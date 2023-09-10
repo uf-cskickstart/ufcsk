@@ -11,8 +11,9 @@ img {
 }
 
 footer {
-  background-color: lightgray;
+  background-color: #1A1421;
+  color: white;
   text-align: center;
   margin-top: auto;
-  padding: 8px;
+  padding: 20px;
 }
