@@ -5,7 +5,10 @@ function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer>{`Copyright © UF CS Kickstart ${year}`}</footer>
+        <footer>
+            {`Copyright © CS Kickstart UF ${year}`}
+        </footer>
+        
     );
 }
 
