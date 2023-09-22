@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
 
 const pages = ['Home', 'Board', 'Sponsor'];
 
@@ -129,7 +128,7 @@ function ResponsiveAppBar() {
                   textDecoration: 'none'
                 }}
               >
-                <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'white' }}>{page}</Link>
+                {page}
               </Button>
             ))}
           </Box>
