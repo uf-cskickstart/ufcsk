@@ -2,7 +2,6 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import SvgIcon from '@mui/material/SvgIcon';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -10,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 const pages = ['Home', 'Board', 'Sponsor'];
 
@@ -101,13 +101,14 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'Encode Sans',
-              letterSpacing: '.3rem',
+              fontFamily: 'DM Sans',
+              fontWeight: 700,
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            CS KICKSTART
+            CS Kickstart
           </Typography>
 
           {/* DESKTOP PAGES */}
@@ -124,10 +125,11 @@ function ResponsiveAppBar() {
                   fontFamily: 'DM Sans',
                   fontSize: '18px',
                   fontWeight: 500,
-                  textTransform: 'none'
+                  textTransform: 'none',
+                  textDecoration: 'none'
                 }}
               >
-                {page}
+                <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'white' }}>{page}</Link>
               </Button>
             ))}
           </Box>
