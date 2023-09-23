@@ -11,10 +11,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
 //Routing
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+//Sponsor Package
+import sponsorPackage from '../../assets/CSK_Sponsor_Package_2023-2024.pdf';
 
 const pages = ['Home', 'Board', 'Sponsor'];
-const routes = ["/home", "/board", "/sponsor"];
+const routes = ["/home", "/board"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -88,6 +91,19 @@ function ResponsiveAppBar() {
                       fontFamily: 'DM Sans',
                     }}
                   >
+                    {index === pages.length - 1 ? (
+                    <a
+                      style={{
+                        textDecoration: 'none',
+                        color: 'black'
+                      }}  
+                      href={sponsorPackage} 
+                      download="CS_Kickstart_Sponsorship_Package.pdf" 
+                      target='_blank'
+                    >
+                      {page}
+                    </a>
+                  ) : (
                     <Link 
                       style={{
                         textDecoration: 'none',
@@ -97,6 +113,7 @@ function ResponsiveAppBar() {
                     >
                       {page}
                     </Link>
+                  )}
                   </Typography>
                 </MenuItem>
               ))}
@@ -141,15 +158,29 @@ function ResponsiveAppBar() {
                   textDecoration: 'none'
                 }}
               >
-                <Link 
-                  style={{
-                    textDecoration: 'none',
-                    color: 'white'
-                  }} 
-                  to={routes[index]}
-                >
-                  {page}
-                </Link>
+                {index === pages.length - 1 ? (
+                  <a
+                    style={{
+                      textDecoration: 'none',
+                      color: 'white'
+                    }}  
+                    href={sponsorPackage} 
+                    download="CS_Kickstart_Sponsorship_Package.pdf" 
+                    target='_blank'
+                  >
+                    {page}
+                  </a>
+                ) : (
+                  <Link 
+                    style={{
+                      textDecoration: 'none',
+                      color: 'white'
+                    }} 
+                    to={routes[index]}
+                  >
+                    {page}
+                  </Link>
+                )}
               </Button>
             ))}
           </Box>
