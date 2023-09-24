@@ -31,7 +31,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#BE9BCB', borderBottom: '2px solid white' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#BE9BCB', borderBottom: '2px solid white', boxShadow: 'none' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* ADD CSK LOGO HERE */}
