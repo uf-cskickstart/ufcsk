@@ -38,11 +38,12 @@ function Home() {
                     <Typography
                         sx={{
                             textAlign: {
-                            xs: 'left',
-                            md: 'right',
+                                xs: 'left',
+                                md: 'right',
                             },
                             fontFamily: 'DM Sans',
-                            fontWeight: '700'
+                            fontWeight: '700',
+                            color: '#1A1421'
                         }}
                         variant='h4'
                     >
@@ -50,7 +51,10 @@ function Home() {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <p style={{ textAlign: 'left', margin: '0', paddingBottom: '20px' }}>
+                    <Typography 
+                        style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
+                        align='left'
+                    >
                         <strong>CS Kickstart at the University of Florida aims to generate more pursuit of technology amongst women to improve the lack of representation and access to
                         the tech industry.</strong> 
                         
@@ -59,7 +63,7 @@ function Home() {
 
                         CS Kickstart will be a <strong>multi-day introductory program</strong> for incoming women at the University of Florida who are interested in <strong>math, science, or
                         engineering.</strong> Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
-                    </p>
+                    </Typography>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Typography
@@ -69,7 +73,8 @@ function Home() {
                             md: 'right',
                             },
                             fontFamily: 'DM Sans',
-                            fontWeight: '700'
+                            fontWeight: '700',
+                            color: '#1A1421'
                         }}
                         variant='h4'
                     >
@@ -112,7 +117,8 @@ function Home() {
                             md: 'right',
                             },
                             fontFamily: 'DM Sans',
-                            fontWeight: '700'
+                            fontWeight: '700',
+                            color: '#1A1421'
                         }}
                         variant='h4'
                     >
