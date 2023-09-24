@@ -90,7 +90,7 @@ export default function Board() {
         variant="h3" 
         pt={2} 
         pl={{ xs: 2, md: 4 }} 
-        sx={{ fontFamily: 'DM Sans', textAlign: 'left', color: '#1A1421', fontWeight: '700' }}
+        sx={{ fontFamily: 'DM Sans', textAlign: 'left', color: '#1A1421', fontWeight: '700', letterSpacing: '3px' }}
       >
         OUR BOARD
       </Typography>

@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 
 export default function BoardCard({ name, position, blurb, avatar, linkedin }) {
   return (
-    <Card style={{ boxShadow: 'none', borderRadius: '30px' }}>
+    <Card style={{ boxShadow: 'none', borderRadius: '30px', backgroundColor: 'transparent' }}>
       <CardMedia
         sx={{ height: 400, borderRadius: '30px' }}
         component="img"
@@ -43,7 +43,7 @@ export default function BoardCard({ name, position, blurb, avatar, linkedin }) {
           <Button 
               variant="outlined" 
               size="medium" 
-              sx={{ fontFamily: 'DM Sans', color: '#BE9BCB', borderColor: '#BE9BCB', borderRadius: '12px', pointerEvents: 'none', width: '100%' }}
+              sx={{ fontFamily: 'DM Sans', color: '#fea5b0', borderColor: '#fdc7cc', borderRadius: '12px', pointerEvents: 'none', width: '100%' }}
           >
               { position }
           </Button>

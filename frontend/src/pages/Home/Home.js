@@ -33,7 +33,13 @@ function Home() {
         <div>
             <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
 
-            <Grid container rowSpacing={{ xs: 1, md: 4 }} columnSpacing={8} sx={{ px: 3, py: 4 }}>
+            <Grid 
+                container 
+                rowSpacing={{ xs: 1, md: 4 }} 
+                columnSpacing={8}
+                px={3}
+                py={{ xs: 2, md: 4 }}
+            >
                 <Grid item xs={12} md={4}>
                     <Typography
                         sx={{
@@ -43,7 +49,8 @@ function Home() {
                             },
                             fontFamily: 'DM Sans',
                             fontWeight: '700',
-                            color: '#1A1421'
+                            color: '#1A1421',
+                            letterSpacing: '2px'
                         }}
                         variant='h4'
                     >
@@ -74,7 +81,8 @@ function Home() {
                             },
                             fontFamily: 'DM Sans',
                             fontWeight: '700',
-                            color: '#1A1421'
+                            color: '#1A1421',
+                            letterSpacing: '2px'
                         }}
                         variant='h4'
                     >
@@ -100,7 +108,7 @@ function Home() {
                         <Button 
                             className="button-text" 
                             variant="contained" 
-                            style={{ marginTop: '20px', backgroundColor: '#BE9BCB', boxShadow: 'none', fontFamily: 'DM Sans' }} 
+                            style={{ marginTop: '20px', backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }} 
                             href='https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York'
                             target='_blank'
                         >
@@ -118,7 +126,8 @@ function Home() {
                             },
                             fontFamily: 'DM Sans',
                             fontWeight: '700',
-                            color: '#1A1421'
+                            color: '#1A1421',
+                            letterSpacing: '2px'
                         }}
                         variant='h4'
                     >

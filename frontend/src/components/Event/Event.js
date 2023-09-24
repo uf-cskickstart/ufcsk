@@ -8,7 +8,7 @@ import './Event.css';
 
 export default function Event({ title, details, description, CTA, link }) {
   return (
-    <Card style={{ fontFamily: 'DM Sans', textAlign: 'left', boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px' }}>
+    <Card style={{ fontFamily: 'DM Sans', textAlign: 'left', borderRadius: '18px', boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px' }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" style={{ fontFamily: 'DM Sans' }}>
           { title }
