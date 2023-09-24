@@ -8,15 +8,15 @@ import './Event.css';
 
 export default function Event({ title, details, description, CTA, link }) {
   return (
-    <Card className='card-shadow' style={{ textAlign: 'left' }}>
+    <Card style={{ fontFamily: 'DM Sans', textAlign: 'left', boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px' }}>
       <CardContent>
-        <Typography className='card-type' gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" style={{ fontFamily: 'DM Sans' }}>
           { title }
         </Typography>
-        <Typography className='card-type' gutterBottom variant="body" component="div" style={{color: '#BE9BCB'}}>
+        <Typography gutterBottom variant="body" component="div" style={{ color: '#BE9BCB' }}>
           { details }
         </Typography>
-        <Typography className='card-type' variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" style={{ fontFamily: 'DM Sans' }}>
           { description }
         </Typography>
       </CardContent>
