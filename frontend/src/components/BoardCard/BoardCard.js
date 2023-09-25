@@ -27,7 +27,7 @@ export default function BoardCard({ name, position, blurb, avatar, linkedin }) {
                   component="div" 
                   style={{ fontFamily: 'DM Sans', fontWeight: '500', textAlign: 'left' }}
                 >
-                  <a href={ linkedin } style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e' }} target='_blank'>
+                  <a href={ linkedin } style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e' }} target='_blank' rel="noreferrer">
                     { name }
                   </a>
                     
