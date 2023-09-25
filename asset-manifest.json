@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ufcsk/static/css/main.da71d779.css",
-    "main.js": "/ufcsk/static/js/main.8bda08bd.js",
+    "main.js": "/ufcsk/static/js/main.700752ba.js",
     "static/js/787.cda612ba.chunk.js": "/ufcsk/static/js/787.cda612ba.chunk.js",
     "static/media/banner-image.png": "/ufcsk/static/media/banner-image.bcf713abd0dd5d70cd7d.png",
     "static/media/CSK_Sponsor_Package_2023-2024.pdf": "/ufcsk/static/media/CSK_Sponsor_Package_2023-2024.5908ee2b97997dfd1c3e.pdf",
     "index.html": "/ufcsk/index.html",
     "main.da71d779.css.map": "/ufcsk/static/css/main.da71d779.css.map",
-    "main.8bda08bd.js.map": "/ufcsk/static/js/main.8bda08bd.js.map",
+    "main.700752ba.js.map": "/ufcsk/static/js/main.700752ba.js.map",
     "787.cda612ba.chunk.js.map": "/ufcsk/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.da71d779.css",
-    "static/js/main.8bda08bd.js"
+    "static/js/main.700752ba.js"
   ]
 }
