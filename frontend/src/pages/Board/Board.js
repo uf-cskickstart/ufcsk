@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
+import susana from '../../assets/avatars/susana-bao.jpg'
 
 export default function Board() {
   const members = [
@@ -9,7 +10,7 @@ export default function Board() {
       name: 'Susana Bao',
       position: 'President',
       blurb: 'Computer Science',
-      avatar: 'susana-bao.jpg',
+      avatar: susana,
       linkedin: 'https://www.linkedin.com/in/haohui-bao/'
     },
     {
