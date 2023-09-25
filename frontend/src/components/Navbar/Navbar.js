@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 import sponsorPackage from '../../assets/CSK_Sponsor_Package_2023-2024.pdf';
 
 const pages = ['Home', 'Board', 'Sponsor'];
-const routes = ["/home", "/board"];
+const routes = ["/ufcsk/home", "/ufcsk/board"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
