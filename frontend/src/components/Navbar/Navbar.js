@@ -100,6 +100,7 @@ function ResponsiveAppBar() {
                       href={sponsorPackage} 
                       download="CS_Kickstart_Sponsorship_Package.pdf" 
                       target='_blank'
+                      rel="noreferrer"
                     >
                       {page}
                     </a>
@@ -167,6 +168,7 @@ function ResponsiveAppBar() {
                     href={sponsorPackage} 
                     download="CS_Kickstart_Sponsorship_Package.pdf" 
                     target='_blank'
+                    rel="noreferrer"
                   >
                     {page}
                   </a>

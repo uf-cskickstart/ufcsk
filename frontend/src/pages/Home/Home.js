@@ -111,6 +111,7 @@ function Home() {
                             style={{ marginTop: '20px', backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }} 
                             href='https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York'
                             target='_blank'
+                            rel="noreferrer"
                         >
                                 view full calendar
                         </Button>
@@ -137,13 +138,13 @@ function Home() {
                 <Grid item xs={12} md={6}>
                     <Typography style={{ fontFamily: 'DM Sans', textAlign: 'left', margin: '0', paddingBottom: '8px' }} variant='h6'>
                         <FontAwesomeIcon icon={icon({name: 'instagram', style: 'brands'})} style={{paddingRight: '15px'}} />
-                        <a href="https://www.instagram.com/uf.cskickstart/" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e'}} target='_blank'>
+                        <a href="https://www.instagram.com/uf.cskickstart/" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e'}} target='_blank' rel="noreferrer">
                             uf.cskickstart
                         </a>
                     </Typography>
                     <Typography style={{ fontFamily: 'DM Sans', textAlign: 'left', margin: '0', paddingBottom: '8px' }} variant='h6'>
                         <FontAwesomeIcon icon={icon({name: 'linkedin', style: 'brands'})} style={{paddingRight: '15px'}} />
-                        <a href="https://www.linkedin.com/company/cs-kickstart-at-uf" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e' }} target='_blank'>
+                        <a href="https://www.linkedin.com/company/cs-kickstart-at-uf" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e' }} target='_blank' rel="noreferrer">
                             CS Kickstart at UF
                         </a>
                     </Typography>
