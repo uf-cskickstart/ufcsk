@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #1A1421;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+}
