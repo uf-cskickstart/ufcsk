@@ -14,9 +14,9 @@ function App() {
       <Router>
         <Navbar></Navbar>
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/home" element={<Home/>}></Route>
-          <Route path="/board" element={<Board/>}></Route>
+          <Route path="/ufcsk" element={<Home/>}></Route>
+          <Route path="/ufcsk/home" element={<Home/>}></Route>
+          <Route path="/ufcsk/board" element={<Board/>}></Route>
         </Routes>
         <Footer className="footer"></Footer>
       </Router>
