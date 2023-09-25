@@ -12,7 +12,7 @@ export default function BoardCard({ name, position, blurb, avatar, linkedin }) {
       <CardMedia
         sx={{ height: 400, borderRadius: '30px' }}
         component="img"
-        src={ avatar }
+        src={ "./avatars/" + avatar }
         title="avatar"
         alt="avatar"
       />
