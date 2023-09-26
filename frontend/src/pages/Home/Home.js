@@ -62,14 +62,14 @@ function Home() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        <strong>CS Kickstart at the University of Florida aims to generate more pursuit of technology amongst women to improve the lack of representation and access to
-                        the tech industry.</strong> 
+                        CS Kickstart at the University of Florida aims to generate more pursuit of technology amongst women to improve the lack of representation and access to
+                        the tech industry.
                         
                         <br></br>
                         <br></br>
 
-                        CS Kickstart will be a <strong>multi-day introductory program</strong> for incoming women at the University of Florida who are interested in <strong>math, science, or
-                        engineering.</strong> Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
+                        CS Kickstart will be a multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
+                        engineering.Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={4}>
