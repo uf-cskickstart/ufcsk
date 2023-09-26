@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 //Sponsor Package
-import sponsorPackage from '../../assets/CSK_Sponsor_Package_2023-2024.pdf';
+import sponsorPackage from '../../assets/CS-Kickstart-Sponsorship-Package.pdf';
 
 const pages = ['Home', 'Board', 'Sponsor'];
 const routes = ["/ufcsk/home", "/ufcsk/board"];
@@ -126,7 +126,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="/ufcsk"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -166,7 +166,7 @@ function ResponsiveAppBar() {
                       color: 'white'
                     }}  
                     href={sponsorPackage} 
-                    download="CS_Kickstart_Sponsorship_Package.pdf" 
+                    download="CS-Kickstart-Sponsorship-Package.pdf" 
                     target='_blank'
                     rel="noreferrer"
                   >
