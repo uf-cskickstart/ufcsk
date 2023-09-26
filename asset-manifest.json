@@ -1,18 +1,28 @@
 {
   "files": {
     "main.css": "/ufcsk/static/css/main.da71d779.css",
-    "main.js": "/ufcsk/static/js/main.3f7fff86.js",
+    "main.js": "/ufcsk/static/js/main.e51be6f9.js",
     "static/js/787.cda612ba.chunk.js": "/ufcsk/static/js/787.cda612ba.chunk.js",
+    "static/media/carolina-boitel.JPG": "/ufcsk/static/media/carolina-boitel.0202fbe519327682bffe.JPG",
+    "static/media/savannah-fletcher.jpg": "/ufcsk/static/media/savannah-fletcher.563cfa62aa8fad52dab2.jpg",
+    "static/media/kelly-chen.jpg": "/ufcsk/static/media/kelly-chen.97caeb274d8ebae8889e.jpg",
+    "static/media/sabrina-wong.jpeg": "/ufcsk/static/media/sabrina-wong.3afc1ebe2d33026b4530.jpeg",
+    "static/media/megan-shah.jpg": "/ufcsk/static/media/megan-shah.0bb8158f2adef171f642.jpg",
+    "static/media/christine-lin.jpeg": "/ufcsk/static/media/christine-lin.c661dc6bb7e5ff221f8a.jpeg",
+    "static/media/stephanie-nguyen.jpg": "/ufcsk/static/media/stephanie-nguyen.8f2b12e1a0af25ee527b.jpg",
     "static/media/banner-image.png": "/ufcsk/static/media/banner-image.bcf713abd0dd5d70cd7d.png",
     "static/media/susana-bao.jpg": "/ufcsk/static/media/susana-bao.25b6096964ac04dc0a05.jpg",
-    "static/media/CSK_Sponsor_Package_2023-2024.pdf": "/ufcsk/static/media/CSK_Sponsor_Package_2023-2024.5908ee2b97997dfd1c3e.pdf",
+    "static/media/maddie-glaum.jpeg": "/ufcsk/static/media/maddie-glaum.b475d13c6b3d40a2d403.jpeg",
+    "static/media/christina-nguyen.jpeg": "/ufcsk/static/media/christina-nguyen.c443b7435266fb30b638.jpeg",
+    "static/media/CS-Kickstart-Sponsorship-Package.pdf": "/ufcsk/static/media/CS-Kickstart-Sponsorship-Package.922938159277b67f15fa.pdf",
+    "static/media/michelle-taing.jpg": "/ufcsk/static/media/michelle-taing.02e4223daaafb5180d3f.jpg",
     "index.html": "/ufcsk/index.html",
     "main.da71d779.css.map": "/ufcsk/static/css/main.da71d779.css.map",
-    "main.3f7fff86.js.map": "/ufcsk/static/js/main.3f7fff86.js.map",
+    "main.e51be6f9.js.map": "/ufcsk/static/js/main.e51be6f9.js.map",
     "787.cda612ba.chunk.js.map": "/ufcsk/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.da71d779.css",
-    "static/js/main.3f7fff86.js"
+    "static/js/main.e51be6f9.js"
   ]
 }
