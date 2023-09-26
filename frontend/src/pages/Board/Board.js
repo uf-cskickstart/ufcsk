@@ -2,7 +2,17 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
-import susana from '../../assets/avatars/susana-bao.jpg'
+import Susana from '../../assets/avatars/susana-bao.jpg';
+import Christine from '../../assets/avatars/christine-lin.jpeg';
+import Carolina from '../../assets/avatars/carolina-boitel.JPG';
+import Sabrina from '../../assets/avatars/sabrina-wong.jpeg';
+import Kelly from '../../assets/avatars/kelly-chen.jpg';
+import Maddie from '../../assets/avatars/maddie-glaum.jpeg';
+import Savannah from '../../assets/avatars/savannah-fletcher.jpg';
+import Michelle from '../../assets/avatars/michelle-taing.jpg';
+import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
+import Christina from '../../assets/avatars/christina-nguyen.jpeg';
+import Megan from '../../assets/avatars/megan-shah.jpg';
 
 export default function Board() {
   const members = [
@@ -10,77 +20,77 @@ export default function Board() {
       name: 'Susana Bao',
       position: 'President',
       blurb: 'Computer Science',
-      avatar: susana,
+      avatar: Susana,
       linkedin: 'https://www.linkedin.com/in/haohui-bao/'
     },
     {
       name: 'Christine Lin',
       position: 'President',
       blurb: 'Computer Science',
-      avatar: 'christine-lin.jpeg',
+      avatar: Christine,
       linkedin: 'https://www.linkedin.com/in/lin-christine/'
     },
     {
       name: 'Carolina Boitel',
       position: 'Treasurer',
       blurb: 'Computer Science',
-      avatar: 'carolina-boitel.JPG',
+      avatar: Carolina,
       linkedin: 'https://www.linkedin.com/in/carolina-boitel/'
     },
     {
       name: 'Sabrina Wong',
       position: 'VP of Curriculum Development',
       blurb: 'Computer Engineering',
-      avatar: 'sabrina-wong.jpeg',
+      avatar: Sabrina,
       linkedin: 'https://www.linkedin.com/in/wongssabrina/'
     },
     {
       name: 'Kelly Chen',
       position: 'VP of External Affairs',
       blurb: 'Computer Science',
-      avatar: 'kelly-chen.jpg',
+      avatar: Kelly,
       linkedin: 'https://www.linkedin.com/in/kelly-chen-417128260/'
     },
     {
       name: 'Maddie Glaum',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: 'maddie-glaum.jpeg',
+      avatar: Maddie,
       linkedin: 'https://www.linkedin.com/in/madeleineglaum/'
     },
     {
       name: 'Savannah Fletcher',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: 'savannah-fletcher.jpg',
+      avatar: Savannah,
       linkedin: 'https://www.linkedin.com/in/savannah-fletcher-a56174251/'
     },
     {
       name: 'Michelle Taing',
       position: 'Webmaster',
       blurb: 'Computer Science',
-      avatar: 'michelle-taing.jpg',
+      avatar: Michelle,
       linkedin: 'https://www.linkedin.com/in/michelletaing/'
     },
     {
       name: 'Stephanie Nguyen',
       position: 'Director of Events',
       blurb: 'Computer Science',
-      avatar: 'stephanie-nguyen.jpg',
+      avatar: Stephanie,
       linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
     },
     {
       name: 'Christina Nguyen',
       position: 'Director of Events',
       blurb: 'Information Systems',
-      avatar: 'christina-nguyen.jpeg',
+      avatar: Christina,
       linkedin: 'https://www.linkedin.com/in/christinalenguyen/'
     },
     {
       name: 'Megan Shah',
       position: 'Director of Workshops',
       blurb: 'Computer Science',
-      avatar: 'megan-shah.jpg',
+      avatar: Megan,
       linkedin: 'https://www.linkedin.com/in/megan-shah/'
     },
   ];
