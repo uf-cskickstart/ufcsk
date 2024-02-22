@@ -2,54 +2,63 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
-import Susana from '../../assets/avatars/susana-bao.jpg';
-import Christine from '../../assets/avatars/christine-lin.jpeg';
-import Carolina from '../../assets/avatars/carolina-boitel.JPG';
-import Sabrina from '../../assets/avatars/sabrina-wong.jpeg';
-import Kelly from '../../assets/avatars/kelly-chen.jpg';
-import Maddie from '../../assets/avatars/maddie-glaum.jpeg';
+import Maddie from '../../assets/avatars/maddie-glaum.png';
 import Savannah from '../../assets/avatars/savannah-fletcher.jpg';
 import Michelle from '../../assets/avatars/michelle-taing.jpg';
 import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
-import Christina from '../../assets/avatars/christina-nguyen.jpeg';
 import Megan from '../../assets/avatars/megan-shah.jpg';
+import Carolyn from '../../assets/avatars/carolyn-wang.jpg';
+import Chelsea from '../../assets/avatars/chelsea-nguyen.jpeg';
+import Maria from '../../assets/avatars/maria-davis.jpeg';
+import Naydelin from '../../assets/avatars/naydelin-trejo.jpeg';
+import Nikki from '../../assets/avatars/nikki-chen.jpeg';
+import Tiffany from '../../assets/avatars/tiffany-vo.jpg';
+import Veronica from '../../assets/avatars/veronica-valdez.jpg';
+import Wendy from '../../assets/avatars/wendy-to.jpeg';
 
 export default function Board() {
   const members = [
     {
-      name: 'Susana Bao',
+      name: 'Wendy To',
       position: 'President',
-      blurb: 'Computer Science',
-      avatar: Susana,
-      linkedin: 'https://www.linkedin.com/in/haohui-bao/'
+      blurb: 'Computer Engineering',
+      avatar: Wendy,
+      linkedin: 'https://www.linkedin.com/in/wendytto/'
     },
     {
-      name: 'Christine Lin',
+      name: 'Carolyn Wang',
       position: 'President',
       blurb: 'Computer Science',
-      avatar: Christine,
-      linkedin: 'https://www.linkedin.com/in/lin-christine/'
+      avatar: Carolyn,
+      linkedin: 'https://www.linkedin.com/in/carolyn-wang-cs/'
     },
     {
-      name: 'Carolina Boitel',
+      name: 'Nikki Chen',
       position: 'Treasurer',
       blurb: 'Computer Science',
-      avatar: Carolina,
-      linkedin: 'https://www.linkedin.com/in/carolina-boitel/'
+      avatar: Nikki,
+      linkedin: 'https://www.linkedin.com/in/nikki-chen23/'
     },
     {
-      name: 'Sabrina Wong',
+      name: 'Naydelin Trejo',
+      position: 'Secretary',
+      blurb: 'Computer Science',
+      avatar: Naydelin,
+      linkedin: 'https://www.linkedin.com/in/naydelin-trejo/'
+    },
+    {
+      name: 'Megan Shah',
       position: 'VP of Curriculum Development',
-      blurb: 'Computer Engineering',
-      avatar: Sabrina,
-      linkedin: 'https://www.linkedin.com/in/wongssabrina/'
+      blurb: 'Computer Science',
+      avatar: Megan,
+      linkedin: 'https://www.linkedin.com/in/megan-shah/'
     },
     {
-      name: 'Kelly Chen',
+      name: 'Stephanie Nguyen',
       position: 'VP of External Affairs',
       blurb: 'Computer Science',
-      avatar: Kelly,
-      linkedin: 'https://www.linkedin.com/in/kelly-chen-417128260/'
+      avatar: Stephanie,
+      linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
     },
     {
       name: 'Maddie Glaum',
@@ -80,19 +89,47 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
     },
     {
-      name: 'Christina Nguyen',
-      position: 'Director of Events',
-      blurb: 'Information Systems',
-      avatar: Christina,
-      linkedin: 'https://www.linkedin.com/in/christinalenguyen/'
+      name: 'Rachel Pu',
+      position: 'Co-Director of Events',
+      blurb: 'Computer Science',
+      avatar: "https://placehold.co/400x600",
+      linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
     },
     {
-      name: 'Megan Shah',
-      position: 'Director of Workshops',
+      name: 'Maria Davis',
+      position: 'Co-Director of Events',
       blurb: 'Computer Science',
-      avatar: Megan,
-      linkedin: 'https://www.linkedin.com/in/megan-shah/'
+      avatar: Maria,
+      linkedin: 'https://www.linkedin.com/in/maria-davis-/'
     },
+    {
+      name: 'Veronica Valdez',
+      position: 'Co-Director of Fundraising',
+      blurb: 'Computer Science',
+      avatar: Veronica,
+      linkedin: ''
+    },
+    {
+      name: 'Aneesha Mummareddy',
+      position: 'Co-Director of Fundraising',
+      blurb: 'Computer Science',
+      avatar: "https://placehold.co/400x600",
+      linkedin: 'https://www.linkedin.com/in/aneesha-mummareddy-b427592a9/'
+    },
+    {
+      name: 'Chelsea Nguyen',
+      position: 'Director of Workshops (Software)',
+      blurb: 'Computer Science',
+      avatar: Chelsea,
+      linkedin: 'https://www.linkedin.com/in/chelseaqnguyen/'
+    },
+    {
+      name: 'Tiffany Vo',
+      position: 'Director of Workshops (Hardware)',
+      blurb: 'Computer Science',
+      avatar: Tiffany,
+      linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
+    }
   ];
   
   return (
