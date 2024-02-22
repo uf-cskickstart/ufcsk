@@ -6,26 +6,72 @@ import { Button, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import './Home.css';
+// import gapi from 'gapi-client';
 
 function Home() {
+
+    /*
+    const [events, setEvents] = useState([]);
+
+    const CLIENT_ID = '334055811193-i58if9p5e3ee82q5vnmc70ul1jsjrhs4.apps.googleusercontent.com';
+    const API_KEY = 'AIzaSyCh3Nunh2gek-Fu0-rHWeidJOPDThvSAro';
+    const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+
+    useEffect(() => {
+        // Load Google API client library
+        gapi.load('client', initClient);
+    }, []);
+
+    const initClient = () => {
+        // Initialize Google API client
+        gapi.client.init({
+            apiKey: API_KEY,
+            discoveryDocs: [DISCOVERY_DOC],
+        }).then(() => {
+            console.log("loading")
+            // After the client is initialized, make API calls
+            // loadEvents();
+        }).catch(error => {
+            console.error('Error initializing Google API client:', error);
+        });
+    };
+
+    const loadEvents = () => {
+        // Fetch events from Google Calendar API
+        gapi.client.calendar.events.list({
+            'calendarId': 'primary', // Use 'primary' for the primary calendar
+            'timeMin': (new Date()).toISOString(), // Get events starting from the current time
+            'maxResults': 3, // Get only the next 3 events
+            'singleEvents': true,
+            'orderBy': 'startTime'
+        }).then(response => {
+            const events = response.result.items;
+            setEvents(events);
+        }).catch(error => {
+            console.error('Error loading events:', error);
+        });
+    };
+    */
+
+
     const events = [
         {
-            title: "Pool Social",
+            title: "Intro to Java Workshop",
             description:
-              "Join us and a ton of other awesome clubs for a pool party social at Lexington Crossing Clubhouse!",
-            details: "Lexington Clubhouse | Sept. 22, 3 pm",
+              "Join us as we learn Intro to Java!",
+            details: "Feb. 27, 5:30 pm",
         },
         {
-            title: "Hello CSK & Friends Social",
+            title: "Huey Magoo's Fundraiser",
             description:
-              "We’ll be making friendship bracelets, coloring, playing games, and doing a snack potluck! Come hang out, make new friends, and find the Kuromi to your My Melody at the Plaza of the Americas! And if you want, bring your favorite snack to share with others or for yourself!",
-            details: "The Plaza of Americas | Sept. 8, 5-7 pm",
+              "Grab some food and socialize with your CSK community!",
+            details: "Feb. 28, 5 pm",
         },
         {
-            title: "CSK x ACM Demystifying CS Workshop",
+            title: "Origami Flower Making Social",
             description:
-              "Learn about classes, resume building, and other resources -- tailored to the UF experience!",
-            details: "McCarty Hall C Room 0100 | Sept. 7, 6:30 pm",
+              "Unwind and destress with some origami :)",
+            details: "Feb. 28, 6 pm",
         }, 
     ];
 
