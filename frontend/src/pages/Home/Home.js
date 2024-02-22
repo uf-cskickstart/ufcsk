@@ -31,7 +31,7 @@ function Home() {
 
     return (
         <div>
-            <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
+            <img src={ `/${Banner}` } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
 
             <Grid 
                 container 
