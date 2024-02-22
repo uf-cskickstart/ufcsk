@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Banner from '../../assets/banner-image.png';
+import banner from '../../assets/banner-image.png';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
 import { Button, Typography } from '@mui/material';
@@ -31,7 +31,7 @@ function Home() {
 
     return (
         <div>
-            <img src={ `/${Banner}` } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
+            <img src={ banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
 
             <Grid 
                 container 
