@@ -16,8 +16,8 @@ import { Link } from 'react-router-dom';
 //Sponsor Package
 import sponsorPackage from '../../assets/CS-Kickstart-Sponsorship-Package.pdf';
 
-const pages = ['Home', 'Board', 'Sponsor'];
-const routes = ["/", "/board"];
+const pages = ['Home', 'Board', 'Calendar', 'Sponsor'];
+const routes = ["/", "/board", "/calendar"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
