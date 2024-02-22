@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ufcsk/static/css/main.da71d779.css",
-    "main.js": "/ufcsk/static/js/main.504b6a21.js",
-    "static/js/787.cda612ba.chunk.js": "/ufcsk/static/js/787.cda612ba.chunk.js",
+    "main.css": "/ufcsk/static/css/main.48820d7c.css",
+    "main.js": "/ufcsk/static/js/main.ad9f6584.js",
+    "static/js/453.d855a71b.chunk.js": "/ufcsk/static/js/453.d855a71b.chunk.js",
     "static/media/banner-image.png": "/ufcsk/static/media/banner-image.bcf713abd0dd5d70cd7d.png",
     "static/media/chelsea-nguyen.jpeg": "/ufcsk/static/media/chelsea-nguyen.8dff4923b82451c648e8.jpeg",
     "static/media/tiffany-vo.jpg": "/ufcsk/static/media/tiffany-vo.d99f0780739a30b2a34d.jpg",
@@ -20,12 +20,12 @@
     "static/media/maria-davis.jpeg": "/ufcsk/static/media/maria-davis.a604a6109ef4bdcf7ffd.jpeg",
     "static/media/rachel-pu.jpg": "/ufcsk/static/media/rachel-pu.c5b0306b38087930081d.jpg",
     "index.html": "/ufcsk/index.html",
-    "main.da71d779.css.map": "/ufcsk/static/css/main.da71d779.css.map",
-    "main.504b6a21.js.map": "/ufcsk/static/js/main.504b6a21.js.map",
-    "787.cda612ba.chunk.js.map": "/ufcsk/static/js/787.cda612ba.chunk.js.map"
+    "main.48820d7c.css.map": "/ufcsk/static/css/main.48820d7c.css.map",
+    "main.ad9f6584.js.map": "/ufcsk/static/js/main.ad9f6584.js.map",
+    "453.d855a71b.chunk.js.map": "/ufcsk/static/js/453.d855a71b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da71d779.css",
-    "static/js/main.504b6a21.js"
+    "static/css/main.48820d7c.css",
+    "static/js/main.ad9f6584.js"
   ]
 }
