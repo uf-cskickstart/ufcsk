@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar.js';
 import Footer from './components/Footer/Footer.js';
 import Home from './pages/Home/Home.js';
 import Board from './pages/Board/Board.js'
+import Calendar from './pages/Calendar/Calendar.js';
 
 //Routing 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -17,6 +18,7 @@ function App() {
           <Route path="/ufcsk" element={<Home/>}></Route>
           <Route path="/ufcsk/home" element={<Home/>}></Route>
           <Route path="/ufcsk/board" element={<Board/>}></Route>
+          <Route path="/ufcsk/calendar" element={<Calendar/>}></Route>
         </Routes>
         <Footer className="footer"></Footer>
       </Router>
