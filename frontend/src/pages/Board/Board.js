@@ -15,6 +15,7 @@ import Nikki from '../../assets/avatars/nikki-chen.jpeg';
 import Tiffany from '../../assets/avatars/tiffany-vo.jpg';
 import Veronica from '../../assets/avatars/veronica-valdez.jpg';
 import Wendy from '../../assets/avatars/wendy-to.jpeg';
+import Rachel from '../../assets/avatars/rachel-pu.jpg';
 
 export default function Board() {
   const members = [
@@ -92,7 +93,7 @@ export default function Board() {
       name: 'Rachel Pu',
       position: 'Co-Director of Events',
       blurb: 'Computer Science',
-      avatar: "https://placehold.co/400x600",
+      avatar: Rachel,
       linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
     },
     {
