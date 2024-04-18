@@ -83,13 +83,6 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/michelletaing/'
     },
     {
-      name: 'Stephanie Nguyen',
-      position: 'Director of Events',
-      blurb: 'Computer Science',
-      avatar: Stephanie,
-      linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
-    },
-    {
       name: 'Rachel Pu',
       position: 'Co-Director of Events',
       blurb: 'Computer Science',
@@ -109,13 +102,6 @@ export default function Board() {
       blurb: 'Computer Science',
       avatar: Veronica,
       linkedin: ''
-    },
-    {
-      name: 'Aneesha Mummareddy',
-      position: 'Co-Director of Fundraising',
-      blurb: 'Computer Science',
-      avatar: "https://placehold.co/400x600",
-      linkedin: 'https://www.linkedin.com/in/aneesha-mummareddy-b427592a9/'
     },
     {
       name: 'Chelsea Nguyen',
