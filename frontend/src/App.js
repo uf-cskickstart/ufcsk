@@ -15,10 +15,10 @@ function App() {
       <Router>
         <Navbar></Navbar>
         <Routes>
-          <Route path="/ufcsk" element={<Home/>}></Route>
-          <Route path="/ufcsk/home" element={<Home/>}></Route>
-          <Route path="/ufcsk/board" element={<Board/>}></Route>
-          <Route path="/ufcsk/calendar" element={<Calendar/>}></Route>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/home" element={<Home/>}></Route>
+          <Route path="/board" element={<Board/>}></Route>
+          <Route path="/calendar" element={<Calendar/>}></Route>
         </Routes>
         <Footer className="footer"></Footer>
       </Router>
