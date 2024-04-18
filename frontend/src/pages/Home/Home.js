@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import Banner from '../../assets/banner-image.png';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
@@ -9,51 +10,6 @@ import './Home.css';
 // import gapi from 'gapi-client';
 
 function Home() {
-
-    /*
-    const [events, setEvents] = useState([]);
-
-    const CLIENT_ID = '334055811193-i58if9p5e3ee82q5vnmc70ul1jsjrhs4.apps.googleusercontent.com';
-    const API_KEY = 'AIzaSyCh3Nunh2gek-Fu0-rHWeidJOPDThvSAro';
-    const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
-
-    useEffect(() => {
-        // Load Google API client library
-        gapi.load('client', initClient);
-    }, []);
-
-    const initClient = () => {
-        // Initialize Google API client
-        gapi.client.init({
-            apiKey: API_KEY,
-            discoveryDocs: [DISCOVERY_DOC],
-        }).then(() => {
-            console.log("loading")
-            // After the client is initialized, make API calls
-            // loadEvents();
-        }).catch(error => {
-            console.error('Error initializing Google API client:', error);
-        });
-    };
-
-    const loadEvents = () => {
-        // Fetch events from Google Calendar API
-        gapi.client.calendar.events.list({
-            'calendarId': 'primary', // Use 'primary' for the primary calendar
-            'timeMin': (new Date()).toISOString(), // Get events starting from the current time
-            'maxResults': 3, // Get only the next 3 events
-            'singleEvents': true,
-            'orderBy': 'startTime'
-        }).then(response => {
-            const events = response.result.items;
-            setEvents(events);
-        }).catch(error => {
-            console.error('Error loading events:', error);
-        });
-    };
-    */
-
-
     const events = [
         {
             title: "Intro to Java Workshop",
