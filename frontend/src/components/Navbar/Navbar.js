@@ -16,8 +16,8 @@ import { Link } from 'react-router-dom';
 //Sponsor Package
 import sponsorPackage from '../../assets/CS-Kickstart-Sponsorship-Package.pdf';
 
-const pages = ['Home', 'Board', 'Calendar', 'Sponsor'];
-const routes = ["/home", "/board", "/calendar"];
+const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor'];
+const routes = ["/home", "/board", "/calendar", "/program"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -166,7 +166,6 @@ function ResponsiveAppBar() {
                       color: 'white'
                     }}  
                     href={sponsorPackage} 
-                    download="CS-Kickstart-Sponsorship-Package.pdf" 
                     target='_blank'
                     rel="noreferrer"
                   >
