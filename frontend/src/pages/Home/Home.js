@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import Banner from '../../assets/banner-image.png';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import { Button, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
@@ -70,8 +72,8 @@ function Home() {
                         <br></br>
                         <br></br>
 
-                        CS Kickstart will be a multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
-                        engineering.Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
+                        CS Kickstart is an upcoming multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
+                        engineering. Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={4}>
