@@ -2,12 +2,13 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import Banner from '../../assets/program-banner.png';
 import { Button, Typography } from '@mui/material';
 
 function Program() {
   return (
     <div>
-      <img src="https://placehold.co/1600x500" alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
+      <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
 
       {/* <Typography
         sx={{
@@ -51,7 +52,7 @@ function Program() {
                     style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                     align='left'
                 >
-                    CS Kickstart is a free, multi-day program created to inspire and empower women in technology. 
+                    CS Kickstart is a free, multi-day program from August 17-20th created to inspire and empower women in technology. 
 
                     <br></br>
                     <br></br>
@@ -180,7 +181,7 @@ function Program() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications are now open!
+                        Applications are now open and close on X!
                     </Typography>
                     <div style={{ textAlign: 'left' }}>
                         <Button 
