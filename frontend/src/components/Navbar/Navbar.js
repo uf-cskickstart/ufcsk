@@ -91,7 +91,7 @@ function ResponsiveAppBar() {
                       fontFamily: 'DM Sans',
                     }}
                   >
-                    {index === pages.length - 1 ? (
+                    {page === "Sponsor" ? (
                     <a
                       style={{
                         textDecoration: 'none',
@@ -159,7 +159,7 @@ function ResponsiveAppBar() {
                   textDecoration: 'none'
                 }}
               >
-                {index === pages.length - 1 ? (
+                {page === "Sponsor" ? (
                   <a
                     style={{
                       textDecoration: 'none',
@@ -185,6 +185,60 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
+
+          
+          {/* RIGHT-ALIGNED "Apply Now!" BUTTON */}
+          <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
+            <Button 
+              variant="contained" 
+              sx={{ 
+                backgroundColor: '#ffe45e', 
+                color: 'black', 
+                boxShadow: 'none', 
+                fontFamily: 'DM Sans',
+                fontSize: '18px',
+                fontWeight: 700,
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#ffeb85',
+                  color: '#676767',
+                  boxShadow: 'none'
+                }
+              }} 
+              href="https://example.com/apply"
+              target="_blank"
+              rel="noreferrer"
+            >
+              APPLY NOW!
+            </Button>
+          </Box>
+
+          {/* MOBILE "Apply Now!" BUTTON */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+            <Button 
+              variant="contained" 
+              sx={{ 
+                backgroundColor: '#ffe45e', 
+                color: 'black', 
+                boxShadow: 'none', 
+                fontFamily: 'DM Sans',
+                fontSize: '18px',
+                fontWeight: 700,
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#ffeb85',
+                  color: '#676767',
+                  boxShadow: 'none'
+                }
+              }} 
+              href="https://example.com/apply"
+              target="_blank"
+              rel="noreferrer"
+            >
+              APPLY NOW!
+            </Button>
+          </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
