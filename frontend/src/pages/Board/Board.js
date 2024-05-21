@@ -84,21 +84,21 @@ export default function Board() {
     },
     {
       name: 'Rachel Pu',
-      position: 'Co-Director of Events',
+      position: 'Director of Events',
       blurb: 'Computer Science',
       avatar: Rachel,
       linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
     },
     {
       name: 'Maria Davis',
-      position: 'Co-Director of Events',
+      position: 'Director of Events',
       blurb: 'Computer Science',
       avatar: Maria,
       linkedin: 'https://www.linkedin.com/in/maria-davis-/'
     },
     {
       name: 'Veronica Valdez',
-      position: 'Co-Director of Fundraising',
+      position: 'Director of Fundraising',
       blurb: 'Computer Science',
       avatar: Veronica,
       linkedin: ''
