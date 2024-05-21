@@ -2,26 +2,13 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Banner from '../../assets/program-banner.png';
+import Banner from '../../assets/program-banner-text.png';
 import { Button, Typography } from '@mui/material';
 
 function Program() {
   return (
     <div>
       <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
-
-      {/* <Typography
-        sx={{
-            fontFamily: 'DM Sans',
-            fontWeight: '700',
-            color: '#1A1421',
-            letterSpacing: '2px'
-        }}
-        variant='h4'
-        pt={3}
-      >
-        Join our Computer Science Exploration Program!
-      </Typography> */}
 
       <Grid 
                 container 
@@ -52,7 +39,7 @@ function Program() {
                     style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                     align='left'
                 >
-                    CS Kickstart is a free, multi-day program from August 17-20th created to inspire and empower women in technology. 
+                    CS Kickstart is a free, multi-day program from August 18th-20th created to inspire and empower women in technology. 
 
                     <br></br>
                     <br></br>
@@ -176,26 +163,26 @@ function Program() {
                     APPLY
                 </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
                     <Typography 
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications are now open and close on X!
+                        Applications have not opened yet. Check our Instagram and Slack for the latest information on when applications open.
                     </Typography>
-                    <div style={{ textAlign: 'left' }}>
+                    {/* <div style={{ textAlign: 'left' }}>
                         <Button 
                             className="button-text" 
                             variant="contained" 
                             size="large"
                             style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }} 
-                            href='https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York'
+                            href='https://docs.google.com/forms/d/e/1FAIpQLSd-CRsPsEzvSC1gAufZ3XZ4ot60fjFSA3hmrdAIGSIMD-J7Hg/viewform'
                             target='_blank'
                             rel="noreferrer"
                         >
-                                APPLY NOW
+                                APPLY HERE
                         </Button>
-                    </div>
+                    </div> */}
             </Grid>
             
 
