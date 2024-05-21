@@ -3,35 +3,85 @@ import { useEffect, useState } from 'react';
 import Banner from '../../assets/banner-image.png';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import { Button, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { Link } from 'react-router-dom';
 import './Home.css';
-// import gapi from 'gapi-client';
+import { gapi } from 'gapi-script'
+
+const calendarID = process.env.REACT_APP_CALENDAR_ID
+const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
+
+const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString(undefined, options);
+};
+
+const formatTime = (timeString) => {
+    const time = new Date(timeString);
+    const options = { hour: 'numeric', minute: '2-digit', hour12: true };
+    return time.toLocaleTimeString(undefined, options);
+};
+
+const fetchEvents = (calendarID, apiKey, params) => {
+    return gapi.client
+        .request({
+            path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+            params: params,
+        })
+        .then((response) => response.result.items)
+        .catch((err) => {
+            console.error("Error fetching events:", err);
+            return [];
+        });
+};
+
+const getEvents = async (calendarID, apiKey, setEvents) => {
+    function initiate() {
+        gapi.client.init({ apiKey: apiKey }).then(async () => {
+            const now = new Date().toISOString();
+
+            // Fetch upcoming events
+            let upcomingEvents = await fetchEvents(calendarID, apiKey, {
+                maxResults: 3,
+                orderBy: 'startTime',
+                singleEvents: true,
+                timeMin: now,
+            });
+
+            // If fewer than 3 upcoming events, fetch recent past events
+            if (upcomingEvents.length < 3) {
+                const pastEvents = await fetchEvents(calendarID, apiKey, {
+                    maxResults: 2500, // Fetch more than needed to ensure you get recent ones
+                    orderBy: 'startTime',
+                    singleEvents: true,
+                    timeMax: now,
+                });
+
+                // Take the most recent past events
+                const recentPastEvents = pastEvents.slice(- (3 - upcomingEvents.length));
+
+                // Combine and sort upcoming and recent past events
+                upcomingEvents = [...upcomingEvents, ...recentPastEvents].sort(
+                    (a, b) => new Date(a.start.dateTime || a.start.date) - new Date(b.start.dateTime || b.start.date)
+                );
+            }
+
+            console.log(upcomingEvents);
+            setEvents(upcomingEvents);
+        });
+    }
+    gapi.load('client', initiate);
+};
 
 function Home() {
-    const events = [
-        {
-            title: "Intro to Java Workshop",
-            description:
-              "Join us as we learn Intro to Java!",
-            details: "Feb. 27, 5:30 pm",
-        },
-        {
-            title: "Huey Magoo's Fundraiser",
-            description:
-              "Grab some food and socialize with your CSK community!",
-            details: "Feb. 28, 5 pm",
-        },
-        {
-            title: "Origami Flower Making Social",
-            description:
-              "Unwind and destress with some origami :)",
-            details: "Feb. 28, 6 pm",
-        }, 
-    ];
+    const [events, setEvents] = useState([])
+    
+    useEffect(() => {
+        const events = getEvents(calendarID, apiKey, setEvents)
+    }, [])
 
     return (
         <div>
@@ -39,7 +89,7 @@ function Home() {
 
             <Grid 
                 container 
-                rowSpacing={{ xs: 1, md: 4 }} 
+                rowSpacing={{ xs: 2, md: 4 }} 
                 columnSpacing={8}
                 px={3}
                 py={{ xs: 2, md: 4 }}
@@ -61,7 +111,7 @@ function Home() {
                         MISSION
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
                     <Typography 
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
@@ -75,6 +125,18 @@ function Home() {
                         CS Kickstart is an upcoming multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
                         engineering. Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
                     </Typography>
+                    <div style={{ textAlign: 'center' }}>
+                        <Button 
+                            component={Link}
+                            to="/program"
+                            className="button-text" 
+                            variant="contained" 
+                            size="large"
+                            style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }} 
+                        >
+                                LEARN MORE
+                        </Button>
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Typography
@@ -99,11 +161,14 @@ function Home() {
                         {events.map((event, index) => (
                             <Grid item xs={12} key={index}>
                             <Event
-                                title={event.title}
+                                title={event.summary}
                                 description={event.description}
-                                details={event.details}
-                                date={event.date}
-                                CTA={event.CTA}
+                                // description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam ac tortor vitae purus faucibus ornare."
+                                date={event.start.dateTime ? formatDate(event.start.dateTime) : formatDate(event.start.date)}
+                                time={event.start.dateTime ? formatTime(event.start.dateTime) : null}
+                                location={event.location ? event.location : null}
+                                // location="McCarty Hall C, Gainesville, FL 32603, USA"
+                                link={event.htmlLink}
                             />
                             </Grid>
                         ))}
@@ -112,6 +177,7 @@ function Home() {
                         <Button 
                             className="button-text" 
                             variant="contained" 
+                            size="large"
                             style={{ marginTop: '20px', backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }} 
                             href='https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York'
                             target='_blank'
@@ -139,7 +205,7 @@ function Home() {
                         KEEP IN TOUCH
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
                     <Typography style={{ fontFamily: 'DM Sans', textAlign: 'left', margin: '0', paddingBottom: '8px' }} variant='h6'>
                         <FontAwesomeIcon icon={icon({name: 'instagram', style: 'brands'})} style={{paddingRight: '15px'}} />
                         <a href="https://www.instagram.com/uf.cskickstart/" style={{ textDecoration: 'none', color: 'inherit', borderBottom: '2px solid #ffe45e'}} target='_blank' rel="noreferrer">
