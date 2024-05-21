@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Banner from '../../assets/program-banner-text.png';
+import Banner from '../../assets/program-banner-small.png';
 import { Button, Typography } from '@mui/material';
 
 function Program() {
