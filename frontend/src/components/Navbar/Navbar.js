@@ -10,14 +10,14 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-//Routing
+// Routing
 import { Link } from 'react-router-dom';
 
-//Sponsor Package
+// Sponsor Package
 import sponsorPackage from '../../assets/CS-Kickstart-Sponsorship-Package.pdf';
 
-const pages = ['Home', 'Board', 'Calendar', 'Sponsor'];
-const routes = ["/home", "/board", "/calendar"];
+const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor'];
+const routes = ["/home", "/board", "/calendar", "/program"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -91,7 +91,7 @@ function ResponsiveAppBar() {
                       fontFamily: 'DM Sans',
                     }}
                   >
-                    {index === pages.length - 1 ? (
+                    {page === "Sponsor" ? (
                     <a
                       style={{
                         textDecoration: 'none',
@@ -126,7 +126,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="/ufcsk"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -159,14 +159,13 @@ function ResponsiveAppBar() {
                   textDecoration: 'none'
                 }}
               >
-                {index === pages.length - 1 ? (
+                {page === "Sponsor" ? (
                   <a
                     style={{
                       textDecoration: 'none',
                       color: 'white'
                     }}  
                     href={sponsorPackage} 
-                    download="CS-Kickstart-Sponsorship-Package.pdf" 
                     target='_blank'
                     rel="noreferrer"
                   >
@@ -186,6 +185,61 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
+
+          
+          {/* RIGHT-ALIGNED "Apply Now!" BUTTON */}
+          <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
+            <Button 
+              component={ Link }
+              to="/program"
+              variant="contained" 
+              sx={{ 
+                backgroundColor: '#ffe45e', 
+                color: 'black', 
+                boxShadow: 'none', 
+                fontFamily: 'DM Sans',
+                fontSize: '18px',
+                fontWeight: 700,
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#ffeb85',
+                  color: '#676767',
+                  boxShadow: 'none'
+                }
+              }} 
+            >
+              APPLY NOW!
+            </Button>
+          </Box>
+
+          {/* MOBILE "Apply Now!" BUTTON */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+            <Button 
+              component={ Link }
+              to="/program"
+              variant="contained" 
+              sx={{ 
+                backgroundColor: '#ffe45e', 
+                color: 'black', 
+                boxShadow: 'none', 
+                fontFamily: 'DM Sans',
+                fontSize: '18px',
+                fontWeight: 700,
+                textTransform: 'none',
+                lineHeight: '1',
+                padding: '5px 5px',
+                width: '75%',
+                '&:hover': {
+                  backgroundColor: '#ffeb85',
+                  color: '#676767',
+                  boxShadow: 'none'
+                }
+              }} 
+            >
+              APPLY NOW!
+            </Button>
+          </Box>
+
         </Toolbar>
       </Container>
     </AppBar>

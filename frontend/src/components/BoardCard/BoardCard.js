@@ -43,7 +43,7 @@ export default function BoardCard({ name, position, blurb, avatar, linkedin }) {
           <Button 
               variant="outlined" 
               size="medium" 
-              sx={{ fontFamily: 'DM Sans', color: '#fea5b0', borderColor: '#fdc7cc', borderRadius: '12px', pointerEvents: 'none', width: '100%' }}
+              sx={{ fontFamily: 'DM Sans', color: '#fea5b0', borderColor: '#fdc7cc', borderRadius: '12px', pointerEvents: 'none', width: '100%', lineHeight: '1.5' }}
           >
               { position }
           </Button>
