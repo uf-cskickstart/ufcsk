@@ -10,10 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-//Routing
+// Routing
 import { Link } from 'react-router-dom';
 
-//Sponsor Package
+// Sponsor Package
 import sponsorPackage from '../../assets/CS-Kickstart-Sponsorship-Package.pdf';
 
 const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor'];
@@ -126,7 +126,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="/ufcsk"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -190,6 +190,8 @@ function ResponsiveAppBar() {
           {/* RIGHT-ALIGNED "Apply Now!" BUTTON */}
           <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
             <Button 
+              component={ Link }
+              to="/program"
               variant="contained" 
               sx={{ 
                 backgroundColor: '#ffe45e', 
@@ -205,9 +207,6 @@ function ResponsiveAppBar() {
                   boxShadow: 'none'
                 }
               }} 
-              href="https://example.com/apply"
-              target="_blank"
-              rel="noreferrer"
             >
               APPLY NOW!
             </Button>
@@ -216,6 +215,8 @@ function ResponsiveAppBar() {
           {/* MOBILE "Apply Now!" BUTTON */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
             <Button 
+              component={ Link }
+              to="/program"
               variant="contained" 
               sx={{ 
                 backgroundColor: '#ffe45e', 
@@ -225,15 +226,15 @@ function ResponsiveAppBar() {
                 fontSize: '18px',
                 fontWeight: 700,
                 textTransform: 'none',
+                lineHeight: '1',
+                padding: '5px 5px',
+                width: '75%',
                 '&:hover': {
                   backgroundColor: '#ffeb85',
                   color: '#676767',
                   boxShadow: 'none'
                 }
               }} 
-              href="https://example.com/apply"
-              target="_blank"
-              rel="noreferrer"
             >
               APPLY NOW!
             </Button>
