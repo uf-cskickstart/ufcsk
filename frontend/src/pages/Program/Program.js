@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Banner from '../../assets/program-banner-small.png';
+import Banner from '../../assets/cs-kickoff-banner.png';
 import { Button, Typography } from '@mui/material';
 
 function Program() {
@@ -39,7 +39,7 @@ function Program() {
                     style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                     align='left'
                 >
-                    CS Kickstart is a free, multi-day program from August 18th-20th created to inspire and empower women in technology. 
+                    CS Kickoff is a free, multi-day program from <i>Sunday, August 18, 2024 to Tuesday, August 20, 2024</i> created to inspire and empower women in technology. 
 
                     <br></br>
                     <br></br>
@@ -139,10 +139,9 @@ function Program() {
                     >
                         Events you can expect:
                         <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>Programming labs</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>Tech info sessions</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>Women in tech panels</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>Social activities</ListItem>
+                            <ListItem sx={{ display: 'list-item', pb: 0 }}><strong>Workshops & Labs:</strong> In our workshops, you will be able to get exposure and hands-on experience in Python, machine learning, and Arduino boards! This is a great opportunity to learn and get a good foundation of both sides of the tech world, software and hardware. Whether you are a beginner or looking to enhance your skills, our workshops are designed to cater to all levels.</ListItem>
+                            <ListItem sx={{ display: 'list-item', pb: 0 }}><strong>Socials:</strong> You will be able to participate in many fun activities that will allow you to get to know other attendees and CSK members. This is a great way to start building your network of connections and friends who can help support you through the years and become a community you can rely on.</ListItem>
+                            <ListItem sx={{ display: 'list-item', pb: 0 }}><strong>Panels:</strong> You will be able to interact with and ask questions to our various speakers. We will feature engineers discussing industry opportunities, professors sharing their research and offering preparation tips, upper-classmen answering college life questions, and representatives from various organizations helping you explore where you fit best.</ListItem>
                         </List>                    
                     </Typography>
             </Grid>
@@ -168,9 +167,9 @@ function Program() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications have not opened yet. Check our Instagram and Slack for the latest information on when applications open.
+                        Applications are now open! Apply by <strong>Monday, July 15, 2024</strong> to be considered for the program.
                     </Typography>
-                    {/* <div style={{ textAlign: 'left' }}>
+                    <div style={{ textAlign: 'left' }}>
                         <Button 
                             className="button-text" 
                             variant="contained" 
@@ -182,7 +181,7 @@ function Program() {
                         >
                                 APPLY HERE
                         </Button>
-                    </div> */}
+                    </div>
             </Grid>
             
 

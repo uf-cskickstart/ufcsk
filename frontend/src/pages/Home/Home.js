@@ -122,7 +122,7 @@ function Home() {
                         <br></br>
                         <br></br>
 
-                        CS Kickstart is an upcoming multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
+                        CS Kickoff is an upcoming multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
                         engineering. Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
                     </Typography>
                     <div style={{ textAlign: 'center' }}>
