@@ -3,14 +3,63 @@ import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Banner from '../../assets/cs-kickoff-banner.png';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import Box from '@mui/material/Box';
 import { Button, Typography } from '@mui/material';
+import Recap1 from '../../assets/recap-1.jpg';
+import Recap2 from '../../assets/recap-2.jpg';
+import Recap3 from '../../assets/recap-3.jpg';
+import Recap4 from '../../assets/recap-4.jpg';
+import Recap5 from '../../assets/recap-5.jpg';
 
 function Program() {
-  return (
-    <div>
-      <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
+    const itemData = [
+        {
+            img: Recap4
+        },
+        {
+            img: Recap1
+        },
+        {
+            img: Recap2
+        },
+        {
+            img: Recap3
+        },
+        {
+            img: Recap5
+        }
+    ];
 
-      <Grid 
+    return (
+    <div>
+        {/* <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/> */}
+
+        <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+        >
+        <ImageList
+            sx={{ width: '100%', height: 'auto' }}
+            cols={5} // Dynamically adjusts based on screen size
+            rowHeight={{ xs: 200, sm: 300 }} // Smaller height for mobile
+        >
+            {itemData.map((item) => (
+                <ImageListItem key={item.img}>
+                    <img
+                    srcSet={`${item.img}?w=300&h=300&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.img}?w=300&h=300&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading="lazy"
+                    />
+                </ImageListItem>
+            ))}
+        </ImageList>
+        </Box>
+
+        <Grid 
                 container 
                 rowSpacing={{ xs: 1, md: 4 }} 
                 columnSpacing={8}
@@ -167,9 +216,9 @@ function Program() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications are now open! Apply by <strong>Monday, July 15, 2024</strong> to be considered for the program.
+                        Applications for our summer 2025 program will be opening at the end of the spring 2025 semester.
                     </Typography>
-                    <div style={{ textAlign: 'left' }}>
+                    {/* <div style={{ textAlign: 'left' }}>
                         <Button 
                             className="button-text" 
                             variant="contained" 
@@ -181,13 +230,13 @@ function Program() {
                         >
                                 APPLY HERE
                         </Button>
-                    </div>
+                    </div> */}
             </Grid>
             
 
         </Grid>
     </div>
-  );
+    );
 }
 
 export default Program;

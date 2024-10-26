@@ -62,18 +62,18 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
     },
     {
-      name: 'Maddie Glaum',
+      name: 'Aseel Ismail',
       position: 'Director of Public Relations',
-      blurb: 'Computer Science',
-      avatar: Maddie,
-      linkedin: 'https://www.linkedin.com/in/madeleineglaum/'
+      blurb: 'Data Science',
+      avatar: 'https://placehold.co/400x600',
+      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
     },
     {
-      name: 'Savannah Fletcher',
+      name: 'Jenna Shi',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: Savannah,
-      linkedin: 'https://www.linkedin.com/in/savannah-fletcher-a56174251/'
+      avatar: 'https://placehold.co/400x600',
+      linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
     },
     {
       name: 'Michelle Taing',
@@ -102,6 +102,13 @@ export default function Board() {
       blurb: 'Computer Science',
       avatar: Veronica,
       linkedin: ''
+    },
+    {
+      name: 'Kayla Chen',
+      position: 'Director of Fundraising',
+      blurb: 'Computer Science',
+      avatar: 'https://placehold.co/400x600',
+      linkedin: 'https://www.linkedin.com/in/kaylachenn/'
     },
     {
       name: 'Chelsea Nguyen',
