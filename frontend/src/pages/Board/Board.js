@@ -2,8 +2,6 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
-import Maddie from '../../assets/avatars/maddie-glaum.png';
-import Savannah from '../../assets/avatars/savannah-fletcher.jpg';
 import Michelle from '../../assets/avatars/michelle-taing.jpg';
 import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
 import Megan from '../../assets/avatars/megan-shah.jpg';
@@ -16,6 +14,10 @@ import Tiffany from '../../assets/avatars/tiffany-vo.jpg';
 import Veronica from '../../assets/avatars/veronica-valdez.jpg';
 import Wendy from '../../assets/avatars/wendy-to.jpeg';
 import Rachel from '../../assets/avatars/rachel-pu.jpg';
+import Crystal from '../../assets/avatars/crystal-le.jpg';
+import Jenna from '../../assets/avatars/jenna-shi.jpeg';
+import Kayla from '../../assets/avatars/kayla-chen.jpeg';
+import Aseel from '../../assets/avatars/aseel-ismail.jpg';
 
 export default function Board() {
   const members = [
@@ -62,17 +64,17 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
     },
     {
-      name: 'Aseel Ismail',
+      name: 'Crystal Le',
       position: 'Director of Public Relations',
-      blurb: 'Data Science',
-      avatar: 'https://placehold.co/400x600',
-      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
+      blurb: 'Computer Science',
+      avatar: Crystal,
+      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
     },
     {
       name: 'Jenna Shi',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: 'https://placehold.co/400x600',
+      avatar: Jenna,
       linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
     },
     {
@@ -107,7 +109,7 @@ export default function Board() {
       name: 'Kayla Chen',
       position: 'Director of Fundraising',
       blurb: 'Computer Science',
-      avatar: 'https://placehold.co/400x600',
+      avatar: Kayla,
       linkedin: 'https://www.linkedin.com/in/kaylachenn/'
     },
     {
@@ -123,6 +125,13 @@ export default function Board() {
       blurb: 'Computer Science',
       avatar: Tiffany,
       linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
+    },
+    {
+      name: 'Aseel Ismail',
+      position: 'Director of Media',
+      blurb: 'Data Science',
+      avatar: Aseel,
+      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
     }
   ];
   

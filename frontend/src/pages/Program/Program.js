@@ -12,6 +12,7 @@ import Recap2 from '../../assets/recap-2.jpg';
 import Recap3 from '../../assets/recap-3.jpg';
 import Recap4 from '../../assets/recap-4.jpg';
 import Recap5 from '../../assets/recap-5.jpg';
+import Recap6 from '../../assets/recap-6.jpg';
 
 function Program() {
     const itemData = [
@@ -28,7 +29,7 @@ function Program() {
             img: Recap3
         },
         {
-            img: Recap5
+            img: Recap6
         }
     ];
 
@@ -99,6 +100,44 @@ function Program() {
                     <br></br>
 
                     Our goal is to cultivate a diverse and inclusive tech community by providing hands-on learning opportunities, mentorship, and exposure to industry practices. 
+                </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Typography
+                    sx={{
+                        textAlign: {
+                            xs: 'left',
+                            md: 'right',
+                        },
+                        fontFamily: 'DM Sans',
+                        fontWeight: '700',
+                        color: '#1A1421',
+                        letterSpacing: '2px'
+                    }}
+                    variant='h4'
+                >
+                    RECAP
+                </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Typography 
+                    style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
+                    align='left'
+                >
+                    During our Summer 2024 program, we welcomed an incredible group of young women to UF! We dived into student panels, hands-on workshops, and inspiring talks from industry leaders and a UF professor. Our attendees also explored tech-related clubs, connected at socials, and so much more! 🫶
+
+                    <br></br>
+                    <br></br>
+
+                    Here's what the stats looked like:
+                    <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>3 days</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>20 participants</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>6 workshops</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>3 panels</ListItem>
+                    </List>
+
+                    Here’s to building a brighter tech future together! 🚀👩‍💻
                 </Typography>
             </Grid>
             <Grid item xs={12} md={4}>
