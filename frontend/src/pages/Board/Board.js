@@ -2,8 +2,6 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
-import Maddie from '../../assets/avatars/maddie-glaum.png';
-import Savannah from '../../assets/avatars/savannah-fletcher.jpg';
 import Michelle from '../../assets/avatars/michelle-taing.jpg';
 import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
 import Megan from '../../assets/avatars/megan-shah.jpg';
@@ -16,6 +14,10 @@ import Tiffany from '../../assets/avatars/tiffany-vo.jpg';
 import Veronica from '../../assets/avatars/veronica-valdez.jpg';
 import Wendy from '../../assets/avatars/wendy-to.jpeg';
 import Rachel from '../../assets/avatars/rachel-pu.jpg';
+import Crystal from '../../assets/avatars/crystal-le.jpg';
+import Jenna from '../../assets/avatars/jenna-shi.jpeg';
+import Kayla from '../../assets/avatars/kayla-chen.jpeg';
+import Aseel from '../../assets/avatars/aseel-ismail.jpg';
 
 export default function Board() {
   const members = [
@@ -62,18 +64,18 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
     },
     {
-      name: 'Maddie Glaum',
+      name: 'Crystal Le',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: Maddie,
-      linkedin: 'https://www.linkedin.com/in/madeleineglaum/'
+      avatar: Crystal,
+      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
     },
     {
-      name: 'Savannah Fletcher',
+      name: 'Jenna Shi',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: Savannah,
-      linkedin: 'https://www.linkedin.com/in/savannah-fletcher-a56174251/'
+      avatar: Jenna,
+      linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
     },
     {
       name: 'Michelle Taing',
@@ -104,6 +106,13 @@ export default function Board() {
       linkedin: ''
     },
     {
+      name: 'Kayla Chen',
+      position: 'Director of Fundraising',
+      blurb: 'Computer Science',
+      avatar: Kayla,
+      linkedin: 'https://www.linkedin.com/in/kaylachenn/'
+    },
+    {
       name: 'Chelsea Nguyen',
       position: 'Director of Workshops (Software)',
       blurb: 'Computer Science',
@@ -116,6 +125,13 @@ export default function Board() {
       blurb: 'Computer Science',
       avatar: Tiffany,
       linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
+    },
+    {
+      name: 'Aseel Ismail',
+      position: 'Director of Media',
+      blurb: 'Data Science',
+      avatar: Aseel,
+      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
     }
   ];
   

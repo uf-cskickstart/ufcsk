@@ -3,14 +3,64 @@ import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Banner from '../../assets/cs-kickoff-banner.png';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import Box from '@mui/material/Box';
 import { Button, Typography } from '@mui/material';
+import Recap1 from '../../assets/recap-1.jpg';
+import Recap2 from '../../assets/recap-2.jpg';
+import Recap3 from '../../assets/recap-3.jpg';
+import Recap4 from '../../assets/recap-4.jpg';
+import Recap5 from '../../assets/recap-5.jpg';
+import Recap6 from '../../assets/recap-6.jpg';
 
 function Program() {
-  return (
-    <div>
-      <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
+    const itemData = [
+        {
+            img: Recap4
+        },
+        {
+            img: Recap1
+        },
+        {
+            img: Recap2
+        },
+        {
+            img: Recap3
+        },
+        {
+            img: Recap6
+        }
+    ];
 
-      <Grid 
+    return (
+    <div>
+        {/* <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/> */}
+
+        <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+        >
+        <ImageList
+            sx={{ width: '100%', height: 'auto' }}
+            cols={5} // Dynamically adjusts based on screen size
+            rowHeight={{ xs: 200, sm: 300 }} // Smaller height for mobile
+        >
+            {itemData.map((item) => (
+                <ImageListItem key={item.img}>
+                    <img
+                    srcSet={`${item.img}?w=300&h=300&fit=crop&auto=format&dpr=2 2x`}
+                    src={`${item.img}?w=300&h=300&fit=crop&auto=format`}
+                    alt={item.title}
+                    loading="lazy"
+                    />
+                </ImageListItem>
+            ))}
+        </ImageList>
+        </Box>
+
+        <Grid 
                 container 
                 rowSpacing={{ xs: 1, md: 4 }} 
                 columnSpacing={8}
@@ -50,6 +100,44 @@ function Program() {
                     <br></br>
 
                     Our goal is to cultivate a diverse and inclusive tech community by providing hands-on learning opportunities, mentorship, and exposure to industry practices. 
+                </Typography>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Typography
+                    sx={{
+                        textAlign: {
+                            xs: 'left',
+                            md: 'right',
+                        },
+                        fontFamily: 'DM Sans',
+                        fontWeight: '700',
+                        color: '#1A1421',
+                        letterSpacing: '2px'
+                    }}
+                    variant='h4'
+                >
+                    RECAP
+                </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Typography 
+                    style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
+                    align='left'
+                >
+                    During our Summer 2024 program, we welcomed an incredible group of young women to UF! We dived into student panels, hands-on workshops, and inspiring talks from industry leaders and a UF professor. Our attendees also explored tech-related clubs, connected at socials, and so much more! 🫶
+
+                    <br></br>
+                    <br></br>
+
+                    Here's what the stats looked like:
+                    <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>3 days</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>20 participants</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>6 workshops</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>3 panels</ListItem>
+                    </List>
+
+                    Here’s to building a brighter tech future together! 🚀👩‍💻
                 </Typography>
             </Grid>
             <Grid item xs={12} md={4}>
@@ -167,9 +255,9 @@ function Program() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications are now open! Apply by <strong>Monday, July 15, 2024</strong> to be considered for the program.
+                        Applications for our summer 2025 program will be opening at the end of the spring 2025 semester.
                     </Typography>
-                    <div style={{ textAlign: 'left' }}>
+                    {/* <div style={{ textAlign: 'left' }}>
                         <Button 
                             className="button-text" 
                             variant="contained" 
@@ -181,13 +269,13 @@ function Program() {
                         >
                                 APPLY HERE
                         </Button>
-                    </div>
+                    </div> */}
             </Grid>
             
 
         </Grid>
     </div>
-  );
+    );
 }
 
 export default Program;

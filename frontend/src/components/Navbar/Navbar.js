@@ -188,7 +188,7 @@ function ResponsiveAppBar() {
 
           
           {/* RIGHT-ALIGNED "Apply Now!" BUTTON */}
-          <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
+          {/* <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
             <Button 
               component={ Link }
               to="/program"
@@ -210,10 +210,10 @@ function ResponsiveAppBar() {
             >
               APPLY NOW!
             </Button>
-          </Box>
+          </Box> */}
 
           {/* MOBILE "Apply Now!" BUTTON */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
             <Button 
               component={ Link }
               to="/program"
@@ -238,7 +238,7 @@ function ResponsiveAppBar() {
             >
               APPLY NOW!
             </Button>
-          </Box>
+          </Box> */}
 
         </Toolbar>
       </Container>
