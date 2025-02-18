@@ -1,6 +1,6 @@
 # CS Kickstart at UF
 
-Project for CS Kickstart's website. View the website here: https://uf-cskickstart.github.io/ufcsk/
+Project for CS Kickstart's website. View the website here: https://ufcskickstart.com
 
 ## Getting Started
 
@@ -37,14 +37,5 @@ To view the website locally, follow these steps:
     ```
 3. Open your web browser and visit 'http://localhost:3000/ufcsk/home' to view the website
 
-### Deployment
-To deploy with GitHub Pages, follow these steps:
-1. Navigate to the frontend directory if you're not already there.
-2. Build the project:
-    ```
-    npm run build
-    ```
-3. Deploy to GitHub Pages:
-    ```
-    npm run deploy
-    ```
+## Deployment
+This application is deployed using [Render](https://dashboard.render.com/). Code merged to main will automatically trigger deployment. However, if this does not happen, you can manually deploy the application in the Render dashboard.
