@@ -35,7 +35,7 @@ To view the website locally, follow these steps:
     ```
     npm start
     ```
-3. Open your web browser and visit 'http://localhost:3000/ufcsk/home' to view the website
+3. Open your web browser and visit 'http://localhost:3000/' to view the website
 
 ## Deployment
 This application is deployed using [Render](https://dashboard.render.com/). Code merged to main will automatically trigger deployment. However, if this does not happen, you can manually deploy the application in the Render dashboard.
