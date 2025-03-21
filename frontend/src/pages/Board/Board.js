@@ -2,6 +2,10 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
+//Presidents
+import Angelina from '../../assets/avatars/angelina-wu.jpg';
+import Rachel from '../../assets/avatars/rachel-pu.jpg';
+
 import Michelle from '../../assets/avatars/michelle-taing.jpg';
 import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
 import Megan from '../../assets/avatars/megan-shah.jpg';
@@ -12,8 +16,7 @@ import Naydelin from '../../assets/avatars/naydelin-trejo.jpeg';
 import Nikki from '../../assets/avatars/nikki-chen.jpeg';
 import Tiffany from '../../assets/avatars/tiffany-vo.jpg';
 import Veronica from '../../assets/avatars/veronica-valdez.jpg';
-import Wendy from '../../assets/avatars/wendy-to.jpeg';
-import Rachel from '../../assets/avatars/rachel-pu.jpg';
+
 import Crystal from '../../assets/avatars/crystal-le.jpg';
 import Jenna from '../../assets/avatars/jenna-shi.jpeg';
 import Kayla from '../../assets/avatars/kayla-chen.jpeg';
@@ -29,11 +32,11 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
     },
     {
-      name: 'Carolyn Wang',
+      name: 'Angelina Wu',
       position: 'President',
       blurb: 'Computer Science',
-      avatar: Carolyn,
-      linkedin: 'https://www.linkedin.com/in/carolyn-wang-cs/'
+      avatar: Angelina,
+      linkedin: 'https://www.linkedin.com/in/angelina-q-wu/'
     },
     {
       name: 'Nikki Chen',
