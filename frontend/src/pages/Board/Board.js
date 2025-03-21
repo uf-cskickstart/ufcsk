@@ -22,11 +22,11 @@ import Aseel from '../../assets/avatars/aseel-ismail.jpg';
 export default function Board() {
   const members = [
     {
-      name: 'Wendy To',
+      name: 'Rachel Pu',
       position: 'President',
-      blurb: 'Computer Engineering',
-      avatar: Wendy,
-      linkedin: 'https://www.linkedin.com/in/wendytto/'
+      blurb: 'Computer Science',
+      avatar: Rachel,
+      linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
     },
     {
       name: 'Carolyn Wang',
