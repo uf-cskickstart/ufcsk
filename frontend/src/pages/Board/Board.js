@@ -13,22 +13,22 @@ import Naydelin from '../../assets/avatars/naydelin-trejo.jpeg';
 import Tiffany from '../../assets/avatars/tiffany-vo.jpeg';
 //VPE
 import Maria from '../../assets/avatars/maria-davis.jpg';
+//PR
+import Jenna from '../../assets/avatars/jenna-shi.jpeg';
+import MJ from '../../assets/avatars/mj-trady.jpeg';
 //Events
 import Crystal from '../../assets/avatars/crystal-le.jpg';
-
-import Michelle from '../../assets/avatars/michelle-taing.jpg';
-import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
-import Megan from '../../assets/avatars/megan-shah.jpg';
-import Carolyn from '../../assets/avatars/carolyn-wang.jpg';
-import Chelsea from '../../assets/avatars/chelsea-nguyen.jpeg';
-
-
-import Nikki from '../../assets/avatars/nikki-chen.jpeg';
-
-import Veronica from '../../assets/avatars/veronica-valdez.jpg';
-import Jenna from '../../assets/avatars/jenna-shi.jpeg';
-
-import Aseel from '../../assets/avatars/aseel-ismail.jpg';
+import Isabella from '../../assets/avatars/isabella-marin.jpg';
+//Fundraising
+import Olivia from '../../assets/avatars/olivia-schwartz.jpeg';
+import Lan from '../../assets/avatars/lan-anh-do.jpg';
+//Software
+import Chloe from '../../assets/avatars/chloe-bai.jpeg';
+import Mohana from '../../assets/avatars/mohana-pamidimukkala.jpeg';
+//Webmaster
+import Tanvi from '../../assets/avatars/michelle-taing.jpg';
+//Media
+import Aseel from '../../assets/avatars/aseel-ismail.png';
 
 export default function Board() {
   const members = [
@@ -78,7 +78,7 @@ export default function Board() {
       name: 'Maria Juliana Tady',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: Crystal,
+      avatar: MJ,
       linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
     },
     {
@@ -92,7 +92,7 @@ export default function Board() {
       name: 'Tanvi Garg',
       position: 'Webmaster',
       blurb: 'Computer Science',
-      avatar: Michelle,
+      avatar: Tanvi,
       linkedin: 'https://www.linkedin.com/in/michelletaing/'
     },
     {
@@ -106,35 +106,35 @@ export default function Board() {
       name: 'Isabella Marin',
       position: 'Director of Events',
       blurb: 'Computer Science',
-      avatar: Maria,
+      avatar: Isabella,
       linkedin: 'https://www.linkedin.com/in/maria-davis-/'
     },
     {
       name: 'Olivia Schwartz',
       position: 'Director of Fundraising',
       blurb: 'Computer Science',
-      avatar: Veronica,
+      avatar: Olivia,
       linkedin: ''
     },
     {
       name: 'Lan Anh Do',
       position: 'Director of Fundraising',
       blurb: 'Computer Science',
-      avatar: Kayla,
+      avatar: Lan,
       linkedin: 'https://www.linkedin.com/in/kaylachenn/'
     },
     {
       name: 'Chloe Bai',
       position: 'Director of Workshops (Software)',
       blurb: 'Computer Science',
-      avatar: Chelsea,
+      avatar: Chloe,
       linkedin: 'https://www.linkedin.com/in/chelseaqnguyen/'
     },
     {
       name: 'Mohana Pamidimukkala',
       position: 'Director of Workshops (Hardware)',
       blurb: 'Computer Science',
-      avatar: Tiffany,
+      avatar: Mohana,
       linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
     },
     {
