@@ -24,9 +24,12 @@ import Olivia from '../../assets/avatars/olivia-schwartz.jpeg';
 import Lan from '../../assets/avatars/lan-anh-do.jpg';
 //Software
 import Chloe from '../../assets/avatars/chloe-bai.jpeg';
+//Hardware
 import Mohana from '../../assets/avatars/mohana-pamidimukkala.jpeg';
+//Prof dev 
+import Rebecca from '../../assets/avatars/rebecca-borissova.JPEG';
 //Webmaster
-import Tanvi from '../../assets/avatars/michelle-taing.jpg';
+import Tanvi from '../../assets/avatars/tanvi-garg.JPG';
 //Media
 import Aseel from '../../assets/avatars/aseel-ismail.png';
 
@@ -119,7 +122,7 @@ export default function Board() {
     {
       name: 'Lan Anh Do',
       position: 'Director of Fundraising',
-      blurb: 'Computer Science',
+      blurb: 'Computer Engineering',
       avatar: Lan,
       linkedin: 'https://www.linkedin.com/in/kaylachenn/'
     },
@@ -136,6 +139,13 @@ export default function Board() {
       blurb: 'Computer Science',
       avatar: Mohana,
       linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
+    },
+    {
+      name: 'Rebecca Borissova',
+      position: 'Director of Workshops (Professional Development)',
+      blurb: 'Computer Science',
+      avatar: Rebecca,
+      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
     },
     {
       name: 'Aseel Ismail',
