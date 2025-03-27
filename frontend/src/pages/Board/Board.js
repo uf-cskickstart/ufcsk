@@ -82,7 +82,7 @@ export default function Board() {
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
       avatar: MJ,
-      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
+      linkedin: 'https://www.linkedin.com/in/maria-juliana-tady/'
     },
     {
       name: 'Jenna Shi',
@@ -110,28 +110,28 @@ export default function Board() {
       position: 'Director of Events',
       blurb: 'Computer Science',
       avatar: Isabella,
-      linkedin: 'https://www.linkedin.com/in/maria-davis-/'
+      linkedin: 'https://www.linkedin.com/in/imarin417/'
     },
     {
       name: 'Olivia Schwartz',
       position: 'Director of Fundraising',
       blurb: 'Computer Science',
       avatar: Olivia,
-      linkedin: ''
+      linkedin: 'https://www.linkedin.com/in/olivia-schwartz-2a5912273/'
     },
     {
       name: 'Lan Anh Do',
       position: 'Director of Fundraising',
       blurb: 'Computer Engineering',
       avatar: Lan,
-      linkedin: 'https://www.linkedin.com/in/kaylachenn/'
+      linkedin: 'https://www.linkedin.com/in/lananhnguyendo/'
     },
     {
       name: 'Chloe Bai',
       position: 'Director of Workshops (Software)',
       blurb: 'Computer Science',
       avatar: Chloe,
-      linkedin: 'https://www.linkedin.com/in/chelseaqnguyen/'
+      linkedin: 'https://www.linkedin.com/in/chloe-bai/'
     },
     {
       name: 'Mohana Pamidimukkala',
