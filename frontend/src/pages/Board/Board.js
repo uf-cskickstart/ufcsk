@@ -2,45 +2,59 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
-import Michelle from '../../assets/avatars/michelle-taing.jpg';
-import Stephanie from '../../assets/avatars/stephanie-nguyen.jpg';
-import Megan from '../../assets/avatars/megan-shah.jpg';
-import Carolyn from '../../assets/avatars/carolyn-wang.jpg';
-import Chelsea from '../../assets/avatars/chelsea-nguyen.jpeg';
-import Maria from '../../assets/avatars/maria-davis.jpeg';
-import Naydelin from '../../assets/avatars/naydelin-trejo.jpeg';
-import Nikki from '../../assets/avatars/nikki-chen.jpeg';
-import Tiffany from '../../assets/avatars/tiffany-vo.jpg';
-import Veronica from '../../assets/avatars/veronica-valdez.jpg';
-import Wendy from '../../assets/avatars/wendy-to.jpeg';
+//Presidents
+import Angelina from '../../assets/avatars/angelina-wu.jpg';
 import Rachel from '../../assets/avatars/rachel-pu.jpg';
-import Crystal from '../../assets/avatars/crystal-le.jpg';
+//Treasurer
+import Kayla from '../../assets/avatars/kayla-chen.jpg';
+//Secretary
+import Naydelin from '../../assets/avatars/naydelin-trejo.jpeg';
+//VPCD
+import Tiffany from '../../assets/avatars/tiffany-vo.jpeg';
+//VPE
+import Maria from '../../assets/avatars/maria-davis.jpg';
+//PR
 import Jenna from '../../assets/avatars/jenna-shi.jpeg';
-import Kayla from '../../assets/avatars/kayla-chen.jpeg';
-import Aseel from '../../assets/avatars/aseel-ismail.jpg';
+import MJ from '../../assets/avatars/mj-trady.jpeg';
+//Events
+import Crystal from '../../assets/avatars/crystal-le.jpg';
+import Isabella from '../../assets/avatars/isabella-marin.jpg';
+//Fundraising
+import Olivia from '../../assets/avatars/olivia-schwartz.jpeg';
+import Lan from '../../assets/avatars/lan-anh-do.jpg';
+//Software
+import Chloe from '../../assets/avatars/chloe-bai.jpeg';
+//Hardware
+import Mohana from '../../assets/avatars/mohana-pamidimukkala.jpeg';
+//Prof dev 
+import Rebecca from '../../assets/avatars/rebecca-borissova.JPEG';
+//Webmaster
+import Tanvi from '../../assets/avatars/tanvi-garg.JPG';
+//Media
+import Aseel from '../../assets/avatars/aseel-ismail.png';
 
 export default function Board() {
   const members = [
     {
-      name: 'Wendy To',
-      position: 'President',
-      blurb: 'Computer Engineering',
-      avatar: Wendy,
-      linkedin: 'https://www.linkedin.com/in/wendytto/'
-    },
-    {
-      name: 'Carolyn Wang',
+      name: 'Rachel Pu',
       position: 'President',
       blurb: 'Computer Science',
-      avatar: Carolyn,
-      linkedin: 'https://www.linkedin.com/in/carolyn-wang-cs/'
+      avatar: Rachel,
+      linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
     },
     {
-      name: 'Nikki Chen',
+      name: 'Angelina Wu',
+      position: 'President',
+      blurb: 'Computer Science',
+      avatar: Angelina,
+      linkedin: 'https://www.linkedin.com/in/angelina-q-wu/'
+    },
+    {
+      name: 'Kayla Chen',
       position: 'Treasurer',
       blurb: 'Computer Science',
-      avatar: Nikki,
-      linkedin: 'https://www.linkedin.com/in/nikki-chen23/'
+      avatar: Kayla,
+      linkedin: 'https://www.linkedin.com/in/kaylachenn/'
     },
     {
       name: 'Naydelin Trejo',
@@ -50,25 +64,25 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/naydelin-trejo/'
     },
     {
-      name: 'Megan Shah',
+      name: 'Tiffany Vo',
       position: 'VP of Curriculum Development',
       blurb: 'Computer Science',
-      avatar: Megan,
-      linkedin: 'https://www.linkedin.com/in/megan-shah/'
+      avatar: Tiffany,
+      linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
     },
     {
-      name: 'Stephanie Nguyen',
+      name: 'Maria Davis',
       position: 'VP of External Affairs',
       blurb: 'Computer Science',
-      avatar: Stephanie,
-      linkedin: 'https://www.linkedin.com/in/stephanienguyen25/'
+      avatar: Maria,
+      linkedin: 'https://www.linkedin.com/in/maria-davis-/'
     },
     {
-      name: 'Crystal Le',
+      name: 'Maria Juliana Tady',
       position: 'Director of Public Relations',
       blurb: 'Computer Science',
-      avatar: Crystal,
-      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
+      avatar: MJ,
+      linkedin: 'https://www.linkedin.com/in/maria-juliana-tady/'
     },
     {
       name: 'Jenna Shi',
@@ -78,53 +92,60 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
     },
     {
-      name: 'Michelle Taing',
+      name: 'Tanvi Garg',
       position: 'Webmaster',
       blurb: 'Computer Science',
-      avatar: Michelle,
+      avatar: Tanvi,
       linkedin: 'https://www.linkedin.com/in/michelletaing/'
     },
     {
-      name: 'Rachel Pu',
+      name: 'Crystal Le',
       position: 'Director of Events',
       blurb: 'Computer Science',
-      avatar: Rachel,
-      linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
+      avatar: Crystal,
+      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
     },
     {
-      name: 'Maria Davis',
+      name: 'Isabella Marin',
       position: 'Director of Events',
       blurb: 'Computer Science',
-      avatar: Maria,
-      linkedin: 'https://www.linkedin.com/in/maria-davis-/'
+      avatar: Isabella,
+      linkedin: 'https://www.linkedin.com/in/imarin417/'
     },
     {
-      name: 'Veronica Valdez',
+      name: 'Olivia Schwartz',
       position: 'Director of Fundraising',
       blurb: 'Computer Science',
-      avatar: Veronica,
-      linkedin: ''
+      avatar: Olivia,
+      linkedin: 'https://www.linkedin.com/in/olivia-schwartz-2a5912273/'
     },
     {
-      name: 'Kayla Chen',
+      name: 'Lan Anh Do',
       position: 'Director of Fundraising',
-      blurb: 'Computer Science',
-      avatar: Kayla,
-      linkedin: 'https://www.linkedin.com/in/kaylachenn/'
+      blurb: 'Computer Engineering',
+      avatar: Lan,
+      linkedin: 'https://www.linkedin.com/in/lananhnguyendo/'
     },
     {
-      name: 'Chelsea Nguyen',
+      name: 'Chloe Bai',
       position: 'Director of Workshops (Software)',
       blurb: 'Computer Science',
-      avatar: Chelsea,
-      linkedin: 'https://www.linkedin.com/in/chelseaqnguyen/'
+      avatar: Chloe,
+      linkedin: 'https://www.linkedin.com/in/chloe-bai/'
     },
     {
-      name: 'Tiffany Vo',
+      name: 'Mohana Pamidimukkala',
       position: 'Director of Workshops (Hardware)',
       blurb: 'Computer Science',
-      avatar: Tiffany,
+      avatar: Mohana,
       linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
+    },
+    {
+      name: 'Rebecca Borissova',
+      position: 'Director of Workshops (Professional Development)',
+      blurb: 'Computer Science',
+      avatar: Rebecca,
+      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
     },
     {
       name: 'Aseel Ismail',
