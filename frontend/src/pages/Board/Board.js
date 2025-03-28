@@ -138,14 +138,14 @@ export default function Board() {
       position: 'Director of Workshops (Hardware)',
       blurb: 'Computer Science',
       avatar: Mohana,
-      linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
+      linkedin: 'https://www.linkedin.com/in/mohana-pamidi/'
     },
     {
       name: 'Rebecca Borissova',
       position: 'Director of Workshops (Professional Development)',
       blurb: 'Computer Science',
       avatar: Rebecca,
-      linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
+      linkedin: 'https://www.linkedin.com/in/rborissova/'
     },
     {
       name: 'Aseel Ismail',
