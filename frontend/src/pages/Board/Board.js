@@ -96,7 +96,7 @@ export default function Board() {
       position: 'Webmaster',
       blurb: 'Computer Science',
       avatar: Tanvi,
-      linkedin: 'https://www.linkedin.com/in/michelletaing/'
+      linkedin: 'www.linkedin.com/in/tanvi-garg2'
     },
     {
       name: 'Crystal Le',
