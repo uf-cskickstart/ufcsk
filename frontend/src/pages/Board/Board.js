@@ -21,7 +21,6 @@ import Crystal from '../../assets/avatars/crystal-le.jpg';
 import Isabella from '../../assets/avatars/isabella-marin.jpg';
 //Fundraising
 import Olivia from '../../assets/avatars/olivia-schwartz.jpeg';
-import Lan from '../../assets/avatars/lan-anh-do.jpg';
 //Software
 import Chloe from '../../assets/avatars/chloe-bai.jpeg';
 //Hardware
@@ -119,13 +118,7 @@ export default function Board() {
       avatar: Olivia,
       linkedin: 'https://www.linkedin.com/in/olivia-schwartz-2a5912273/'
     },
-    {
-      name: 'Lan Anh Do',
-      position: 'Director of Fundraising',
-      blurb: 'Computer Engineering',
-      avatar: Lan,
-      linkedin: 'https://www.linkedin.com/in/lananhnguyendo/'
-    },
+  
     {
       name: 'Chloe Bai',
       position: 'Director of Workshops (Software)',
