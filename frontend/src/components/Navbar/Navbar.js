@@ -188,8 +188,17 @@ function ResponsiveAppBar() {
 
           
           {/* RIGHT-ALIGNED "Apply Now!" BUTTON */}
-          {/* <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
-            <Button 
+          { <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
+          <Button 
+                            className="button-text" 
+                            variant="contained" 
+                            size="large"
+                            style={{ backgroundColor: '#5b2f70', boxShadow: 'none', fontFamily: 'DM Sans' }} 
+                            href='https://docs.google.com/forms/d/e/1FAIpQLSfP5NQ8Tt8cJLdFO4sF6HwRaMX-O7dS4kWXoMukZYtkCJr80w/viewform'
+                            target='_blank'
+                            rel="noreferrer"
+                        >
+                          {/* <Button 
               component={ Link }
               to="/program"
               variant="contained" 
@@ -207,13 +216,13 @@ function ResponsiveAppBar() {
                   boxShadow: 'none'
                 }
               }} 
-            >
+            > */}
               APPLY NOW!
             </Button>
-          </Box> */}
+          </Box> }
 
           {/* MOBILE "Apply Now!" BUTTON */}
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+          { <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
             <Button 
               component={ Link }
               to="/program"
@@ -238,7 +247,7 @@ function ResponsiveAppBar() {
             >
               APPLY NOW!
             </Button>
-          </Box> */}
+          </Box> }
 
         </Toolbar>
       </Container>

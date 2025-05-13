@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import Banner from '../../assets/banner-image.png';
+import Banner from '../../assets/kickoff2025banner.png';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
 import { Button, Typography } from '@mui/material';
@@ -116,14 +116,12 @@ function Home() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        CS Kickstart at the University of Florida aims to generate more pursuit of technology amongst women to improve the lack of representation and access to
-                        the tech industry.
+                        CS Kickstart at the University of Florida strives to offer a welcoming environment for any beginners, non-technical majors, and underrepresented groups who seek to pursue careers in technology, inspiring confidence and creativity in our members.
                         
                         <br></br>
                         <br></br>
 
-                        CS Kickoff is an upcoming multi-day introductory program for incoming women at the University of Florida who are interested in math, science, or
-                        engineering. Participants come to UF a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering through activities.
+                        CS Kickoff is a multi-day introductory program for incoming students at the University of Florida who are interested in applying computer science in various disciplines. We offer this program free of charge to students. Participants come to campus a week before the fall semester to gain hands-on experience in programming and explore various domains of computer science and engineering.
                     </Typography>
                     <div style={{ textAlign: 'center' }}>
                         <Button 
