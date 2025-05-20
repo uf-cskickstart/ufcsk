@@ -9,6 +9,8 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import { gapi } from 'gapi-script'
+import Bloomberg from '../../assets/Bloomberg.png';
+import TI from '../../assets/TI.png';
 
 const calendarID = process.env.REACT_APP_CALENDAR_ID
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
@@ -85,7 +87,7 @@ function Home() {
 
     return (
         <div>
-            <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/>
+            <img src={ Banner } alt="CS Kickoff Applications Open with images from CSK Kickoff." style={{ width: '100%' }}/>
 
             <Grid 
                 container 
@@ -185,7 +187,61 @@ function Home() {
                         </Button>
                     </div>
                 </Grid>
+                <Grid item xs={12} md={4}>
+                    <Typography
+                        sx={{
+                            textAlign: {
+                            xs: 'left',
+                            md: 'right',
+                            },
+                            fontFamily: 'DM Sans',
+                            fontWeight: '700',
+                            color: '#1A1421',
+                            letterSpacing: '2px'
+                        }}
+                        variant='h4'
+                    >
+                            SPONSORS
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
+                    <Typography 
+                        style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
+                        align='left'
+                    >
+                        Thank you to our sponsors for their support in making CS Kickstart possible! We are grateful for your generosity and commitment to empowering students in their pursuit of knowledge and skills in computer science. Your contributions help us create a vibrant learning environment and provide valuable resources for our participants.
+                    </Typography>
+                   <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '24px',
+                        flexWrap: 'nowrap',           
+                        justifyContent: 'flex-start'  
+                    }}
+                    >
+                    <img
+                        src={Bloomberg}
+                        alt="Bloomberg logo"
+                        style={{
+                        maxHeight: '120px',
+                        width: 'auto',
+                        objectFit: 'contain'
+                        }}
+                    />
+                    <img
+                        src={TI}
+                        alt="TI logo"
+                        style={{
+                        maxHeight: '120px',
+                        width: 'auto',
+                        objectFit: 'contain'
+                        }}
+                    />
+                    </div>
 
+
+                </Grid>
                 <Grid item xs={12} md={4}>
                     <Typography
                         sx={{
