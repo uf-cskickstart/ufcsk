@@ -228,7 +228,7 @@ function ResponsiveAppBar() {
               to="/program"
               variant="contained" 
               sx={{ 
-                backgroundColor: '#ffe45e', 
+                backgroundColor: '#5b2f70', 
                 color: 'black', 
                 boxShadow: 'none', 
                 fontFamily: 'DM Sans',
@@ -239,7 +239,7 @@ function ResponsiveAppBar() {
                 padding: '5px 5px',
                 width: '75%',
                 '&:hover': {
-                  backgroundColor: '#ffeb85',
+                  backgroundColor: '#5b2f70',
                   color: '#676767',
                   boxShadow: 'none'
                 }
