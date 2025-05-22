@@ -224,12 +224,11 @@ function ResponsiveAppBar() {
           {/* MOBILE "Apply Now!" BUTTON */}
           { <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
             <Button 
-              component={ Link }
-              to="/program"
+              href='https://docs.google.com/forms/d/e/1FAIpQLSfP5NQ8Tt8cJLdFO4sF6HwRaMX-O7dS4kWXoMukZYtkCJr80w/viewform'
               variant="contained" 
               sx={{ 
                 backgroundColor: '#5b2f70', 
-                color: 'black', 
+                color: 'white', 
                 boxShadow: 'none', 
                 fontFamily: 'DM Sans',
                 fontSize: '18px',
