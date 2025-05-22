@@ -212,33 +212,34 @@ function Home() {
                         Thank you to our sponsors for their support in making CS Kickstart possible! We are grateful for your generosity and commitment to empowering students in their pursuit of knowledge and skills in computer science. Your contributions help us create a vibrant learning environment and provide valuable resources for our participants.
                     </Typography>
                    <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '24px',
-                        flexWrap: 'nowrap',           
-                        justifyContent: 'flex-start'  
-                    }}
-                    >
-                    <img
-                        src={Bloomberg}
-                        alt="Bloomberg logo"
-                        style={{
-                        maxHeight: '120px',
-                        width: 'auto',
-                        objectFit: 'contain'
-                        }}
-                    />
-                    <img
-                        src={TI}
-                        alt="TI logo"
-                        style={{
-                        maxHeight: '120px',
-                        width: 'auto',
-                        objectFit: 'contain'
-                        }}
-                    />
-                    </div>
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap', // allow wrapping on small screens
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '24px',
+  }}
+>
+  <img
+    src={Bloomberg}
+    alt="Bloomberg logo"
+    style={{
+      maxWidth: '40%',       
+      height: 'auto',
+      objectFit: 'contain',
+    }}
+  />
+  <img
+    src={TI}
+    alt="TI logo"
+    style={{
+      maxWidth: '40%',
+      height: 'auto',
+      objectFit: 'contain',
+    }}
+  />
+</div>
+
 
 
                 </Grid>
