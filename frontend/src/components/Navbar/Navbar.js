@@ -187,7 +187,7 @@ function ResponsiveAppBar() {
           </Box>
 
           
-          {/* RIGHT-ALIGNED "Apply Now!" BUTTON */}
+          {/* RIGHT-ALIGNED "Apply Now!" BUTTON
           { <Box sx={{ ml: 'auto', display: { xs: 'none', md: 'flex' } }}>
           <Button 
                             className="button-text" 
@@ -217,12 +217,12 @@ function ResponsiveAppBar() {
                 }
               }} 
             > */}
-              APPLY NOW!
+              {/* APPLY NOW!
             </Button>
-          </Box> }
+          </Box> } */}
 
           {/* MOBILE "Apply Now!" BUTTON */}
-          { <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+          {/* { <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
             <Button 
               href='https://docs.google.com/forms/d/e/1FAIpQLSfP5NQ8Tt8cJLdFO4sF6HwRaMX-O7dS4kWXoMukZYtkCJr80w/viewform'
               variant="contained" 
@@ -246,7 +246,7 @@ function ResponsiveAppBar() {
             >
               APPLY NOW!
             </Button>
-          </Box> }
+          </Box> } */} 
 
         </Toolbar>
       </Container>

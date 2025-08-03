@@ -102,7 +102,7 @@ function Program() {
                     >
                         Applications for our summer 2025 program will be opening at the end of the spring 2025 semester.
                     </Typography> */}
-                    <div style={{ textAlign: 'left' }}>
+                    {/* <div style={{ textAlign: 'left' }}>
                         <Button 
                             className="button-text" 
                             variant="contained" 
@@ -114,13 +114,13 @@ function Program() {
                         >
                                 2025 CS Kickoff Application Form
                         </Button>
-                    </div>
+                    </div> */}
                     <Typography 
                     style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                     align='left'
                 >
                     <br></br>
-                    Applications close July 20th, 2025 at 11:59 PM EST, so be sure to apply before then!
+                    Applications for CS Kickoff 2025 are now closed! Stay on the lookout for future events!
                 </Typography>
             </Grid>
             <Grid item xs={12} md={4}>
