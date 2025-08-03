@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import Banner from '../../assets/kickoff2025banner.png';
+import Banner from '../../assets/banner-image.png';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
 import { Button, Typography } from '@mui/material';
