@@ -78,11 +78,16 @@ const getEvents = async (calendarID, apiKey, setEvents) => {
     gapi.load('client', initiate);
 };
 
+const stripHtml = (html) => {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+};
 function Home() {
     const [events, setEvents] = useState([])
     
     useEffect(() => {
-        const events = getEvents(calendarID, apiKey, setEvents)
+        getEvents(calendarID, apiKey, setEvents)
     }, [])
 
     return (
@@ -162,7 +167,17 @@ function Home() {
                             <Grid item xs={12} key={index}>
                             <Event
                                 title={event.summary}
-                                description={event.description}
+                                description={
+                                <div className="event-description">
+                                    {stripHtml(event.description).split('\n').map((line, i) => (
+                                    <span key={i}>
+                                        {line}
+                                        <br />
+                                    </span>
+                                    ))}
+                                </div>
+                                }
+
                                 // description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam ac tortor vitae purus faucibus ornare."
                                 date={event.start.dateTime ? formatDate(event.start.dateTime) : formatDate(event.start.date)}
                                 time={event.start.dateTime ? formatTime(event.start.dateTime) : null}
