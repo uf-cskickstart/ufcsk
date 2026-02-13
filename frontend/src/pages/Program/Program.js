@@ -6,15 +6,14 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Box from '@mui/material/Box';
 import { Button, Typography } from '@mui/material';
-import Recap1 from '../../assets/recap-1.jpg';
-import Recap2 from '../../assets/recap-2.jpg';
-import Recap3 from '../../assets/recap-3.jpg';
+
 import Board from '../../assets/board.jpg';
 import Marshmallow from '../../assets/marshmallow.png';
 import Group from '../../assets/group.png';
 import Selfie from '../../assets/selfie.jpg';
 import Presentation from '../../assets/presentation.png';
 import CSKickoff2024 from '../../assets/cskickoff2024.jpg';
+import {Link} from "react-router-dom"
 function Program() {
     const itemData = [
         {
@@ -38,7 +37,6 @@ function Program() {
 
     return (
     <div>
-        {/* <img src={ Banner } alt="CS Kickstart logo with text." style={{ width: '100%' }}/> */}
 
         <Box
   display="flex"
@@ -69,8 +67,28 @@ function Program() {
       );
     })}
   </ImageList>
+   
 </Box>
-
+<Button 
+    className="button-text" 
+    variant="contained" 
+    size="large"
+    style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', margin: "20px" }} 
+    component = {Link}
+    to = "/CSK2024"
+>
+        CSK2024
+</Button>
+<Button 
+    className="button-text" 
+    variant="contained" 
+    size="large"
+    style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', margin: "20px" }} 
+    component = {Link}
+    to = "/CSK2025"
+>
+        CSK2025
+</Button>
         <Grid 
                 container 
                 rowSpacing={{ xs: 1, md: 4 }} 
