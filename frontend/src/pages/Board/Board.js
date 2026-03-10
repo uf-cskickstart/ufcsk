@@ -2,150 +2,156 @@ import * as React from 'react';
 import { Typography } from '@mui/material';
 import BoardCard from '../../components/BoardCard/BoardCard.js';
 import Grid from '@mui/material/Grid';
-//Presidents
-import Angelina from '../../assets/avatars/angelina-wu.jpg';
-import Rachel from '../../assets/avatars/rachel-pu.jpg';
-//Treasurer
-import Kayla from '../../assets/avatars/kayla-chen.jpg';
-//Secretary
-import Naydelin from '../../assets/avatars/naydelin-trejo.jpeg';
-//VPCD
-import Tiffany from '../../assets/avatars/tiffany-vo.jpeg';
-//VPE
-import Maria from '../../assets/avatars/maria-davis.jpg';
-//PR
+// Presidents
+import Isabella from '../../assets/avatars/2026-board/isabella-marin.jpg';
 import Jenna from '../../assets/avatars/jenna-shi.jpeg';
-import MJ from '../../assets/avatars/mj-trady.jpeg';
-//Events
-import Crystal from '../../assets/avatars/crystal-le.jpg';
-import Isabella from '../../assets/avatars/isabella-marin.jpg';
-//Fundraising
-import Olivia from '../../assets/avatars/olivia-schwartz.jpeg';
-//Software
-import Chloe from '../../assets/avatars/chloe-bai.jpeg';
-//Hardware
+// vp of career development
 import Mohana from '../../assets/avatars/mohana-pamidimukkala.jpeg';
-//Prof dev 
-import Rebecca from '../../assets/avatars/rebecca-borissova.JPEG';
-//Webmaster
-import Tanvi from '../../assets/avatars/tanvi-garg.JPG';
-//Media
-import Aseel from '../../assets/avatars/aseel-ismail.png';
+// vp of external affairs
+import Tanvi from '../../assets/avatars/2026-board/tanvi-garg.jpeg';
+// secretary
+import Aseel from '../../assets/avatars/2026-board/aseel-ismail.jpeg';
+// treasurer
+import Emily from '../../assets/avatars/2026-board/emily-chen.jpeg';
+//director of ui/ux
+import Laveena from '../../assets/avatars/2026-board/laveena-bhuiyan.jpg';
+// director of software development
+import KaylaInoa from '../../assets/avatars/2026-board/kayla-inoa.PNG';
+// director of software workshops
+import Leonna from '../../assets/avatars/2026-board/leonna-xie.JPG';
+// director of hardware workshops
+import Grace from '../../assets/avatars/2026-board/grace-mihiral.png';
+//fundraising directors
+import Neha from '../../assets/avatars/2026-board/neha-jupalli.JPG';
+import Angelica from '../../assets/avatars/2026-board/angelica-tang.jpg';
+// director of corporate relations
+import Aashita from '../../assets/avatars/2026-board/aashita-rai.PNG';
+//director of public relations
+import Mishka from '../../assets/avatars/2026-board/mishka-sonavadeka.jpg';
+// director of professional development
+import Thuy from '../../assets/avatars/crystal-le.jpg';
+// co-director of events
 
 export default function Board() {
   const members = [
     {
-      name: 'Rachel Pu',
-      position: 'President',
-      blurb: 'Computer Science',
-      avatar: Rachel,
-      linkedin: 'https://www.linkedin.com/in/rachel-pu-ufl/'
-    },
-    {
-      name: 'Angelina Wu',
-      position: 'President',
-      blurb: 'Computer Science',
-      avatar: Angelina,
-      linkedin: 'https://www.linkedin.com/in/angelina-q-wu/'
-    },
-    {
-      name: 'Kayla Chen',
-      position: 'Treasurer',
-      blurb: 'Computer Science',
-      avatar: Kayla,
-      linkedin: 'https://www.linkedin.com/in/kaylachenn/'
-    },
-    {
-      name: 'Naydelin Trejo',
-      position: 'Secretary',
-      blurb: 'Computer Science',
-      avatar: Naydelin,
-      linkedin: 'https://www.linkedin.com/in/naydelin-trejo/'
-    },
-    {
-      name: 'Tiffany Vo',
-      position: 'VP of Curriculum Development',
-      blurb: 'Computer Science',
-      avatar: Tiffany,
-      linkedin: 'https://www.linkedin.com/in/tiffanyyvo/'
-    },
-    {
-      name: 'Maria Davis',
-      position: 'VP of External Affairs',
-      blurb: 'Computer Science',
-      avatar: Maria,
-      linkedin: 'https://www.linkedin.com/in/maria-davis-/'
-    },
-    {
-      name: 'Maria Juliana Tady',
-      position: 'Director of Public Relations',
-      blurb: 'Computer Science',
-      avatar: MJ,
-      linkedin: 'https://www.linkedin.com/in/maria-juliana-tady/'
-    },
-    {
-      name: 'Jenna Shi',
-      position: 'Director of Public Relations',
-      blurb: 'Computer Science',
-      avatar: Jenna,
-      linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
-    },
-    {
-      name: 'Tanvi Garg',
-      position: 'Webmaster',
-      blurb: 'Computer Science',
-      avatar: Tanvi,
-      linkedin: 'www.linkedin.com/in/tanvi-garg2'
-    },
-    {
-      name: 'Crystal Le',
-      position: 'Director of Events',
-      blurb: 'Computer Science',
-      avatar: Crystal,
-      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
-    },
-    {
       name: 'Isabella Marin',
-      position: 'Director of Events',
+      position: 'President',
       blurb: 'Computer Science',
       avatar: Isabella,
       linkedin: 'https://www.linkedin.com/in/imarin417/'
     },
     {
-      name: 'Olivia Schwartz',
-      position: 'Director of Fundraising',
+      name: 'Jenna Shi',
+      position: 'President',
       blurb: 'Computer Science',
-      avatar: Olivia,
-      linkedin: 'https://www.linkedin.com/in/olivia-schwartz-2a5912273/'
-    },
-  
-    {
-      name: 'Chloe Bai',
-      position: 'Director of Workshops (Software)',
-      blurb: 'Computer Science',
-      avatar: Chloe,
-      linkedin: 'https://www.linkedin.com/in/chloe-bai/'
+      avatar: Jenna,
+      linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
     },
     {
       name: 'Mohana Pamidimukkala',
-      position: 'Director of Workshops (Hardware)',
+      position: 'Vice President of Career Development',
       blurb: 'Computer Science',
       avatar: Mohana,
       linkedin: 'https://www.linkedin.com/in/mohana-pamidi/'
     },
     {
-      name: 'Rebecca Borissova',
-      position: 'Director of Workshops (Professional Development)',
+      name: 'Tanvi Garg',
+      position: 'Vice President of External Affairs',
       blurb: 'Computer Science',
-      avatar: Rebecca,
-      linkedin: 'https://www.linkedin.com/in/rborissova/'
+      avatar: Tanvi,
+      linkedin: 'https://www.linkedin.com/in/tanvi-garg2/'
     },
     {
       name: 'Aseel Ismail',
-      position: 'Director of Media',
+      position: 'Secretary',
       blurb: 'Data Science',
       avatar: Aseel,
       linkedin: 'https://www.linkedin.com/in/aseel-ismail07/'
+    },
+    {
+      name: 'Emily Chen',
+      position: 'Treasurer',
+      blurb: 'Computer Science',
+      avatar: Emily,
+      linkedin: 'https://www.linkedin.com/in/emily-chen-2207c/'
+    },
+    {
+      name: 'Laveena Bhuiyan',
+      position: 'Director of UI/UX',
+      blurb: 'Computer Science',
+      avatar: Laveena,
+      linkedin: 'https://www.linkedin.com/in/laveena-bhuiyan/'
+    },
+    {
+      name: 'Kayla Inoa',
+      position: 'Director of Software Development',
+      blurb: 'Computer Science',
+      avatar: KaylaInoa,
+      linkedin: 'https://www.linkedin.com/in/kaylainoa/'
+    },
+    {
+      name: 'Leonna Xie',
+      position: 'Director of Software Workshops',
+      blurb: 'Computer Science',
+      avatar: Leonna,
+      linkedin: 'https://www.linkedin.com/in/leonnaxie/'
+    },
+    {
+      name: 'Grace Mihiral',
+      position: 'Director of Hardware Workshops',
+      blurb: 'Computer Science',
+      avatar: Grace,
+      linkedin: 'https://www.linkedin.com/in/grace-mihiral/'
+    },
+    {
+      name: 'Neha Jupalli',
+      position: 'Co-director of Fundraising',
+      blurb: 'Computer Science',
+      avatar: Neha,
+      linkedin: 'https://www.linkedin.com/in/neha-jupalli/'
+    },
+    {
+      name: 'Angelica Tang',
+      position: 'Co-director of Fundraising',
+      blurb: 'Computer Science',
+      avatar: Angelica,
+      linkedin: 'https://www.linkedin.com/in/angelicatang/'
+    },
+    {
+      name: 'Aashita Rai',
+      position: 'Director of Corporate Relations',
+      blurb: 'Computer Science',
+      avatar: Aashita,
+      linkedin: 'https://www.linkedin.com/in/aashita-rai/'
+    },
+    {
+      name: 'Mishka Sonavadekar',
+      position: 'Director of Public Relations',
+      blurb: 'Computer Science',
+      avatar: Mishka,
+      linkedin: 'https://www.linkedin.com/in/mishka-sonavadekar/'
+    },
+    {
+      name: 'Thuy Le',
+      position: 'Director of Professional Development',
+      blurb: 'Computer Science',
+      avatar: Thuy,
+      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
+    },
+    {
+      name: 'Giuliana Silva',
+      position: 'Co-Director of Events',
+      blurb: 'Computer Science',
+      avatar: null,
+      linkedin: 'https://www.linkedin.com/in/giulianaesilva/'
+    },
+    {
+      name: 'Kayla Bui',
+      position: 'Co-Director of Events',
+      blurb: 'Computer Science',
+      avatar: null,
+      linkedin: 'https://www.linkedin.com/in/kbui-b61741369/'
     }
   ];
   
