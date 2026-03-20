@@ -23,7 +23,7 @@ import Leonna from '../../assets/avatars/2026-board/leonna-xie.JPG';
 import Grace from '../../assets/avatars/2026-board/grace-mihiral.png';
 //fundraising directors
 import Neha from '../../assets/avatars/2026-board/neha-jupalli.JPG';
-import Angelica from '../../assets/avatars/2026-board/angelica-tang.jpg';
+import Angelica from '../../assets/avatars/2026-board/angelica-tang.png';
 // director of corporate relations
 import Aashita from '../../assets/avatars/2026-board/aashita-rai.PNG';
 //director of public relations
@@ -44,7 +44,7 @@ export default function Board() {
     {
       name: 'Jenna Shi',
       position: 'President',
-      blurb: 'Computer Science',
+      blurb: 'Computer Science & Statistics', 
       avatar: Jenna,
       linkedin: 'https://www.linkedin.com/in/haoran-shi2/'
     },
@@ -100,21 +100,21 @@ export default function Board() {
     {
       name: 'Grace Mihiral',
       position: 'Director of Hardware Workshops',
-      blurb: 'Computer Science',
+      blurb: 'Computer Engineering',
       avatar: Grace,
       linkedin: 'https://www.linkedin.com/in/grace-mihiral/'
     },
     {
       name: 'Neha Jupalli',
       position: 'Co-director of Fundraising',
-      blurb: 'Computer Science',
+      blurb: 'Data Science',
       avatar: Neha,
       linkedin: 'https://www.linkedin.com/in/neha-jupalli/'
     },
     {
       name: 'Angelica Tang',
       position: 'Co-director of Fundraising',
-      blurb: 'Computer Science',
+      blurb: 'Computer Engineering',
       avatar: Angelica,
       linkedin: 'https://www.linkedin.com/in/angelicatang/'
     },
