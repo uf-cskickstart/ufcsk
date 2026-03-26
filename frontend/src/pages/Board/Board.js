@@ -146,13 +146,6 @@ export default function Board() {
       avatar: null,
       linkedin: 'https://www.linkedin.com/in/giulianaesilva/'
     },
-    {
-      name: 'Kayla Bui',
-      position: 'Co-Director of Events',
-      blurb: 'Computer Science',
-      avatar: null,
-      linkedin: 'https://www.linkedin.com/in/kbui-b61741369/'
-    }
   ];
   
   return (
