@@ -10,10 +10,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-import sponsorPackage from '../../assets/CS-Kickstart-Sponsorship-Package.pdf';
+
 
 const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor'];
-const routes = ["/home", "/board", "/calendar", "/program"];
+const routes = ["/home", "/board", "/calendar", "/program", "/sponsors"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -55,15 +55,9 @@ function ResponsiveAppBar() {
             >
               {pages.map((page, index) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {page === "Sponsor" ? (
-                    <a href={sponsorPackage} download target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'black' }}>
-                      {page}
-                    </a>
-                  ) : (
-                    <Link to={routes[index]} style={{ textDecoration: 'none', color: 'black' }}>
-                      {page}
-                    </Link>
-                  )}
+                  <Link to={routes[index]} style={{ textDecoration: 'none', color: 'black' }}>
+                    {page}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -122,15 +116,9 @@ function ResponsiveAppBar() {
                     textTransform: 'none',
                   }}
                 >
-                  {page === "Sponsor" ? (
-                    <a href={sponsorPackage} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'white' }}>
-                      {page}
-                    </a>
-                  ) : (
-                    <Link to={routes[index]} style={{ textDecoration: 'none', color: 'white' }}>
-                      {page}
-                    </Link>
-                  )}
+                  <Link to={routes[index]} style={{ textDecoration: 'none', color: 'white' }}>
+                    {page}
+                  </Link>
                 </Button>
               )
             ))}
