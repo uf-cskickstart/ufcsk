@@ -9,7 +9,7 @@ function Sponsors() {
     return (
         <div>
             {/* Embedded PDF */}
-            <div style={{ display: 'flex', justifyContent: 'center', padding: '24px 24px 0' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', padding: '24px 24px 0', marginBottom: '32px' }}>
                 <iframe
                     src={sponsorPackage}
                     title="CS Kickstart Sponsorship Package"
@@ -24,50 +24,7 @@ function Sponsors() {
                 px={3}
                 py={{ xs: 2, md: 4 }}
             >
-                {/* Our Sponsors */}
-                <Grid item xs={12} md={4}>
-                    <Typography
-                        sx={{
-                            textAlign: { xs: 'left', md: 'right' },
-                            fontFamily: 'DM Sans',
-                            fontWeight: '700',
-                            color: '#1A1421',
-                            letterSpacing: '2px',
-                        }}
-                        variant="h4"
-                    >
-                        OUR SPONSORS
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
-                    <Typography
-                        style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                        align="left"
-                    >
-                        Thank you to our sponsors for their support in making CS Kickstart possible! We are grateful for your generosity and commitment to empowering students in their pursuit of knowledge and skills in computer science. Your contributions help us create a vibrant learning environment and provide valuable resources for our participants.
-                    </Typography>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '24px',
-                            paddingBottom: '20px',
-                        }}
-                    >
-                        <img
-                            src={Bloomberg}
-                            alt="Bloomberg logo"
-                            style={{ maxWidth: '40%', height: 'auto', objectFit: 'contain' }}
-                        />
-                        <img
-                            src={TI}
-                            alt="TI logo"
-                            style={{ maxWidth: '40%', height: 'auto', objectFit: 'contain' }}
-                        />
-                    </div>
-                </Grid>
+            
 
                 {/* Sponsor Us */}
                 <Grid item xs={12} md={4}>
