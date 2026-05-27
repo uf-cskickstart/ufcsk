@@ -9,7 +9,7 @@ export default function ApplyFloat() {
       target="_blank"
       rel="noreferrer"
     >
-      Apply Now
+      APPLY NOW
     </a>
   );
 }
