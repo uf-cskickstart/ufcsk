@@ -114,32 +114,28 @@ function Program() {
                 </Typography>
             </Grid>
             <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
-                    {/* <Typography 
+                    <Typography
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications for our summer 2025 program will be opening at the end of the spring 2025 semester.
-                    </Typography> */}
-                    {/* <div style={{ textAlign: 'left' }}>
-                        <Button 
-                            className="button-text" 
-                            variant="contained" 
+                        Applications for CS Kickoff 2026 are now open! Applications close July 19th.
+                        <br></br>
+                        <br></br>
+                        Refer a friend who applies and you'll be entered into a raffle to win a $15 gift card!
+                    </Typography>
+                    <div style={{ textAlign: 'left' }}>
+                        <Button
+                            className="button-text"
+                            variant="contained"
                             size="large"
-                            style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }} 
-                            href='https://docs.google.com/forms/d/e/1FAIpQLSfP5NQ8Tt8cJLdFO4sF6HwRaMX-O7dS4kWXoMukZYtkCJr80w/viewform'
+                            style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }}
+                            href='https://forms.gle/ruyidZciZoejMMqNA'
                             target='_blank'
                             rel="noreferrer"
                         >
-                                2025 CS Kickoff Application Form
+                            Apply Now
                         </Button>
-                    </div> */}
-                    <Typography 
-                    style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                    align='left'
-                >
-                    <br></br>
-                    Applications for CS Kickoff 2025 are now closed! Stay on the lookout for future events!
-                </Typography>
+                    </div>
             </Grid>
             <Grid item xs={12} md={4}>
                 <Typography
@@ -163,17 +159,17 @@ function Program() {
                     style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                     align='left'
                 >
-                    CS Kickoff is a free, multi-day program from Monday, August 18, 2025 to Wednesday, August 20, 2025 created to inspire and empower beginners in technology. 
+                    CS Kickoff is a free, multi-day program from Sunday, August 17, 2026 to Tuesday, August 19, 2026 created to inspire and empower beginners in technology.
 
                     <br></br>
                     <br></br>
 
-                    Tailored specifically for incoming students at the University of Florida who have a passion for math, science, or engineering, our program provides participants a unique opportunity to get a head-start on the world of Computer Science before the fall semester begins.
+                    Tailored specifically for incoming freshman and transfer students at the University of Florida who have a passion for math, science, or engineering, our program provides participants a unique opportunity to get a head-start on the world of Computer Science before the fall semester begins.
 
                     <br></br>
                     <br></br>
 
-                    Our goal is to cultivate a diverse and inclusive tech community by providing hands-on learning opportunities, mentorship, and exposure to industry practices.
+                    Our goal is to cultivate a diverse and inclusive tech community by providing hands-on learning opportunities, mentorship, and exposure to industry practices. All meals are catered and attendees can expect shirts, gifts, and connections to our amazing corporate sponsors!
  
                 </Typography>
             </Grid>
@@ -203,12 +199,11 @@ function Program() {
                 >
                     Throughout the program, students will:
                     <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Gain programming skills</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Explore tech domains</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Connect with industry leaders</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Discover life at the University of Florida</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Build a supportive network</ListItem>
-
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Gain software, hardware, and professional skills</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Discover campus life at UF</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Get paired with mentors and learn from industry professionals</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Explore diverse tech domains</ListItem>
+                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Socialize and build lasting friendships!</ListItem>
                     </List>
                 </Typography>
             </Grid>
@@ -235,7 +230,7 @@ function Program() {
                         align='left'
                     >
                         <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You are an incoming first year at the University of Florida who is excited about technology and engineering.</ListItem>
+                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You are an incoming freshman or transfer student at the University of Florida who is excited about technology and engineering.</ListItem>
                             <ListItem sx={{ display: 'list-item', pb: 0 }}>You are interested in acquiring foundational programming skills and gaining hands-on experience in coding.</ListItem>
                             <ListItem sx={{ display: 'list-item', pb: 0 }}>You want to expand your knowledge in technology and engineering through immersive and hands-on experiences.</ListItem>
                             <ListItem sx={{ display: 'list-item', pb: 0 }}>You are seeking a supportive and inclusive community at the University of Florida.</ListItem>
@@ -273,45 +268,42 @@ function Program() {
                         </List>                    
                     </Typography>
             </Grid>
-            
+
+            {/* RECAP section temporarily hidden
             <Grid item xs={12} md={4}>
                 <Typography
                     sx={{
                         textAlign: {
-                            xs: 'left',
-                            md: 'right',
+                            xs: ‘left’,
+                            md: ‘right’,
                         },
-                        fontFamily: 'DM Sans',
-                        fontWeight: '700',
-                        color: '#1A1421',
-                        letterSpacing: '2px'
+                        fontFamily: ‘DM Sans’,
+                        fontWeight: ‘700’,
+                        color: ‘#1A1421’,
+                        letterSpacing: ‘2px’
                     }}
-                    variant='h4'
+                    variant=’h4’
                 >
                     RECAP
                 </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-                <Typography 
-                    style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                    align='left'
+                <Typography
+                    style={{ fontFamily: ‘DM Sans’, margin: ‘0’, paddingBottom: ‘20px’ }}
+                    align=’left’
                 >
-                    During our Summer 2024 program, we welcomed an incredible group of young women to UF! We dived into student panels, hands-on workshops, and inspiring talks from industry leaders and a UF professor. Our attendees also explored tech-related clubs, connected at socials, and so much more! 🫶
+                    During our Summer 2024 program, we welcomed an incredible group of young women to UF! We dived into student panels, hands-on workshops, and inspiring talks from industry leaders and a UF professor. Our attendees also explored tech-related clubs, connected at socials, and so much more!
 
-                    <br></br>
-                    <br></br>
+                    Here’s what the stats looked like:
+                    - 3 days
+                    - 20 participants
+                    - 6 workshops
+                    - 3 panels
 
-                    Here's what the stats looked like:
-                    <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>3 days</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>20 participants</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>6 workshops</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>3 panels</ListItem>
-                    </List>
-
-                    Here’s to building a brighter tech future together! 🚀👩‍💻
+                    Here’s to building a brighter tech future together!
                 </Typography>
             </Grid>
+            */}
 
         </Grid>
     </div>

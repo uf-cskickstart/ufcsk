@@ -94,7 +94,7 @@ function Home() {
         <div>
             <img src={ Banner } alt="CS Kickoff Applications Open with images from CSK Kickoff." style={{ width: '100%' }}/>
 
-            <Grid 
+            <Grid
                 container 
                 rowSpacing={{ xs: 2, md: 4 }} 
                 columnSpacing={8}

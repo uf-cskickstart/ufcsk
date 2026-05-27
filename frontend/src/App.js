@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar.js';
 import Footer from './components/Footer/Footer.js';
+import ApplyFloat from './components/ApplyFloat/ApplyFloat.js';
 import Home from './pages/Home/Home.js';
 import Board from './pages/Board/Board.js'
 import Calendar from './pages/Calendar/Calendar.js';
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar></Navbar>
+        <ApplyFloat />
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/home" element={<Home/>}></Route>

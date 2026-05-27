@@ -70,6 +70,8 @@ function ResponsiveAppBar() {
                 <Box key={page}>
                   <Button
                     onMouseEnter={handleProgramOpen}
+                    component={Link}
+                    to="/program"
                     sx={{
                       my: 1,
                       mx: 1,
