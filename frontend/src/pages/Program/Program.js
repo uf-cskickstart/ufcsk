@@ -118,10 +118,10 @@ function Program() {
                         style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                         align='left'
                     >
-                        Applications for CS Kickoff 2026 are now open! Applications close July 19th.
+                        Applications for CS Kickoff 2026 are now open! Applications close <strong>July 19th</strong>.
                         <br></br>
                         <br></br>
-                        Refer a friend who applies and you'll be entered into a raffle to win a $15 gift card!
+                        Refer a friend who applies and you'll be entered into a raffle to win a <strong>$15 gift card</strong>!
                     </Typography>
                     <div style={{ textAlign: 'left' }}>
                         <Button

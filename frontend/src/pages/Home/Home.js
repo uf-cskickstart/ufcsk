@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Banner from '../../assets/banner-image.png';
+import ApplyCSK26 from '../../assets/ApplyCSK26.png';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Event from '../../components/Event/Event.js';
 import { Button, Typography } from '@mui/material';
@@ -93,6 +95,62 @@ function Home() {
     return (
         <div>
             <img src={ Banner } alt="CS Kickoff Applications Open with images from CSK Kickoff." style={{ width: '100%' }}/>
+
+            <Box
+                display="flex"
+                flexDirection={{ xs: 'column', md: 'row' }}
+                alignItems="center"
+                justifyContent="center"
+                gap={6}
+                px={{ xs: 4, md: 8 }}
+                py={{ xs: 4, md: 6 }}
+                mx={{ xs: 2, md: 'auto' }}
+                mt={{ xs: 2, md: 4 }}
+                mb={2}
+                maxWidth="900px"
+                sx={{
+                    backgroundColor: '#fff5f7',
+                    borderRadius: '20px',
+                    boxShadow: 'rgba(149, 157, 165, 0.15) 0px 8px 32px',
+                }}
+            >
+                <img
+                    src={ApplyCSK26}
+                    alt="Apply for CS Kickoff 2026"
+                    style={{
+                        maxWidth: '320px',
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '16px',
+                        boxShadow: 'rgba(149, 157, 165, 0.25) 0px 8px 32px',
+                        flexShrink: 0,
+                    }}
+                />
+                <Box textAlign="left">
+                    <Typography variant="h5" sx={{ fontFamily: 'DM Sans', fontWeight: '700', color: '#1A1421', mb: 2 }}>
+                        CS Kickoff 2026 Applications Are Open!
+                    </Typography>
+                    <Typography style={{ fontFamily: 'DM Sans', marginBottom: '16px' }}>
+                        Are you an incoming freshman or transfer student at the University of Florida interested in any aspect of technology? Consider applying for CS Kickoff — a <strong>FREE</strong> introductory program designed to create a welcoming environment for beginners, non-technical majors, and underrepresented groups in tech.
+                    </Typography>
+                    <Typography style={{ fontFamily: 'DM Sans', marginBottom: '16px' }}>
+                        From August 17–19, 2025, you'll explore domains of CS through hands-on workshops, make friends at social events, and learn from incredible panelists. All meals are catered and attendees can expect shirts, gifts, and connections to our amazing corporate sponsors!
+                    </Typography>
+                    <Typography style={{ fontFamily: 'DM Sans', marginBottom: '24px' }}>
+                        Refer a friend who applies and you'll be entered into a raffle for a <strong>$15 gift card</strong>. Applications close <strong>July 19th</strong>.
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        size="large"
+                        href="https://forms.gle/9Vkd9xnNu7Fvkz9F8"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', fontWeight: '700' }}
+                    >
+                        Apply Now
+                    </Button>
+                </Box>
+            </Box>
 
             <Grid
                 container 
