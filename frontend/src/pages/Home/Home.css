@@ -3,3 +3,15 @@
     color: white;
     text-decoration: 'none';
 }
+
+.apply-banner {
+    background: linear-gradient(270deg, #fea5b0, #f7c5d5, #e8a0bf, #fea5b0);
+    background-size: 400% 400%;
+    animation: shimmer 4s ease infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
