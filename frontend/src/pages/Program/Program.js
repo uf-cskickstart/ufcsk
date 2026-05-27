@@ -159,7 +159,7 @@ function Program() {
                     style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
                     align='left'
                 >
-                    CS Kickoff is a free, multi-day program from Sunday, August 17, 2026 to Tuesday, August 19, 2026 created to inspire and empower beginners in technology.
+                    CS Kickoff is a free, multi-day program from Monday, August 17, 2026 to Wednesday, August 19, 2026 created to inspire and empower beginners in technology.
 
                     <br></br>
                     <br></br>
