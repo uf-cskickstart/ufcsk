@@ -16,7 +16,7 @@ import {
   TableCell,
   Link,
 } from '@mui/material';
-import { apiGet, apiPost } from '../../api.js';
+import { apiGet, apiPost, apiDelete } from '../../api.js';
 
 const cardStyle = {
   borderRadius: '18px',
@@ -69,6 +69,8 @@ export default function AdminEvents() {
   const [submitting, setSubmitting] = React.useState(false);
   const [formError, setFormError] = React.useState('');
   const [copiedId, setCopiedId] = React.useState(null);
+  const [deletingId, setDeletingId] = React.useState(null);
+  const [deleteError, setDeleteError] = React.useState('');
 
   const handleCopyLink = (event) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -78,6 +80,24 @@ export default function AdminEvents() {
     }
     setCopiedId(event.id);
     setTimeout(() => setCopiedId((current) => (current === event.id ? null : current)), 1500);
+  };
+
+  const handleDelete = async (event) => {
+    const confirmed = window.confirm(
+      `Delete "${event.name}"? This also permanently removes everyone's check-in history and points for this event.`
+    );
+    if (!confirmed) return;
+
+    setDeleteError('');
+    setDeletingId(event.id);
+    try {
+      await apiDelete(`/api/events/${event.id}`);
+      setEvents((current) => current.filter((e) => e.id !== event.id));
+    } catch (err) {
+      setDeleteError(err.message || 'Could not delete event');
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   const loadEvents = React.useCallback(() => {
@@ -198,6 +218,11 @@ export default function AdminEvents() {
               <Typography variant="h6" sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700', pb: 1 }}>
                 Events
               </Typography>
+              {deleteError && (
+                <Alert severity="error" sx={{ fontFamily: 'DM Sans', mb: 2 }}>
+                  {deleteError}
+                </Alert>
+              )}
               {loadingEvents ? (
                 <CircularProgress size={24} sx={{ color: '#BE9BCB' }} />
               ) : events.length === 0 ? (
@@ -218,6 +243,9 @@ export default function AdminEvents() {
                       </TableCell>
                       <TableCell sx={{ fontFamily: 'DM Sans', fontWeight: '700' }} align="right">
                         Link
+                      </TableCell>
+                      <TableCell sx={{ fontFamily: 'DM Sans', fontWeight: '700' }} align="right">
+                        Delete
                       </TableCell>
                     </TableRow>
                   </TableHead>
@@ -247,6 +275,16 @@ export default function AdminEvents() {
                             sx={{ fontFamily: 'DM Sans', textTransform: 'none', color: '#BE9BCB' }}
                           >
                             {copiedId === event.id ? 'Copied!' : 'Copy Link'}
+                          </Button>
+                        </TableCell>
+                        <TableCell align="right">
+                          <Button
+                            size="small"
+                            onClick={() => handleDelete(event)}
+                            disabled={deletingId === event.id}
+                            sx={{ fontFamily: 'DM Sans', textTransform: 'none', color: '#d32f2f' }}
+                          >
+                            {deletingId === event.id ? 'Deleting...' : 'Delete'}
                           </Button>
                         </TableCell>
                       </TableRow>

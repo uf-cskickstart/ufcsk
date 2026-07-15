@@ -9,6 +9,13 @@ const cardStyle = {
   fontFamily: 'DM Sans',
 };
 
+function formatTime(dateString) {
+  return new Date(dateString).toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+}
+
 export default function CheckinDisplay() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -18,6 +25,7 @@ export default function CheckinDisplay() {
   const [event, setEvent] = React.useState(null);
   const [qrUrl, setQrUrl] = React.useState('');
   const [error, setError] = React.useState('');
+  const [attendance, setAttendance] = React.useState([]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -57,6 +65,26 @@ export default function CheckinDisplay() {
     };
   }, [eventId, navigate]);
 
+  React.useEffect(() => {
+    if (!eventId) return undefined;
+    let cancelled = false;
+
+    const loadAttendance = () => {
+      apiGet(`/api/events/${eventId}/attendance`)
+        .then((rows) => {
+          if (!cancelled) setAttendance(rows);
+        })
+        .catch(() => {});
+    };
+
+    loadAttendance();
+    const interval = setInterval(loadAttendance, 5000);
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, [eventId]);
+
   return (
     <Box sx={{ padding: 4, display: 'flex', justifyContent: 'center' }}>
       {!eventId ? (
@@ -70,26 +98,62 @@ export default function CheckinDisplay() {
           {error}
         </Alert>
       ) : (
-        <Card style={cardStyle} sx={{ width: '100%', maxWidth: 640 }}>
-          <CardContent style={{ margin: '16px', textAlign: 'center' }}>
-            <Typography
-              variant="h3"
-              sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700', letterSpacing: '2px' }}
-            >
-              {event.name}
-            </Typography>
-            <Typography variant="body1" sx={{ fontFamily: 'DM Sans', pt: 1, pb: 3 }}>
-              Scan to check in &middot; {event.points} point{event.points === 1 ? '' : 's'}
-            </Typography>
-            {qrUrl && (
-              <img
-                src={qrUrl}
-                alt={`Check-in QR code for ${event.name}`}
-                style={{ width: '100%', maxWidth: 480, height: 'auto' }}
-              />
-            )}
-          </CardContent>
-        </Card>
+        <Box sx={{ width: '100%', maxWidth: 640 }}>
+          <Card style={cardStyle}>
+            <CardContent style={{ margin: '16px', textAlign: 'center' }}>
+              <Typography
+                variant="h3"
+                sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700', letterSpacing: '2px' }}
+              >
+                {event.name}
+              </Typography>
+              <Typography variant="body1" sx={{ fontFamily: 'DM Sans', pt: 1, pb: 3 }}>
+                Scan to check in &middot; {event.points} point{event.points === 1 ? '' : 's'}
+              </Typography>
+              {qrUrl && (
+                <img
+                  src={qrUrl}
+                  alt={`Check-in QR code for ${event.name}`}
+                  style={{ width: '100%', maxWidth: 480, height: 'auto' }}
+                />
+              )}
+            </CardContent>
+          </Card>
+
+          <Card style={cardStyle} sx={{ mt: 3 }}>
+            <CardContent style={{ margin: '16px' }}>
+              <Typography variant="h6" sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700', pb: 1 }}>
+                {attendance.length} checked in
+              </Typography>
+              {attendance.length === 0 ? (
+                <Typography variant="body2" sx={{ fontFamily: 'DM Sans' }}>
+                  No one has checked in yet.
+                </Typography>
+              ) : (
+                <Box sx={{ maxHeight: 320, overflowY: 'auto' }}>
+                  {attendance.map((row, index) => (
+                    <Box
+                      key={`${row.full_name}-${row.checked_in_at}-${index}`}
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        py: 1,
+                        borderBottom: index === attendance.length - 1 ? 'none' : '1px solid #eee',
+                      }}
+                    >
+                      <Typography variant="body2" sx={{ fontFamily: 'DM Sans' }}>
+                        {row.full_name}
+                      </Typography>
+                      <Typography variant="body2" sx={{ fontFamily: 'DM Sans', color: '#888' }}>
+                        {formatTime(row.checked_in_at)}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              )}
+            </CardContent>
+          </Card>
+        </Box>
       )}
     </Box>
   );

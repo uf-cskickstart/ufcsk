@@ -76,4 +76,39 @@ router.get('/events/:id/qrcode', requireAdmin, async (req, res, next) => {
   }
 });
 
+router.get('/events/:id/attendance', requireAdmin, async (req, res, next) => {
+  try {
+    const eventId = Number(req.params.id);
+    if (!Number.isInteger(eventId)) {
+      return res.status(400).json({ error: 'Invalid event id' });
+    }
+
+    const result = await pool.query(
+      'SELECT full_name, checked_in_at FROM attendance WHERE event_id = $1 ORDER BY checked_in_at ASC',
+      [eventId]
+    );
+    res.json(result.rows);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete('/events/:id', requireAdmin, async (req, res, next) => {
+  try {
+    const eventId = Number(req.params.id);
+    if (!Number.isInteger(eventId)) {
+      return res.status(400).json({ error: 'Invalid event id' });
+    }
+
+    const result = await pool.query('DELETE FROM events WHERE id = $1 RETURNING id', [eventId]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Event not found' });
+    }
+
+    res.json({ ok: true });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

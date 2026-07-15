@@ -36,6 +36,10 @@ export function apiPost(path, body) {
   return apiRequest(path, { method: 'POST', body: JSON.stringify(body) });
 }
 
+export function apiDelete(path) {
+  return apiRequest(path, { method: 'DELETE' });
+}
+
 export async function apiGetBlob(path) {
   const res = await fetch(`${API_BASE_URL}${path}`, { credentials: 'include' });
   if (!res.ok) {

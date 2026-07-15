@@ -103,7 +103,7 @@ export default function Checkin() {
           <Card className="checkin-card" style={cardStyle}>
             <CardContent style={{ margin: '8px' }}>
               <Typography variant="h5" sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700' }}>
-                {checkinResult.already_checked_in ? 'Already checked in!' : "You're checked in!"}
+                {checkinResult.already_checked_in ? "Looks like you've already checked in" : "You're checked in!"}
               </Typography>
               <Typography variant="body1" sx={{ fontFamily: 'DM Sans', pt: 1 }}>
                 {checkinResult.event.name} &middot; {checkinResult.event.points} point
