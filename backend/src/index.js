@@ -12,8 +12,8 @@ const eventsRouter = require('./routes/events');
 const app = express();
 
 const allowedOrigins = [process.env.FRONTEND_ORIGIN, ...(process.env.CORS_EXTRA_ORIGINS || '').split(',')]
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+  .filter(Boolean)
+  .map((origin) => origin.trim());
 
 app.use(
   cors({

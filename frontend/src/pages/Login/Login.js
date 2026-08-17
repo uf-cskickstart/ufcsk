@@ -17,13 +17,15 @@ const buttonStyle = {
 
 export default function Login() {
   const navigate = useNavigate();
-  const googleButtonRef = React.useRef(null);
 
   const [checkingSession, setCheckingSession] = React.useState(true);
   const [fullName, setFullName] = React.useState('');
   const [ufid, setUfid] = React.useState('');
   const [submitting, setSubmitting] = React.useState(false);
   const [formError, setFormError] = React.useState('');
+  const [adminUsername, setAdminUsername] = React.useState('');
+  const [adminPassword, setAdminPassword] = React.useState('');
+  const [adminSubmitting, setAdminSubmitting] = React.useState(false);
   const [adminError, setAdminError] = React.useState('');
   const [showAdminSignIn, setShowAdminSignIn] = React.useState(false);
 
@@ -41,45 +43,19 @@ export default function Login() {
     };
   }, [navigate]);
 
-  React.useEffect(() => {
-    if (!showAdminSignIn) return undefined;
-
-    async function handleCredentialResponse(response) {
-      setAdminError('');
-      try {
-        await apiPost('/api/admin/google-signin', { credential: response.credential });
-        navigate('/admin/events');
-      } catch (err) {
-        setAdminError(err.message || 'Sign-in failed');
-      }
+  const handleAdminLogin = async (e) => {
+    e.preventDefault();
+    setAdminError('');
+    setAdminSubmitting(true);
+    try {
+      await apiPost('/api/admin/login', { username: adminUsername.trim(), password: adminPassword });
+      navigate('/admin/events');
+    } catch (err) {
+      setAdminError(err.message || 'Sign-in failed');
+    } finally {
+      setAdminSubmitting(false);
     }
-
-    function renderButton() {
-      if (window.google && googleButtonRef.current) {
-        window.google.accounts.id.initialize({
-          client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-          callback: handleCredentialResponse,
-        });
-        window.google.accounts.id.renderButton(googleButtonRef.current, {
-          theme: 'outline',
-          size: 'large',
-        });
-      }
-    }
-
-    if (window.google) {
-      renderButton();
-      return undefined;
-    }
-
-    const interval = setInterval(() => {
-      if (window.google) {
-        clearInterval(interval);
-        renderButton();
-      }
-    }, 100);
-    return () => clearInterval(interval);
-  }, [showAdminSignIn, navigate]);
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -165,17 +141,44 @@ export default function Login() {
                     onClick={() => setShowAdminSignIn(true)}
                     sx={{ fontFamily: 'DM Sans', color: '#1A1421' }}
                   >
-                    Board member? Sign in with Google
+                    Board member? Sign in
                   </Link>
                 ) : (
-                  <>
-                    <Box sx={{ display: 'flex', justifyContent: 'center' }} ref={googleButtonRef} />
+                  <form onSubmit={handleAdminLogin}>
+                    <TextField
+                      label="Admin Username"
+                      fullWidth
+                      required
+                      margin="normal"
+                      value={adminUsername}
+                      onChange={(e) => setAdminUsername(e.target.value)}
+                      sx={{ fontFamily: 'DM Sans' }}
+                    />
+                    <TextField
+                      label="Admin Password"
+                      type="password"
+                      fullWidth
+                      required
+                      margin="normal"
+                      value={adminPassword}
+                      onChange={(e) => setAdminPassword(e.target.value)}
+                      sx={{ fontFamily: 'DM Sans' }}
+                    />
                     {adminError && (
-                      <Alert severity="error" sx={{ fontFamily: 'DM Sans', mt: 2 }}>
+                      <Alert severity="error" sx={{ fontFamily: 'DM Sans', mt: 1 }}>
                         {adminError}
                       </Alert>
                     )}
-                  </>
+                    <Button
+                      type="submit"
+                      variant="outlined"
+                      size="large"
+                      sx={{ mt: 1.5, fontFamily: 'DM Sans' }}
+                      disabled={adminSubmitting}
+                    >
+                      {adminSubmitting ? 'Signing in...' : 'Sign In'}
+                    </Button>
+                  </form>
                 )}
               </Box>
             </CardContent>

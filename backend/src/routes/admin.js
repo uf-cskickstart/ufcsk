@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const express = require('express');
 const { OAuth2Client } = require('google-auth-library');
 const {
@@ -16,6 +17,44 @@ function getAdminAllowlist() {
     .map((e) => e.trim().toLowerCase())
     .filter(Boolean);
 }
+
+function timingSafeStringEqual(a, b) {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  if (bufA.length !== bufB.length) {
+    // Still run a comparison so failure timing doesn't leak the length.
+    crypto.timingSafeEqual(bufA, bufA);
+    return false;
+  }
+  return crypto.timingSafeEqual(bufA, bufB);
+}
+
+router.post('/admin/login', (req, res) => {
+  const { username, password } = req.body || {};
+  const expectedUsername = process.env.ADMIN_USERNAME || '';
+  const expectedPassword = process.env.ADMIN_PASSWORD || '';
+
+  if (
+    typeof username !== 'string' ||
+    typeof password !== 'string' ||
+    !expectedUsername ||
+    !expectedPassword ||
+    !timingSafeStringEqual(username, expectedUsername) ||
+    !timingSafeStringEqual(password, expectedPassword)
+  ) {
+    return res.status(401).json({ error: 'Invalid username or password' });
+  }
+
+  const token = signAdminToken(expectedUsername);
+  res.cookie(ADMIN_COOKIE, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    maxAge: ADMIN_COOKIE_MAX_AGE_MS,
+  });
+
+  res.json({ username: expectedUsername });
+});
 
 router.post('/admin/google-signin', async (req, res, next) => {
   const { credential } = req.body || {};
