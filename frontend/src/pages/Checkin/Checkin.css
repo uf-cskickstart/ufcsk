@@ -1,0 +1,10 @@
+.checkin-page {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+
+.checkin-card {
+  width: 100%;
+  max-width: 420px;
+}
