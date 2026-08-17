@@ -60,7 +60,6 @@ function ResponsiveAppBar() {
 
   const authLabel = authState === 'admin' ? 'Admin' : authState === 'participant' ? 'My Points' : 'Login';
   const authRoute = authState === 'admin' ? '/admin/events' : authState === 'participant' ? '/profile' : '/login';
-  const authEmoji = authState === 'admin' ? '🛠️' : authState === 'participant' ? '⭐' : '👋';
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#BE9BCB', borderBottom: '2px solid white', boxShadow: 'none' }}>
@@ -159,29 +158,14 @@ function ResponsiveAppBar() {
                 my: 1,
                 ml: 1,
                 mr: { xs: 1, md: 0 },
-                backgroundColor: '#fea5b0',
-                color: '#1A1421',
+                color: 'white',
                 fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: 700,
+                fontSize: '18px',
+                fontWeight: 500,
                 textTransform: 'none',
-                borderRadius: '999px',
-                px: 2.5,
-                py: 0.75,
-                boxShadow: '0 3px 8px rgba(0,0,0,0.18)',
-                transition: 'transform 0.15s ease, background-color 0.15s ease',
-                '&:hover': {
-                  backgroundColor: '#ff8fa3',
-                  transform: 'scale(1.06)',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.22)',
-                },
               }}
             >
-              <Link
-                to={authRoute}
-                style={{ textDecoration: 'none', color: '#1A1421', display: 'flex', alignItems: 'center', gap: '6px' }}
-              >
-                <span>{authEmoji}</span>
+              <Link to={authRoute} style={{ textDecoration: 'none', color: 'white' }}>
                 {authLabel}
               </Link>
             </Button>
