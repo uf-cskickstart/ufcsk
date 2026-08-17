@@ -1,8 +1,15 @@
 // In local dev, default to whatever host loaded the page (localhost or a LAN IP)
 // instead of a fixed value, so the same build works from a laptop and a phone
-// on the same WiFi without needing to rebuild. Production always sets
-// REACT_APP_API_BASE_URL explicitly, so this fallback never applies there.
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || `http://${window.location.hostname}:4000`;
+// on the same WiFi without needing to rebuild. Production sets
+// REACT_APP_API_BASE_URL='' so requests go to a relative /api/* path, proxied
+// same-origin to the backend - Safari blocks cross-site cookies outright, so
+// the frontend and backend must look like the same domain to the browser.
+// (An empty string is falsy, so we check for `undefined` rather than using
+// `||`, which would incorrectly fall through to the LAN-IP default.)
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL !== undefined
+    ? process.env.REACT_APP_API_BASE_URL
+    : `http://${window.location.hostname}:4000`;
 
 async function apiRequest(path, options = {}) {
   const res = await fetch(`${API_BASE_URL}${path}`, {
