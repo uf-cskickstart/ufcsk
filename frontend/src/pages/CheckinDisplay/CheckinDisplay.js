@@ -50,7 +50,7 @@ export default function CheckinDisplay() {
       .catch((err) => {
         if (cancelled) return;
         if (err.status === 401) {
-          navigate('/admin/login');
+          navigate('/login');
           return;
         }
         setError(err.message || 'Could not load check-in display');

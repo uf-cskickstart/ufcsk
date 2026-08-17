@@ -115,7 +115,7 @@ export default function AdminEvents() {
         loadEvents();
       })
       .catch(() => {
-        navigate('/admin/login');
+        navigate('/login');
       })
       .finally(() => setCheckingAuth(false));
   }, [navigate, loadEvents]);
