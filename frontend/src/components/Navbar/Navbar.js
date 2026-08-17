@@ -9,16 +9,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { apiGet } from '../../api.js';
 
 
-const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor', 'Login'];
-const routes = ["/home", "/board", "/calendar", "/program", "/sponsors", "/login"];
+const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor'];
+const routes = ["/home", "/board", "/calendar", "/program", "/sponsors"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
+
   const [anchorElProgram, setAnchorElProgram] = React.useState(null);
+
+  const [authState, setAuthState] = React.useState(null);
+  const location = useLocation();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -33,6 +37,29 @@ function ResponsiveAppBar() {
   const handleProgramClose = () => {
     setAnchorElProgram(null);
   };
+
+  React.useEffect(() => {
+    let cancelled = false;
+    apiGet('/api/admin/me')
+      .then(() => {
+        if (!cancelled) setAuthState('admin');
+      })
+      .catch(() => {
+        apiGet('/api/profile')
+          .then(() => {
+            if (!cancelled) setAuthState('participant');
+          })
+          .catch(() => {
+            if (!cancelled) setAuthState('guest');
+          });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [location.pathname]);
+
+  const authLabel = authState === 'admin' ? 'Admin' : authState === 'participant' ? 'My Points' : 'Login';
+  const authRoute = authState === 'admin' ? '/admin/events' : authState === 'participant' ? '/profile' : '/login';
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#BE9BCB', borderBottom: '2px solid white', boxShadow: 'none' }}>
@@ -122,6 +149,28 @@ function ResponsiveAppBar() {
                 </Button>
               )
             ))}
+          </Box>
+
+          {/* AUTH BUTTON - Login / My Points / Admin, always pinned to the right */}
+          <Box>
+            <Button
+              sx={{
+                my: 1,
+                mx: 1,
+                color: 'white',
+                fontFamily: 'DM Sans',
+                fontSize: '18px',
+                fontWeight: 500,
+                textTransform: 'none',
+                border: '1px solid white',
+                borderRadius: '20px',
+                px: 2,
+              }}
+            >
+              <Link to={authRoute} style={{ textDecoration: 'none', color: 'white' }}>
+                {authLabel}
+              </Link>
+            </Button>
           </Box>
         </Toolbar>
       </Container>
