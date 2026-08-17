@@ -3,9 +3,9 @@ const express = require('express');
 const { OAuth2Client } = require('google-auth-library');
 const {
   ADMIN_COOKIE,
-  ADMIN_COOKIE_MAX_AGE_MS,
   signAdminToken,
   requireAdmin,
+  adminCookieOptions,
 } = require('../middleware/adminAuth');
 
 const router = express.Router();
@@ -46,12 +46,7 @@ router.post('/admin/login', (req, res) => {
   }
 
   const token = signAdminToken(expectedUsername);
-  res.cookie(ADMIN_COOKIE, token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: ADMIN_COOKIE_MAX_AGE_MS,
-  });
+  res.cookie(ADMIN_COOKIE, token, adminCookieOptions());
 
   res.json({ username: expectedUsername });
 });
@@ -80,12 +75,7 @@ router.post('/admin/google-signin', async (req, res, next) => {
     }
 
     const token = signAdminToken(email);
-    res.cookie(ADMIN_COOKIE, token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: ADMIN_COOKIE_MAX_AGE_MS,
-    });
+    res.cookie(ADMIN_COOKIE, token, adminCookieOptions());
 
     res.json({ email });
   } catch (err) {

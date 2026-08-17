@@ -27,10 +27,23 @@ function requireParticipant(req, res, next) {
   next();
 }
 
+// See adminCookieOptions in adminAuth.js for why this differs between
+// production (cross-site, needs None+Secure) and local dev (same-site).
+function participantCookieOptions() {
+  const isProduction = process.env.NODE_ENV === 'production';
+  return {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
+    maxAge: PARTICIPANT_COOKIE_MAX_AGE_MS,
+  };
+}
+
 module.exports = {
   PARTICIPANT_COOKIE,
   PARTICIPANT_COOKIE_MAX_AGE_MS,
   signParticipantToken,
   loadParticipant,
   requireParticipant,
+  participantCookieOptions,
 };

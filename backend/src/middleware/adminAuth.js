@@ -27,10 +27,26 @@ function requireAdmin(req, res, next) {
   next();
 }
 
+// Frontend and backend live on different domains in production, which makes
+// every API call cross-site - SameSite=Lax cookies aren't sent on those, only
+// on top-level navigations, so we need None+Secure there. Locally both run on
+// localhost (same-site across ports), where Lax works and None would require
+// HTTPS we don't have.
+function adminCookieOptions() {
+  const isProduction = process.env.NODE_ENV === 'production';
+  return {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
+    maxAge: ADMIN_COOKIE_MAX_AGE_MS,
+  };
+}
+
 module.exports = {
   ADMIN_COOKIE,
   ADMIN_COOKIE_MAX_AGE_MS,
   signAdminToken,
   loadAdmin,
   requireAdmin,
+  adminCookieOptions,
 };

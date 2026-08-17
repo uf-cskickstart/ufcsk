@@ -2,9 +2,9 @@ const express = require('express');
 const pool = require('../db');
 const {
   PARTICIPANT_COOKIE,
-  PARTICIPANT_COOKIE_MAX_AGE_MS,
   signParticipantToken,
   requireParticipant,
+  participantCookieOptions,
 } = require('../middleware/auth');
 
 const router = express.Router();
@@ -40,12 +40,7 @@ router.post('/register-or-lookup', async (req, res, next) => {
     }
 
     const token = signParticipantToken(participant.id);
-    res.cookie(PARTICIPANT_COOKIE, token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: PARTICIPANT_COOKIE_MAX_AGE_MS,
-    });
+    res.cookie(PARTICIPANT_COOKIE, token, participantCookieOptions());
 
     res.json({ id: participant.id, full_name: participant.full_name, ufid: participant.ufid });
   } catch (err) {
