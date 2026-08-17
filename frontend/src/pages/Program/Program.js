@@ -123,19 +123,6 @@ function Program() {
                         <br></br>
                         Refer a friend who applies and you'll be entered into a raffle to win a <strong>$15 gift card</strong>!
                     </Typography>
-                    <div style={{ textAlign: 'left' }}>
-                        <Button
-                            className="button-text"
-                            variant="contained"
-                            size="large"
-                            style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans' }}
-                            href='https://forms.gle/ruyidZciZoejMMqNA'
-                            target='_blank'
-                            rel="noreferrer"
-                        >
-                            Apply Now
-                        </Button>
-                    </div>
             </Grid>
             <Grid item xs={12} md={4}>
                 <Typography

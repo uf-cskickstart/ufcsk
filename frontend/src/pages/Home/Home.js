@@ -139,16 +139,6 @@ function Home() {
                     <Typography style={{ fontFamily: 'DM Sans', marginBottom: '24px' }}>
                         Refer a friend who applies and you'll be entered into a raffle for a <strong>$15 gift card</strong>. Applications close <strong>July 19th</strong>.
                     </Typography>
-                    <Button
-                        variant="contained"
-                        size="large"
-                        href="https://forms.gle/9Vkd9xnNu7Fvkz9F8"
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', fontWeight: '700' }}
-                    >
-                        Apply Now
-                    </Button>
                 </Box>
             </Box>
 
