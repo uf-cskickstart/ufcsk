@@ -11,6 +11,7 @@ import CSK2025 from './pages/CSK2025/CSK2025.js';
 import Sponsors from './pages/Sponsors/Sponsors.js';
 import Checkin from './pages/Checkin/Checkin.js';
 import Profile from './pages/Profile/Profile.js';
+import Login from './pages/Login/Login.js';
 import AdminLogin from './pages/AdminLogin/AdminLogin.js';
 import AdminEvents from './pages/AdminEvents/AdminEvents.js';
 import CheckinDisplay from './pages/CheckinDisplay/CheckinDisplay.js';
@@ -36,6 +37,7 @@ function App() {
           <Route path="/sponsors" element={<Sponsors/>}></Route>
           <Route path="/checkin" element={<Checkin/>}></Route>
           <Route path="/profile" element={<Profile/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
           <Route path="/admin/login" element={<AdminLogin/>}></Route>
           <Route path="/admin/events" element={<AdminEvents/>}></Route>
           <Route path="/checkin-display" element={<CheckinDisplay/>}></Route>
