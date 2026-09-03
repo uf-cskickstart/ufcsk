@@ -28,9 +28,12 @@ import Angelica from '../../assets/avatars/2026-board/angelica-tang.png';
 import Aashita from '../../assets/avatars/2026-board/aashita-rai.PNG';
 //director of public relations
 import Mishka from '../../assets/avatars/2026-board/mishka-sonavadeka.jpg';
+import Tiffany from '../../assets/avatars/2026-board/tiffany-chen.PNG';
+import Adora from '../../assets/avatars/2026-board/adora-lin.PNG';
 // director of professional development
-import Thuy from '../../assets/avatars/crystal-le.jpg';
+import Monica from '../../assets/avatars/2026-board/monica-coira.jpg';
 // co-director of events
+import Giuliana from '../../assets/avatars/2026-board/giuliana-silva.jpg';
 
 export default function Board() {
   const members = [
@@ -88,7 +91,7 @@ export default function Board() {
       position: 'Director of Software Development',
       blurb: 'Computer Science',
       avatar: KaylaInoa,
-      linkedin: 'https://www.linkedin.com/in/kaylainoa/'
+      linkedin: 'https://www.linkedin.com/in/kayla-inoa/'
     },
     {
       name: 'Leonna Xie',
@@ -121,7 +124,7 @@ export default function Board() {
     {
       name: 'Aashita Rai',
       position: 'Director of Corporate Relations',
-      blurb: 'Computer Science',
+      blurb: 'Biomedical Engineering',
       avatar: Aashita,
       linkedin: 'https://www.linkedin.com/in/aashita-rai/'
     },
@@ -133,17 +136,31 @@ export default function Board() {
       linkedin: 'https://www.linkedin.com/in/mishka-sonavadekar/'
     },
     {
-      name: 'Thuy Le',
+      name: 'Tiffany Chen',
+      position: 'Director of Public Relations',
+      blurb: 'Computer Science',
+      avatar: Tiffany,
+      linkedin: 'https://www.linkedin.com/in/ttiffanychen/'
+    },
+    {
+      name: 'Adora Lin',
+      position: 'Director of Media',
+      blurb: 'Computer Science',
+      avatar: Adora,
+      linkedin: 'https://www.linkedin.com/in/adora-lin-/'
+    },
+    {
+      name: 'Monica Coira',
       position: 'Director of Professional Development',
       blurb: 'Computer Science',
-      avatar: Thuy,
-      linkedin: 'https://www.linkedin.com/in/thuy-n-le/'
+      avatar: Monica,
+      linkedin: 'https://www.linkedin.com/in/monicacoira/'
     },
     {
       name: 'Giuliana Silva',
       position: 'Co-Director of Events',
       blurb: 'Computer Science',
-      avatar: null,
+      avatar: Giuliana,
       linkedin: 'https://www.linkedin.com/in/giulianaesilva/'
     },
   ];
