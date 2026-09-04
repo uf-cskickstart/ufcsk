@@ -18,13 +18,17 @@ export default function Event({ title, date, time, description, location, link }
             { title }
           </a>
         </Typography>
-        <Typography gutterBottom variant="body" component="div" style={{ fontFamily: 'DM Sans' }}>
-          <FontAwesomeIcon icon={ faLocationDot } style={{paddingRight: '8px'}} />
-          { location }
-        </Typography>
-        <Typography variant="body2" color="text.secondary" style={{ fontFamily: 'DM Sans', paddingTop: '10px' }}>
-          { description }
-        </Typography>
+        { location && (
+          <Typography gutterBottom variant="body" component="div" style={{ fontFamily: 'DM Sans' }}>
+            <FontAwesomeIcon icon={ faLocationDot } style={{paddingRight: '8px'}} />
+            { location }
+          </Typography>
+        ) }
+        { description && (
+          <Typography variant="body2" color="text.secondary" style={{ fontFamily: 'DM Sans', paddingTop: '10px' }}>
+            { description }
+          </Typography>
+        ) }
       </CardContent>
     </Card>
   );
