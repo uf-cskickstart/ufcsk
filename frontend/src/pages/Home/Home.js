@@ -245,16 +245,18 @@ function Home() {
                 <Event
                   title={event.summary}
                   description={
-                    <div className="event-description">
-                      {stripHtml(event.description)
-                        .split('\n')
-                        .map((line, i) => (
-                          <span key={i}>
-                            {line}
-                            <br />
-                          </span>
-                        ))}
-                    </div>
+                    event.description ? (
+                      <div className="event-description">
+                        {stripHtml(event.description)
+                          .split('\n')
+                          .map((line, i) => (
+                            <span key={i}>
+                              {line}
+                              <br />
+                            </span>
+                          ))}
+                      </div>
+                    ) : null
                   }
 
                   // description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam ac tortor vitae purus faucibus ornare."
