@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Typography, Box } from '@mui/material';
 import Iframe from 'react-iframe';
+import './Calendar.css';
 
 export default function Calendar() {
   return (
@@ -13,11 +14,10 @@ export default function Calendar() {
       >
         CALENDAR
       </Typography>
-      <Box sx={{ padding: 2 }}>
-      <Iframe 
+      <Box sx={{ padding: 2, display: 'flex', justifyContent: 'center' }}>
+      <Iframe
         url="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&bgcolor=%23ffffff&showTitle=0&src=NTc1MmJlMDNjNzU0ZWQwMTZjMWI4MWU3OTU5M2IxN2EzMjAyZmJkNjIzNTBlMDMyOTcxZGFmMDRjZjE4Y2M3YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60"
-        width="800"
-        height="600"
+        className="calendar-iframe"
         frameBorder="0"
         scrolling="no"
       />
