@@ -23,7 +23,8 @@ export default function Board() {
       </Typography>
       <Grid container spacing={2} px={{ xs: 6, md: 12 }} py={2}>
         {members.map((member, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          // <Grid item xs={12} sm={6} md={index < 6 ? 6 : 4} key={index}>
+          <Grid item xs={12} sm={6} md={4} key={index}>
             <BoardCard
               name={member.name}
               position={member.position}

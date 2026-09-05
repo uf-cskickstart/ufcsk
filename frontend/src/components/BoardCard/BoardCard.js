@@ -47,8 +47,9 @@ export default function BoardCard({
       >
         <CardMedia
           sx={{
-            width: { xs: 150, md: '100%' },
+            width: { xs: 150, md: 320 },
             height: { xs: 150, md: 400 },
+            alignSelf: 'center',
             flexShrink: 0,
             borderRadius: { xs: '16px', md: '30px' },
           }}
@@ -75,7 +76,7 @@ export default function BoardCard({
                 component="div"
                 sx={{
                   fontSize: { xs: '1.1rem', md: '1.5rem' },
-                  textAlign: { xs: reverse ? 'right' : 'left', md: 'left' },
+                  textAlign: { xs: reverse ? 'right' : 'left', md: 'center' },
                 }}
                 style={{
                   fontFamily: 'DM Sans',
@@ -101,7 +102,7 @@ export default function BoardCard({
                 variant="body2"
                 color="text.secondary"
                 sx={{
-                  textAlign: { xs: reverse ? 'right' : 'left', md: 'left' },
+                  textAlign: { xs: reverse ? 'right' : 'left', md: 'center' },
                 }}
                 style={{ fontFamily: 'DM Sans' }}
               >
@@ -109,7 +110,9 @@ export default function BoardCard({
               </Typography>
             </Grid>
           </Grid>
-          <Box sx={{ display: { xs: 'none', md: 'block' }, textAlign: 'left' }}>
+          <Box
+            sx={{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}
+          >
             <Button
               variant="outlined"
               size="small"
@@ -119,7 +122,7 @@ export default function BoardCard({
                 borderColor: '#fdc7cc',
                 borderRadius: '8px',
                 pointerEvents: 'none',
-                width: '100%',
+                // width: '100%',
                 lineHeight: '1.5',
               }}
             >
