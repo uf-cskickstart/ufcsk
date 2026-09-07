@@ -7,6 +7,7 @@ import Calendar from './pages/Calendar/Calendar.js';
 import Program from './pages/Program/Program.js';
 import CSK2024 from './pages/CSK2024/CSK2024.js';
 import CSK2025 from './pages/CSK2025/CSK2025.js';
+import CSK2026 from './pages/CSK2026/CSK2026.js';
 import Sponsors from './pages/Sponsors/Sponsors.js';
 import Checkin from './pages/Checkin/Checkin.js';
 import Profile from './pages/Profile/Profile.js';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/program" element={<Program/>}></Route>
           <Route path="/CSK2024" element={<CSK2024/>}></Route>
           <Route path="/CSK2025" element={<CSK2025/>}></Route>
+          <Route path="/CSK2026" element={<CSK2026/>}></Route>
           <Route path="/sponsors" element={<Sponsors/>}></Route>
           <Route path="/checkin" element={<Checkin/>}></Route>
           <Route path="/profile" element={<Profile/>}></Route>

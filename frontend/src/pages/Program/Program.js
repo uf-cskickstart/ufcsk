@@ -13,250 +13,336 @@ import Group from '../../assets/group.png';
 import Selfie from '../../assets/selfie.jpg';
 import Presentation from '../../assets/presentation.png';
 import CSKickoff2024 from '../../assets/cskickoff2024.jpg';
-import {Link} from "react-router-dom"
+import { Link } from 'react-router-dom';
 function Program() {
-    const itemData = [
-        {
-            img: Selfie
-        },
-        {
-            img: Marshmallow
-        },
-        {
-            img: Board
-        },
-        {
-            img: Group
-        },
-      
-        {
-            img: Presentation
-        },
-       
-    ];
+  const itemData = [
+    {
+      img: Selfie,
+    },
+    {
+      img: Marshmallow,
+    },
+    {
+      img: Board,
+    },
+    {
+      img: Group,
+    },
 
-    return (
+    {
+      img: Presentation,
+    },
+  ];
+
+  return (
     <div>
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <ImageList sx={{ width: '100%', height: 'auto' }} cols={6} gap={0}>
+          {itemData.map((item, index) => {
+            let cols = 1;
 
-        <Box
-  display="flex"
-  justifyContent="center"
-  alignItems="center"
->
-  <ImageList
-    sx={{ width: '100%', height: 'auto' }}
-    cols={6}
-    gap={0}
-  >
-    {itemData.map((item, index) => {
-      let cols = 1;
+            if (index === 2) {
+              cols = 2;
+            }
 
-      if (index === 2) {
-        cols = 2;
-      }
-
-      return (
-        <ImageListItem key={item.img} cols={cols}>
-          <img
-            srcSet={`${item.img}?w=${300 * cols}&h=300&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=${300 * cols}&h=300&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      );
-    })}
-  </ImageList>
-   
-</Box>
-<Button 
-    className="button-text" 
-    variant="contained" 
-    size="large"
-    style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', margin: "20px" }} 
-    component = {Link}
-    to = "/CSK2024"
->
+            return (
+              <ImageListItem key={item.img} cols={cols}>
+                <img
+                  srcSet={`${item.img}?w=${300 * cols}&h=300&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item.img}?w=${300 * cols}&h=300&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            );
+          })}
+        </ImageList>
+      </Box>
+      <Button
+        className="button-text"
+        variant="contained"
+        size="large"
+        style={{
+          backgroundColor: '#fea5b0',
+          boxShadow: 'none',
+          fontFamily: 'DM Sans',
+          margin: '20px',
+        }}
+        component={Link}
+        to="/CSK2024"
+      >
         CSK2024
-</Button>
-<Button 
-    className="button-text" 
-    variant="contained" 
-    size="large"
-    style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', margin: "20px" }} 
-    component = {Link}
-    to = "/CSK2025"
->
+      </Button>
+      <Button
+        className="button-text"
+        variant="contained"
+        size="large"
+        style={{
+          backgroundColor: '#fea5b0',
+          boxShadow: 'none',
+          fontFamily: 'DM Sans',
+          margin: '20px',
+        }}
+        component={Link}
+        to="/CSK2025"
+      >
         CSK2025
-</Button>
-        <Grid 
-                container 
-                rowSpacing={{ xs: 1, md: 4 }} 
-                columnSpacing={8}
-                px={3}
-                py={{ xs: 2, md: 4 }}
-            >
-                <Grid item xs={12} md={4}>
-                <Typography
-                    sx={{
-                        textAlign: {
-                            xs: 'left',
-                            md: 'right',
-                        },
-                        fontFamily: 'DM Sans',
-                        fontWeight: '700',
-                        color: '#1A1421',
-                        letterSpacing: '2px'
-                    }}
-                    variant='h4'
-                >
-                    APPLY
-                </Typography>
-            </Grid>
-            <Grid item xs={12} md={6} style={{ paddingBottom: '20px' }}>
-                    <Typography
-                        style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                        align='left'
-                    >
-                        Applications for CS Kickoff 2026 are now open! Applications close <strong>July 19th</strong>.
-                        <br></br>
-                        <br></br>
-                        Refer a friend who applies and you'll be entered into a raffle to win a <strong>$15 gift card</strong>!
-                    </Typography>
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <Typography
-                    sx={{
-                        textAlign: {
-                            xs: 'left',
-                            md: 'right',
-                        },
-                        fontFamily: 'DM Sans',
-                        fontWeight: '700',
-                        color: '#1A1421',
-                        letterSpacing: '2px'
-                    }}
-                    variant='h4'
-                >
-                    ABOUT
-                </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-                <Typography 
-                    style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                    align='left'
-                >
-                    CS Kickoff is a free, multi-day program from Monday, August 17, 2026 to Wednesday, August 19, 2026 created to inspire and empower beginners in technology.
+      </Button>
+      <Button
+        className="button-text"
+        variant="contained"
+        size="large"
+        style={{
+          backgroundColor: '#fea5b0',
+          boxShadow: 'none',
+          fontFamily: 'DM Sans',
+          margin: '20px',
+        }}
+        component={Link}
+        to="/CSK2026"
+      >
+        CSK2026
+      </Button>
+      <Grid
+        container
+        rowSpacing={{ xs: 1, md: 4 }}
+        columnSpacing={8}
+        px={3}
+        py={{ xs: 2, md: 4 }}
+      >
+        <Grid item xs={12} md={4}>
+          <Typography
+            sx={{
+              textAlign: {
+                xs: 'left',
+                md: 'right',
+              },
+              fontFamily: 'DM Sans',
+              fontWeight: '700',
+              color: '#1A1421',
+              letterSpacing: '2px',
+            }}
+            variant="h4"
+          >
+            APPLY
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography
+            style={{
+              fontFamily: 'DM Sans',
+              margin: '0',
+              paddingBottom: '20px',
+            }}
+            align="left"
+          >
+            {/* Applications for CS Kickoff 2026 are now open! Applications close <strong>July 19th</strong>. */}
+            Applications for CS Kickoff 2026 are currently closed. Check back
+            around <strong>May 2027</strong> for the 2027 application!
+            <br></br>
+            <br></br>
+            {/* Refer a friend who applies and you'll be entered into a raffle to win a <strong>$15 gift card</strong>! */}
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography
+            sx={{
+              textAlign: {
+                xs: 'left',
+                md: 'right',
+              },
+              fontFamily: 'DM Sans',
+              fontWeight: '700',
+              color: '#1A1421',
+              letterSpacing: '2px',
+            }}
+            variant="h4"
+          >
+            ABOUT
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography
+            style={{
+              fontFamily: 'DM Sans',
+              margin: '0',
+              paddingBottom: '20px',
+            }}
+            align="left"
+          >
+            {/* CS Kickoff is a free, multi-day program from Monday, August 17, 2026 to Wednesday, August 19, 2026 created to inspire and empower beginners in technology. */}
+            CS Kickoff is a free, multi-day program created to inspire and
+            empower beginners in technology.
+            <br></br>
+            <br></br>
+            Tailored specifically for incoming freshman and transfer students at
+            the University of Florida who have a passion for math, science, or
+            engineering, our program provides participants a unique opportunity
+            to get a head-start on the world of Computer Science before the fall
+            semester begins.
+            <br></br>
+            <br></br>
+            Our goal is to cultivate a diverse and inclusive tech community by
+            providing hands-on learning opportunities, mentorship, and exposure
+            to industry practices. All meals are catered and attendees can
+            expect shirts, gifts, and connections to our amazing corporate
+            sponsors!
+          </Typography>
+        </Grid>
 
-                    <br></br>
-                    <br></br>
+        <Grid item xs={12} md={4}>
+          <Typography
+            sx={{
+              textAlign: {
+                xs: 'left',
+                md: 'right',
+              },
+              fontFamily: 'DM Sans',
+              fontWeight: '700',
+              color: '#1A1421',
+              letterSpacing: '2px',
+            }}
+            variant="h4"
+          >
+            OUTCOMES
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography
+            style={{
+              fontFamily: 'DM Sans',
+              margin: '0',
+              paddingBottom: '20px',
+            }}
+            align="left"
+          >
+            Throughout the program, students will:
+            <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                Gain software, hardware, and professional skills
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                Discover campus life at UF
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                Get paired with mentors and learn from industry professionals
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                Explore diverse tech domains
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                Socialize and build lasting friendships!
+              </ListItem>
+            </List>
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography
+            sx={{
+              textAlign: {
+                xs: 'left',
+                md: 'right',
+              },
+              fontFamily: 'DM Sans',
+              fontWeight: '700',
+              color: '#1A1421',
+              letterSpacing: '2px',
+            }}
+            variant="h4"
+          >
+            WHO YOU ARE
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography
+            style={{
+              fontFamily: 'DM Sans',
+              margin: '0',
+              paddingBottom: '20px',
+            }}
+            align="left"
+          >
+            <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                You are an incoming freshman or transfer student at the
+                University of Florida who is excited about technology and
+                engineering.
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                You are interested in acquiring foundational programming skills
+                and gaining hands-on experience in coding.
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                You want to expand your knowledge in technology and engineering
+                through immersive and hands-on experiences.
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                You are seeking a supportive and inclusive community at the
+                University of Florida.
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                You want to have fun!
+              </ListItem>
+            </List>
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography
+            sx={{
+              textAlign: {
+                xs: 'left',
+                md: 'right',
+              },
+              fontFamily: 'DM Sans',
+              fontWeight: '700',
+              color: '#1A1421',
+              letterSpacing: '2px',
+            }}
+            variant="h4"
+          >
+            EVENTS
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography
+            style={{
+              fontFamily: 'DM Sans',
+              margin: '0',
+              paddingBottom: '20px',
+            }}
+            align="left"
+          >
+            Events you can expect:
+            <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                <strong>Workshops & Labs:</strong> In our workshops, you will be
+                able to get exposure and hands-on experience in Python, machine
+                learning, and Arduino boards! This is a great opportunity to
+                learn and get a good foundation of both sides of the tech world,
+                software and hardware. Whether you are a beginner or looking to
+                enhance your skills, our workshops are designed to cater to all
+                levels.
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                <strong>Socials:</strong> You will be able to participate in
+                many fun activities that will allow you to get to know other
+                attendees and CSK members. This is a great way to start building
+                your network of connections and friends who can help support you
+                through the years and become a community you can rely on.
+              </ListItem>
+              <ListItem sx={{ display: 'list-item', pb: 0 }}>
+                <strong>Panels:</strong> You will be able to interact with and
+                ask questions to our various speakers. We will feature engineers
+                discussing industry opportunities, professors sharing their
+                research and offering preparation tips, upper-classmen answering
+                college life questions, and representatives from various
+                organizations helping you explore where you fit best.{' '}
+              </ListItem>
+            </List>
+          </Typography>
+        </Grid>
 
-                    Tailored specifically for incoming freshman and transfer students at the University of Florida who have a passion for math, science, or engineering, our program provides participants a unique opportunity to get a head-start on the world of Computer Science before the fall semester begins.
-
-                    <br></br>
-                    <br></br>
-
-                    Our goal is to cultivate a diverse and inclusive tech community by providing hands-on learning opportunities, mentorship, and exposure to industry practices. All meals are catered and attendees can expect shirts, gifts, and connections to our amazing corporate sponsors!
- 
-                </Typography>
-            </Grid>
-            
-            
-            <Grid item xs={12} md={4}>
-                <Typography
-                    sx={{
-                        textAlign: {
-                            xs: 'left',
-                            md: 'right',
-                        },
-                        fontFamily: 'DM Sans',
-                        fontWeight: '700',
-                        color: '#1A1421',
-                        letterSpacing: '2px'
-                    }}
-                    variant='h4'
-                >
-                    OUTCOMES
-                </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-                <Typography 
-                    style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                    align='left'
-                >
-                    Throughout the program, students will:
-                    <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Gain software, hardware, and professional skills</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Discover campus life at UF</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Get paired with mentors and learn from industry professionals</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Explore diverse tech domains</ListItem>
-                        <ListItem sx={{ display: 'list-item', pb: 0 }}>Socialize and build lasting friendships!</ListItem>
-                    </List>
-                </Typography>
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <Typography
-                    sx={{
-                        textAlign: {
-                            xs: 'left',
-                            md: 'right',
-                        },
-                        fontFamily: 'DM Sans',
-                        fontWeight: '700',
-                        color: '#1A1421',
-                        letterSpacing: '2px'
-                    }}
-                    variant='h4'
-                >
-                    WHO YOU ARE
-                </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-                    <Typography 
-                        style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                        align='left'
-                    >
-                        <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You are an incoming freshman or transfer student at the University of Florida who is excited about technology and engineering.</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You are interested in acquiring foundational programming skills and gaining hands-on experience in coding.</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You want to expand your knowledge in technology and engineering through immersive and hands-on experiences.</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You are seeking a supportive and inclusive community at the University of Florida.</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}>You want to have fun!</ListItem>
-                        </List>
-                    </Typography>
-            </Grid>
-            <Grid item xs={12} md={4}>
-                <Typography
-                    sx={{
-                        textAlign: {
-                            xs: 'left',
-                            md: 'right',
-                        },
-                        fontFamily: 'DM Sans',
-                        fontWeight: '700',
-                        color: '#1A1421',
-                        letterSpacing: '2px'
-                    }}
-                    variant='h4'
-                >
-                    EVENTS
-                </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-                    <Typography 
-                        style={{ fontFamily: 'DM Sans', margin: '0', paddingBottom: '20px' }}
-                        align='left'
-                    >
-                        Events you can expect:
-                        <List sx={{ listStyleType: 'disc', pl: 4, pt: 0 }}>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}><strong>Workshops & Labs:</strong> In our workshops, you will be able to get exposure and hands-on experience in Python, machine learning, and Arduino boards! This is a great opportunity to learn and get a good foundation of both sides of the tech world, software and hardware. Whether you are a beginner or looking to enhance your skills, our workshops are designed to cater to all levels.</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}><strong>Socials:</strong> You will be able to participate in many fun activities that will allow you to get to know other attendees and CSK members. This is a great way to start building your network of connections and friends who can help support you through the years and become a community you can rely on.</ListItem>
-                            <ListItem sx={{ display: 'list-item', pb: 0 }}><strong>Panels:</strong> You will be able to interact with and ask questions to our various speakers. We will feature engineers discussing industry opportunities, professors sharing their research and offering preparation tips, upper-classmen answering college life questions, and representatives from various organizations helping you explore where you fit best. </ListItem>
-                        </List>                    
-                    </Typography>
-            </Grid>
-
-            {/* RECAP section temporarily hidden
+        {/* RECAP section temporarily hidden
             <Grid item xs={12} md={4}>
                 <Typography
                     sx={{
@@ -291,10 +377,9 @@ function Program() {
                 </Typography>
             </Grid>
             */}
-
-        </Grid>
+      </Grid>
     </div>
-    );
+  );
 }
 
 export default Program;

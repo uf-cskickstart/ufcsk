@@ -286,6 +286,7 @@ function Home() {
             }}
           >
             <Button
+              component={Link}
               className="button-text"
               variant="contained"
               size="large"
@@ -295,9 +296,10 @@ function Home() {
                 boxShadow: 'none',
                 fontFamily: 'DM Sans',
               }}
-              href="https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York"
-              target="_blank"
-              rel="noreferrer"
+              to="/calendar"
+              // href="https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York"
+              // target="_blank"
+              // rel="noreferrer"
             >
               view full calendar
             </Button>
