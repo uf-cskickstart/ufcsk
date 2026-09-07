@@ -58,51 +58,57 @@ function Program() {
           })}
         </ImageList>
       </Box>
-      <Button
-        className="button-text"
-        variant="contained"
-        size="large"
-        style={{
-          backgroundColor: '#fea5b0',
-          boxShadow: 'none',
-          fontFamily: 'DM Sans',
-          margin: '20px',
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'nowrap',
+          justifyContent: 'center',
+          gap: { xs: 1, md: 3 },
         }}
-        component={Link}
-        to="/CSK2024"
       >
-        CSK2024
-      </Button>
-      <Button
-        className="button-text"
-        variant="contained"
-        size="large"
-        style={{
-          backgroundColor: '#fea5b0',
-          boxShadow: 'none',
-          fontFamily: 'DM Sans',
-          margin: '20px',
-        }}
-        component={Link}
-        to="/CSK2025"
-      >
-        CSK2025
-      </Button>
-      <Button
-        className="button-text"
-        variant="contained"
-        size="large"
-        style={{
-          backgroundColor: '#fea5b0',
-          boxShadow: 'none',
-          fontFamily: 'DM Sans',
-          margin: '20px',
-        }}
-        component={Link}
-        to="/CSK2026"
-      >
-        CSK2026
-      </Button>
+        <Button
+          className="button-text"
+          variant="contained"
+          size="large"
+          sx={{
+            backgroundColor: '#fea5b0',
+            boxShadow: 'none',
+            fontFamily: 'DM Sans',
+          }}
+          component={Link}
+          to="/CSK2024"
+        >
+          CSK 2024
+        </Button>
+        <Button
+          className="button-text"
+          variant="contained"
+          size="large"
+          sx={{
+            backgroundColor: '#fea5b0',
+            boxShadow: 'none',
+            fontFamily: 'DM Sans',
+          }}
+          component={Link}
+          to="/CSK2025"
+        >
+          CSK 2025
+        </Button>
+        <Button
+          className="button-text"
+          variant="contained"
+          size="large"
+          sx={{
+            backgroundColor: '#fea5b0',
+            boxShadow: 'none',
+            fontFamily: 'DM Sans',
+          }}
+          component={Link}
+          to="/CSK2026"
+        >
+          CSK 2026
+        </Button>
+      </Box>
       <Grid
         container
         rowSpacing={{ xs: 1, md: 4 }}

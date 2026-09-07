@@ -18,7 +18,7 @@ function CSK2026() {
   const stats = [
     {
       label: 'Participants',
-      value: '#',
+      value: '36',
       slides: [],
     },
     {
@@ -27,13 +27,13 @@ function CSK2026() {
       slides: [],
     },
     {
-      label: 'ProDev Workshops',
-      value: '3',
+      label: 'Workshops',
+      value: '5',
       slides: [],
     },
     {
-      label: 'Technical Workshops',
-      value: '3',
+      label: 'Panels',
+      value: '2',
       slides: [],
     },
   ];

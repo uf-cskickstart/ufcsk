@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { useState } from "react";
 import {
   Card,
@@ -16,6 +16,9 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleOpen = (card) => {
+    if (!card.slides || card.slides.length === 0) {
+      return;
+    }
     setSelectedCard(card);
     setCurrentSlide(0);
     setOpenDialog(true);
@@ -28,13 +31,13 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
 
   const handlePrev = () => {
     setCurrentSlide((prev) =>
-      prev === 0 ? selectedCard.slides.length - 1 : prev - 1
+      prev === 0 ? selectedCard.slides.length - 1 : prev - 1,
     );
   };
 
   const handleNext = () => {
     setCurrentSlide((prev) =>
-      prev === selectedCard.slides.length - 1 ? 0 : prev + 1
+      prev === selectedCard.slides.length - 1 ? 0 : prev + 1,
     );
   };
 
@@ -44,12 +47,22 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
         {title}
       </Typography>
 
-     
       <Grid container spacing={3}>
         {stats.map((stat) => (
-          <Grid item xs={12} sm={6} md={3} key={stat.label}>
+          <Grid
+            item
+            xs={6}
+            sm={6}
+            md={3}
+            key={stat.label}
+            sx={{ display: "flex" }}
+          >
             <Card
               sx={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
                 textAlign: "center",
                 p: 2,
                 borderRadius: 3,
@@ -57,9 +70,9 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
                 cursor: "pointer",
                 backgroundColor: "#BE9BCB",
                 "&:hover": {
-                bgcolor: "#ffe6f0", 
-                transform: "scale(1.03)", 
-              },
+                  bgcolor: "#ffe6f0",
+                  transform: "scale(1.03)",
+                },
               }}
               onClick={() => handleOpen(stat)}
             >
@@ -67,14 +80,13 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
                 <Typography variant="h3" sx={{ color: "#632f76ff" }}>
                   {stat.value}
                 </Typography>
-                <Typography variant="h6">{stat.label}</Typography>
+                <Typography variant="h8">{stat.label}</Typography>
               </CardContent>
             </Card>
           </Grid>
         ))}
       </Grid>
 
-     
       {selectedCard && (
         <Dialog
           open={openDialog}
@@ -109,7 +121,6 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
               boxSizing: "border-box",
             }}
           >
-           
             <div
               style={{
                 position: "absolute",
@@ -144,7 +155,6 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
               {selectedCard.slides[currentSlide].text}
             </Typography>
 
-          
             <div
               style={{
                 position: "absolute",
@@ -164,7 +174,6 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
               </IconButton>
             </div>
 
-           
             <IconButton
               onClick={handleClose}
               sx={{

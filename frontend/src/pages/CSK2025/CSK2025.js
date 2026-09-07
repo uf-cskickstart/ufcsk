@@ -68,7 +68,7 @@ const stats = [
       ],
     },
     {
-      label: "ProDev Workshops",
+      label: "Professional Development Workshops",
       value: "3",
       slides: [
         { img: ResumeReview, text: "Resume Review with UKG" },
