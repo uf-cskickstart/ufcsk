@@ -12,9 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link, useLocation } from 'react-router-dom';
 import { apiGet } from '../../api.js';
 
-
 const pages = ['Home', 'Board', 'Calendar', 'Program', 'Sponsor'];
-const routes = ["/home", "/board", "/calendar", "/program", "/sponsors"];
+const routes = ['/home', '/board', '/calendar', '/program', '/sponsors'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -58,11 +57,28 @@ function ResponsiveAppBar() {
     };
   }, [location.pathname]);
 
-  const authLabel = authState === 'admin' ? 'Admin' : authState === 'participant' ? 'My Points' : 'Login';
-  const authRoute = authState === 'admin' ? '/admin/events' : authState === 'participant' ? '/profile' : '/login';
+  const authLabel =
+    authState === 'admin'
+      ? 'Admin'
+      : authState === 'participant'
+        ? 'My Points'
+        : 'Login';
+  const authRoute =
+    authState === 'admin'
+      ? '/admin/events'
+      : authState === 'participant'
+        ? '/profile'
+        : '/login';
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#BE9BCB', borderBottom: '2px solid white', boxShadow: 'none' }}>
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: '#BE9BCB',
+        borderBottom: '2px solid white',
+        boxShadow: 'none',
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* MOBILE MENU */}
@@ -82,7 +98,10 @@ function ResponsiveAppBar() {
             >
               {pages.map((page, index) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link to={routes[index]} style={{ textDecoration: 'none', color: 'black' }}>
+                  <Link
+                    to={routes[index]}
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
                     {page}
                   </Link>
                 </MenuItem>
@@ -92,8 +111,8 @@ function ResponsiveAppBar() {
 
           {/* DESKTOP MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page, index) => (
-              page === "Program" ? (
+            {pages.map((page, index) =>
+              page === 'Program' ? (
                 <Box key={page}>
                   <Button
                     onMouseEnter={handleProgramOpen}
@@ -119,13 +138,35 @@ function ResponsiveAppBar() {
                     transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                   >
                     <MenuItem onClick={handleProgramClose}>
-                      <Link to="/CSK2024" style={{ textDecoration: 'none', color: 'black' }}>
+                      <Link
+                        to="/program"
+                        style={{ textDecoration: 'none', color: 'black' }}
+                      >
+                        CS Kickoff
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleProgramClose}>
+                      <Link
+                        to="/CSK2024"
+                        style={{ textDecoration: 'none', color: 'black' }}
+                      >
                         CSK 2024 Recap
                       </Link>
                     </MenuItem>
                     <MenuItem onClick={handleProgramClose}>
-                      <Link to="/CSK2025" style={{ textDecoration: 'none', color: 'black' }}>
+                      <Link
+                        to="/CSK2025"
+                        style={{ textDecoration: 'none', color: 'black' }}
+                      >
                         CSK 2025 Recap
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleProgramClose}>
+                      <Link
+                        to="/CSK2026"
+                        style={{ textDecoration: 'none', color: 'black' }}
+                      >
+                        CSK 2026 Recap
                       </Link>
                     </MenuItem>
                   </Menu>
@@ -143,12 +184,15 @@ function ResponsiveAppBar() {
                     textTransform: 'none',
                   }}
                 >
-                  <Link to={routes[index]} style={{ textDecoration: 'none', color: 'white' }}>
+                  <Link
+                    to={routes[index]}
+                    style={{ textDecoration: 'none', color: 'white' }}
+                  >
                     {page}
                   </Link>
                 </Button>
-              )
-            ))}
+              ),
+            )}
           </Box>
 
           {/* AUTH BUTTON - Login / My Points / Admin, always pinned to the right */}
@@ -165,7 +209,10 @@ function ResponsiveAppBar() {
                 textTransform: 'none',
               }}
             >
-              <Link to={authRoute} style={{ textDecoration: 'none', color: 'white' }}>
+              <Link
+                to={authRoute}
+                style={{ textDecoration: 'none', color: 'white' }}
+              >
                 {authLabel}
               </Link>
             </Button>

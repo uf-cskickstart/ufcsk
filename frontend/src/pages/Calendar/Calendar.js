@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Typography, Box } from '@mui/material';
+import { Button, Typography, Box } from '@mui/material';
 import Iframe from 'react-iframe';
 import './Calendar.css';
 
@@ -28,6 +28,23 @@ export default function Calendar() {
           scrolling="no"
         />
       </Box>
+      <Button
+        className="button-text"
+        variant="contained"
+        size="large"
+        style={{
+          marginTop: '20px',
+          marginBottom: '35px',
+          backgroundColor: '#fea5b0',
+          boxShadow: 'none',
+          fontFamily: 'DM Sans',
+        }}
+        href="https://calendar.google.com/calendar/u/0/embed?src=5752be03c754ed016c1b81e79593b17a3202fbd62350e032971daf04cf18cc7a@group.calendar.google.com&ctz=America/New_York"
+        target="_blank"
+        rel="noreferrer"
+      >
+        add to your google calendar
+      </Button>
     </div>
   );
 }
