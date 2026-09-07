@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useState } from "react";
+import * as React from 'react';
+import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -7,10 +7,10 @@ import {
   Grid,
   Dialog,
   IconButton,
-} from "@mui/material";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
+} from '@mui/material';
+import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
-export default function StatsSection({ title = "Event Highlights", stats }) {
+export default function StatsSection({ title = 'Event Highlights', stats }) {
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,8 +42,8 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
+    <div style={{ padding: '2rem' }}>
+      <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
         {title}
       </Typography>
 
@@ -55,29 +55,29 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
             sm={6}
             md={3}
             key={stat.label}
-            sx={{ display: "flex" }}
+            sx={{ display: 'flex' }}
           >
             <Card
               sx={{
                 flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                textAlign: "center",
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                textAlign: 'center',
                 p: 2,
                 borderRadius: 3,
                 boxShadow: 3,
-                cursor: "pointer",
-                backgroundColor: "#BE9BCB",
-                "&:hover": {
-                  bgcolor: "#ffe6f0",
-                  transform: "scale(1.03)",
+                cursor: 'pointer',
+                backgroundColor: '#BE9BCB',
+                '&:hover': {
+                  bgcolor: '#ffe6f0',
+                  transform: 'scale(1.03)',
                 },
               }}
               onClick={() => handleOpen(stat)}
             >
               <CardContent>
-                <Typography variant="h3" sx={{ color: "#632f76ff" }}>
+                <Typography variant="h3" sx={{ color: '#632f76ff' }}>
                   {stat.value}
                 </Typography>
                 <Typography variant="h8">{stat.label}</Typography>
@@ -95,49 +95,49 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
           maxWidth="md"
           PaperProps={{
             sx: {
-              width: "90vw",
-              height: "80vh",
-              maxWidth: "800px",
-              maxHeight: "600px",
+              width: '90vw',
+              height: '80vh',
+              maxWidth: '800px',
+              maxHeight: '600px',
               borderRadius: 4,
-              overflow: "hidden",
-              position: "relative",
+              overflow: 'hidden',
+              position: 'relative',
             },
           }}
         >
           <div
             style={{
-              width: "100%",
-              height: "100%",
+              width: '100%',
+              height: '100%',
               backgroundImage: `url(${selectedCard.slides[currentSlide].img})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              padding: "2rem",
-              boxSizing: "border-box",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              padding: '2rem',
+              boxSizing: 'border-box',
             }}
           >
             <div
               style={{
-                position: "absolute",
+                position: 'absolute',
                 inset: 0,
-                background: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))",
+                background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))',
               }}
             />
 
             <Typography
               variant="h5"
               sx={{
-                fontWeight: "bold",
+                fontWeight: 'bold',
                 mb: 1,
-                color: "#fff",
-                textShadow: "0 2px 8px rgba(0,0,0,0.8)",
+                color: '#fff',
+                textShadow: '0 2px 8px rgba(0,0,0,0.8)',
                 zIndex: 1,
-                textAlign: "center",
+                textAlign: 'center',
               }}
             >
               {selectedCard.label}
@@ -145,11 +145,11 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
             <Typography
               variant="body1"
               sx={{
-                color: "#fff",
-                textShadow: "0 2px 8px rgba(0,0,0,0.8)",
+                color: '#fff',
+                textShadow: '0 2px 8px rgba(0,0,0,0.8)',
                 zIndex: 1,
-                textAlign: "center",
-                maxWidth: "80%",
+                textAlign: 'center',
+                maxWidth: '80%',
               }}
             >
               {selectedCard.slides[currentSlide].text}
@@ -157,19 +157,19 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
 
             <div
               style={{
-                position: "absolute",
-                top: "50%",
-                left: "2rem",
-                right: "2rem",
-                display: "flex",
-                justifyContent: "space-between",
+                position: 'absolute',
+                top: '50%',
+                left: '2rem',
+                right: '2rem',
+                display: 'flex',
+                justifyContent: 'space-between',
                 zIndex: 2,
               }}
             >
-              <IconButton onClick={handlePrev} sx={{ color: "white" }}>
+              <IconButton onClick={handlePrev} sx={{ color: 'white' }}>
                 <ArrowBack />
               </IconButton>
-              <IconButton onClick={handleNext} sx={{ color: "white" }}>
+              <IconButton onClick={handleNext} sx={{ color: 'white' }}>
                 <ArrowForward />
               </IconButton>
             </div>
@@ -177,12 +177,12 @@ export default function StatsSection({ title = "Event Highlights", stats }) {
             <IconButton
               onClick={handleClose}
               sx={{
-                position: "absolute",
-                top: "1rem",
-                right: "1rem",
-                color: "white",
-                backgroundColor: "rgba(0,0,0,0.4)",
-                "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                color: 'white',
+                backgroundColor: 'rgba(0,0,0,0.4)',
+                '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
                 zIndex: 2,
               }}
             >
