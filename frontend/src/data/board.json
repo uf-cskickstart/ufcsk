@@ -51,14 +51,14 @@
   {
     "name": "Kayla Inoa",
     "position": "Director of Software Development",
-    "blurb": "Computer Science",
+    "blurb": "Computer Science & Digital Arts and Sciences",
     "avatar": "/avatars/2026-board/kayla-inoa.PNG",
     "linkedin": "https://www.linkedin.com/in/kayla-inoa/"
   },
   {
     "name": "Leonna Xie",
     "position": "Director of Software Workshops",
-    "blurb": "Computer Science",
+    "blurb": "Computer Science & Digital Arts and Sciences",
     "avatar": "/avatars/2026-board/leonna-xie.JPG",
     "linkedin": "https://www.linkedin.com/in/leonnaxie/"
   },
@@ -124,5 +124,12 @@
     "blurb": "Computer Science & Philosophy",
     "avatar": "/avatars/2026-board/giuliana-silva.jpg",
     "linkedin": "https://www.linkedin.com/in/giulianaesilva/"
+  },
+  {
+    "name": "Joshua Brown",
+    "position": "Co-Director of Events",
+    "blurb": "Computer Science & Digital Arts and Sciences",
+    "avatar": "/avatars/2026-board/joshua-brown.jpeg",
+    "linkedin": "https://www.linkedin.com/in/joshua-brown-005b21435/"
   }
 ]
