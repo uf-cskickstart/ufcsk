@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const express = require('express');
 const { OAuth2Client } = require('google-auth-library');
+const pool = require('../db');
 const {
   ADMIN_COOKIE,
   signAdminToken,
@@ -90,6 +91,58 @@ router.get('/admin/me', requireAdmin, (req, res) => {
 router.post('/admin/logout', (req, res) => {
   res.clearCookie(ADMIN_COOKIE);
   res.json({ ok: true });
+});
+
+router.get('/admin/roster', requireAdmin, async (req, res, next) => {
+  try {
+    // Same points math as /profile: sum of points for every event attended.
+    const result = await pool.query(
+      `SELECT p.id, p.full_name, p.ufid, p.created_at,
+              COALESCE(SUM(e.points), 0)::int AS total_points,
+              COALESCE(
+                json_agg(
+                  json_build_object('id', e.id, 'name', e.name, 'date', e.date, 'points', e.points, 'checked_in_at', a.checked_in_at)
+                  ORDER BY e.date DESC
+                ) FILTER (WHERE e.id IS NOT NULL),
+                '[]'
+              ) AS events
+       FROM participants p
+       LEFT JOIN attendance a ON a.participant_id = p.id
+       LEFT JOIN events e ON e.id = a.event_id
+       GROUP BY p.id
+       ORDER BY total_points DESC, p.full_name ASC`
+    );
+    res.json(result.rows);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete('/admin/participants/:id', requireAdmin, async (req, res, next) => {
+  const participantId = Number(req.params.id);
+  if (!Number.isInteger(participantId)) {
+    return res.status(400).json({ error: 'Invalid participant id' });
+  }
+
+  // attendance.participant_id has no ON DELETE CASCADE, so remove their
+  // check-ins first, in the same transaction so a failure leaves both intact.
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    await client.query('DELETE FROM attendance WHERE participant_id = $1', [participantId]);
+    const result = await client.query('DELETE FROM participants WHERE id = $1 RETURNING id', [participantId]);
+    if (result.rows.length === 0) {
+      await client.query('ROLLBACK');
+      return res.status(404).json({ error: 'Member not found' });
+    }
+    await client.query('COMMIT');
+    res.json({ ok: true });
+  } catch (err) {
+    await client.query('ROLLBACK').catch(() => {});
+    next(err);
+  } finally {
+    client.release();
+  }
 });
 
 module.exports = router;

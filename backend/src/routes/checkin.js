@@ -27,11 +27,15 @@ router.post('/checkin', requireParticipant, async (req, res, next) => {
 
     let alreadyCheckedIn = false;
     try {
-      await pool.query(
+      const inserted = await pool.query(
         `INSERT INTO attendance (participant_id, event_id, full_name)
          SELECT $1, $2, full_name FROM participants WHERE id = $1`,
         [req.participantId, event.id]
       );
+      // Zero rows means their session points at a member an admin deleted.
+      if (inserted.rowCount === 0) {
+        return res.status(401).json({ error: 'Please sign in again to check in' });
+      }
     } catch (err) {
       if (err.code === '23505') {
         alreadyCheckedIn = true;

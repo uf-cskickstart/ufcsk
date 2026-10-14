@@ -1,17 +1,12 @@
 import * as React from 'react';
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  CircularProgress,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-} from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Card, CardContent, CircularProgress, Chip, Button } from '@mui/material';
 import { apiGet } from '../../api.js';
+import PageHeader from '../../components/PageHeader/PageHeader.js';
+import DateBadge from '../../components/DateBadge/DateBadge.js';
+
+const INK = '#1A1421';
+const PURPLE = '#BE9BCB';
 
 const cardStyle = {
   borderRadius: '18px',
@@ -19,13 +14,23 @@ const cardStyle = {
   fontFamily: 'DM Sans',
 };
 
-function formatDate(dateString) {
-  return new Date(dateString).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
+const font = { fontFamily: 'DM Sans' };
+
+function StatCard({ label, value, highlight }) {
+  return (
+    <Card style={cardStyle} sx={{ flex: 1, minWidth: 0 }}>
+      <CardContent sx={{ textAlign: 'center', py: 2, '&:last-child': { pb: 2 } }}>
+        <Typography
+          sx={{ ...font, fontSize: { xs: '2rem', sm: '2.5rem' }, fontWeight: 700, color: highlight ? PURPLE : INK, lineHeight: 1.2 }}
+        >
+          {value}
+        </Typography>
+        <Typography variant="body2" sx={{ ...font, color: 'text.secondary' }}>
+          {label}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
 }
 
 export default function Profile() {
@@ -50,84 +55,82 @@ export default function Profile() {
   }, []);
 
   return (
-    <div>
-      <Typography
-        variant="h3"
-        pt={2}
-        pl={{ xs: 2, md: 4 }}
-        sx={{ fontFamily: 'DM Sans', textAlign: 'left', color: '#1A1421', fontWeight: '700', letterSpacing: '3px' }}
-      >
-        MY POINTS
-      </Typography>
+    <Box sx={{ padding: { xs: 2, sm: 3 }, display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ width: '100%', maxWidth: 720 }}>
+        <PageHeader eyebrow={profile ? `HI, ${profile.full_name.toUpperCase()}` : 'MEMBERS'} title="MY POINTS" />
 
-      <Box sx={{ padding: 3, display: 'flex', justifyContent: 'center' }}>
         {loading ? (
-          <CircularProgress sx={{ color: '#BE9BCB' }} />
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <CircularProgress sx={{ color: PURPLE }} />
+          </Box>
         ) : !profile ? (
-          <Card style={cardStyle} sx={{ width: '100%', maxWidth: 480 }}>
-            <CardContent style={{ margin: '8px' }}>
-              <Typography variant="h5" sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700' }}>
-                No check-ins yet
+          <Card style={cardStyle}>
+            <CardContent style={{ margin: '8px' }} sx={{ textAlign: 'left' }}>
+              <Typography variant="h6" sx={{ ...font, color: INK, fontWeight: '700' }}>
+                You're not logged in
               </Typography>
-              <Typography variant="body2" sx={{ fontFamily: 'DM Sans', pt: 1 }}>
-                Scan an event's QR code to check in and start earning points.
+              <Typography variant="body2" sx={{ ...font, color: 'text.secondary', pt: 0.5 }}>
+                Log in with your name and UFID to see your points, or scan an event's QR code to check in.
               </Typography>
+              <Button
+                component={RouterLink}
+                to="/login"
+                variant="contained"
+                size="large"
+                className="button-text"
+                style={{ backgroundColor: '#fea5b0', boxShadow: 'none', fontFamily: 'DM Sans', marginTop: '16px' }}
+              >
+                Log In
+              </Button>
             </CardContent>
           </Card>
         ) : (
-          <Box sx={{ width: '100%', maxWidth: 720 }}>
-            <Card style={cardStyle}>
-              <CardContent style={{ margin: '8px', textAlign: 'center' }}>
-                <Typography variant="h6" sx={{ fontFamily: 'DM Sans' }}>
-                  {profile.full_name}
-                </Typography>
-                <Typography variant="h2" sx={{ fontFamily: 'DM Sans', color: '#BE9BCB', fontWeight: '700', pt: 1 }}>
-                  {profile.total_points}
-                </Typography>
-                <Typography variant="body2" sx={{ fontFamily: 'DM Sans' }}>
-                  total points
-                </Typography>
-              </CardContent>
-            </Card>
+          <>
+            <Box sx={{ display: 'flex', gap: { xs: 1.5, sm: 2 }, mb: 3 }}>
+              <StatCard label="total points" value={profile.total_points} highlight />
+              <StatCard label={profile.events.length === 1 ? 'event attended' : 'events attended'} value={profile.events.length} />
+            </Box>
 
-            <Card style={cardStyle} sx={{ mt: 3 }}>
+            <Card style={cardStyle}>
               <CardContent style={{ margin: '8px' }}>
-                <Typography variant="h6" sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700', pb: 1 }}>
+                <Typography variant="h6" sx={{ ...font, color: INK, fontWeight: '700', textAlign: 'left', mb: 2 }}>
                   Events Attended
                 </Typography>
                 {profile.events.length === 0 ? (
-                  <Typography variant="body2" sx={{ fontFamily: 'DM Sans' }}>
-                    No events yet.
+                  <Typography variant="body2" sx={{ ...font, color: 'text.secondary', textAlign: 'left' }}>
+                    No check-ins yet. Scan an event's QR code to start earning points.
                   </Typography>
                 ) : (
-                  <Table>
-                    <TableHead>
-                      <TableRow>
-                        <TableCell sx={{ fontFamily: 'DM Sans', fontWeight: '700' }}>Event</TableCell>
-                        <TableCell sx={{ fontFamily: 'DM Sans', fontWeight: '700' }}>Date</TableCell>
-                        <TableCell sx={{ fontFamily: 'DM Sans', fontWeight: '700' }} align="right">
-                          Points
-                        </TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {profile.events.map((event) => (
-                        <TableRow key={event.id}>
-                          <TableCell sx={{ fontFamily: 'DM Sans' }}>{event.name}</TableCell>
-                          <TableCell sx={{ fontFamily: 'DM Sans' }}>{formatDate(event.date)}</TableCell>
-                          <TableCell sx={{ fontFamily: 'DM Sans' }} align="right">
-                            {event.points}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                  profile.events.map((event) => (
+                    <Box
+                      key={event.id}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 2,
+                        p: 1.5,
+                        mb: 1.5,
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                        borderRadius: '14px',
+                      }}
+                    >
+                      <DateBadge date={event.date} />
+                      <Typography sx={{ ...font, fontWeight: 700, color: INK, flex: 1, minWidth: 0, textAlign: 'left', overflowWrap: 'anywhere' }}>
+                        {event.name}
+                      </Typography>
+                      <Chip
+                        label={`+${event.points} ${event.points === 1 ? 'pt' : 'pts'}`}
+                        size="small"
+                        sx={{ ...font, fontWeight: 700, backgroundColor: 'rgba(254, 165, 176, 0.35)', color: INK }}
+                      />
+                    </Box>
+                  ))
                 )}
               </CardContent>
             </Card>
-          </Box>
+          </>
         )}
       </Box>
-    </div>
+    </Box>
   );
 }

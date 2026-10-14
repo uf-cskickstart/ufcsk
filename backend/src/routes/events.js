@@ -42,7 +42,11 @@ router.post('/events', requireAdmin, async (req, res, next) => {
 router.get('/events', requireAdmin, async (req, res, next) => {
   try {
     const result = await pool.query(
-      'SELECT id, name, date, points, qr_token FROM events ORDER BY date DESC'
+      `SELECT e.id, e.name, e.date, e.points, e.qr_token, COUNT(a.id)::int AS checkin_count
+       FROM events e
+       LEFT JOIN attendance a ON a.event_id = e.id
+       GROUP BY e.id
+       ORDER BY e.date DESC`
     );
     const events = result.rows.map((event) => ({
       ...event,

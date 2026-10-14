@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Typography, TextField, Button, Card, CardContent, Alert, CircularProgress, Link } from '@mui/material';
+import { Box, Typography, TextField, Button, Card, CardContent, Alert, CircularProgress, Link, Divider } from '@mui/material';
 import { apiGet, apiPost } from '../../api.js';
+import PageHeader from '../../components/PageHeader/PageHeader.js';
 
 const cardStyle = {
   borderRadius: '18px',
@@ -75,24 +76,22 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <Typography
-        variant="h3"
-        pt={2}
-        pl={{ xs: 2, md: 4 }}
-        sx={{ fontFamily: 'DM Sans', textAlign: 'left', color: '#1A1421', fontWeight: '700', letterSpacing: '3px' }}
-      >
-        LOG IN
-      </Typography>
+    <Box sx={{ padding: { xs: 2, sm: 3 }, display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ width: '100%', maxWidth: 440 }}>
+        <PageHeader eyebrow="MEMBERS" title="LOG IN" />
 
-      <Box sx={{ padding: 3, display: 'flex', justifyContent: 'center' }}>
         {checkingSession ? (
-          <CircularProgress sx={{ color: '#BE9BCB' }} />
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <CircularProgress sx={{ color: '#BE9BCB' }} />
+          </Box>
         ) : (
-          <Card style={cardStyle} sx={{ width: '100%', maxWidth: 420 }}>
-            <CardContent style={{ margin: '8px' }}>
-              <Typography variant="body2" sx={{ fontFamily: 'DM Sans', pb: 1 }}>
-                Enter your info to see your points.
+          <Card style={cardStyle}>
+            <CardContent style={{ margin: '8px' }} sx={{ textAlign: 'left' }}>
+              <Typography variant="h6" sx={{ fontFamily: 'DM Sans', color: '#1A1421', fontWeight: '700' }}>
+                Check your points
+              </Typography>
+              <Typography variant="body2" sx={{ fontFamily: 'DM Sans', color: 'text.secondary', pt: 0.5 }}>
+                Enter the name and UFID you use to check in at events.
               </Typography>
               <form onSubmit={handleLogin}>
                 <TextField
@@ -102,7 +101,6 @@ export default function Login() {
                   margin="normal"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  sx={{ fontFamily: 'DM Sans' }}
                 />
                 <TextField
                   label="UFID"
@@ -110,81 +108,85 @@ export default function Login() {
                   required
                   margin="normal"
                   inputProps={{ maxLength: 8, inputMode: 'numeric' }}
+                  helperText="8 digits"
                   value={ufid}
                   onChange={(e) => setUfid(e.target.value)}
-                  sx={{ fontFamily: 'DM Sans' }}
                 />
                 {formError && (
                   <Alert severity="error" sx={{ fontFamily: 'DM Sans', mt: 1 }}>
                     {formError}
                   </Alert>
                 )}
-                <Box sx={{ textAlign: 'left' }}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    size="large"
-                    style={{ ...buttonStyle, marginTop: '12px' }}
-                    disabled={submitting}
-                  >
-                    {submitting ? 'Logging in...' : 'Log In'}
-                  </Button>
-                </Box>
+                <Button
+                  type="submit"
+                  className="button-text"
+                  variant="contained"
+                  size="large"
+                  fullWidth
+                  style={{ ...buttonStyle, marginTop: '16px' }}
+                  disabled={submitting}
+                >
+                  {submitting ? 'Logging in...' : 'Log In'}
+                </Button>
               </form>
 
-              <Box sx={{ mt: 3, textAlign: 'center' }}>
-                {!showAdminSignIn ? (
+              <Divider sx={{ my: 3 }} />
+
+              {!showAdminSignIn ? (
+                <Box sx={{ textAlign: 'center' }}>
                   <Link
                     component="button"
                     type="button"
                     variant="body2"
                     onClick={() => setShowAdminSignIn(true)}
-                    sx={{ fontFamily: 'DM Sans', color: '#1A1421' }}
+                    sx={{ fontFamily: 'DM Sans', color: '#BE9BCB', fontWeight: 700 }}
                   >
                     Board member? Sign in
                   </Link>
-                ) : (
-                  <form onSubmit={handleAdminLogin}>
-                    <TextField
-                      label="Admin Username"
-                      fullWidth
-                      required
-                      margin="normal"
-                      value={adminUsername}
-                      onChange={(e) => setAdminUsername(e.target.value)}
-                      sx={{ fontFamily: 'DM Sans' }}
-                    />
-                    <TextField
-                      label="Admin Password"
-                      type="password"
-                      fullWidth
-                      required
-                      margin="normal"
-                      value={adminPassword}
-                      onChange={(e) => setAdminPassword(e.target.value)}
-                      sx={{ fontFamily: 'DM Sans' }}
-                    />
-                    {adminError && (
-                      <Alert severity="error" sx={{ fontFamily: 'DM Sans', mt: 1 }}>
-                        {adminError}
-                      </Alert>
-                    )}
-                    <Button
-                      type="submit"
-                      variant="outlined"
-                      size="large"
-                      sx={{ mt: 1.5, fontFamily: 'DM Sans' }}
-                      disabled={adminSubmitting}
-                    >
-                      {adminSubmitting ? 'Signing in...' : 'Sign In'}
-                    </Button>
-                  </form>
-                )}
-              </Box>
+                </Box>
+              ) : (
+                <form onSubmit={handleAdminLogin}>
+                  <Typography sx={{ fontFamily: 'DM Sans', color: '#BE9BCB', fontWeight: '700', letterSpacing: '2px', fontSize: '0.8rem' }}>
+                    BOARD SIGN IN
+                  </Typography>
+                  <TextField
+                    label="Admin Username"
+                    fullWidth
+                    required
+                    margin="normal"
+                    value={adminUsername}
+                    onChange={(e) => setAdminUsername(e.target.value)}
+                  />
+                  <TextField
+                    label="Admin Password"
+                    type="password"
+                    fullWidth
+                    required
+                    margin="normal"
+                    value={adminPassword}
+                    onChange={(e) => setAdminPassword(e.target.value)}
+                  />
+                  {adminError && (
+                    <Alert severity="error" sx={{ fontFamily: 'DM Sans', mt: 1 }}>
+                      {adminError}
+                    </Alert>
+                  )}
+                  <Button
+                    type="submit"
+                    variant="outlined"
+                    size="large"
+                    fullWidth
+                    sx={{ mt: 1.5, fontFamily: 'DM Sans', textTransform: 'none', color: '#1A1421', borderColor: '#BE9BCB', borderRadius: '10px' }}
+                    disabled={adminSubmitting}
+                  >
+                    {adminSubmitting ? 'Signing in...' : 'Sign In'}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
         )}
       </Box>
-    </div>
+    </Box>
   );
 }
